@@ -10,9 +10,9 @@
 
 
 ## Descripción del Sitio
-El sitio estará enfocado en la venta de componentes, périfericos e insumos de computadoras.
+El sitio estará enfocado en la venta de componentes, periféricos e insumos de computadoras.
 
-Buscamos atraer a un publico de diversas necesidades, esto incluye tanto a las personas que necesiten computadoras para uso básico, como aquellos individuos que requieran componentes de alto rendimiento para actividades tales como el gaming, edición, renderizado, etc. 
+Buscamos atraer a un público de diversas necesidades, esto incluye tanto a las personas que necesiten computadoras para uso básico, como aquellos individuos que requieran componentes de alto rendimiento para actividades tales como el gaming, edición, renderización y demás.
 
 
 ## Sitios Referentes
@@ -21,6 +21,9 @@ Buscamos atraer a un publico de diversas necesidades, esto incluye tanto a las p
 - [Maximus](https://www.maximus.com.ar/)
 - [Mercadolibre](https://www.mercadolibre.com.ar/)
 - [Hardcorecomputacion](https://hardcorecomputacion.com.ar/)
+- [Frávega](https://www.fravega.com/)
+
+Para la creación de nuestros wireframes reunimos diversos sitios dedicados a la venta de productos, no necesariamente enfocados a la venta de hardware, para recolectar ciertos fragmentos de diseño que sean agradables a la vista y brinden una buena experiencia de usuario.
 
 
 ## Wireframes
