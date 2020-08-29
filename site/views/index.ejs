@@ -12,24 +12,22 @@
   <body>
     <header class="container-fluid">
 
-      <nav class="barra navbar-expand-lg">
+      <nav class="navbar navbar-expand-lg px-0 mx-0">
 
         <!-- LOGO -->
-        <div class="col-2 col-md-1 logo">
-          <a href=""><img src="icons/logo-svg.svg"></a>
-        </div>
+        
+          <a class="logo" href="navbar-brand"><img src="icons/logo-svg.svg"></a>
+
 
         <!-- FORMULARIO -->
-      <div class="col-8 col-md-10" >
-        <form action="">
-          <input type="text" name="search" placeholder="Buscar productos">
+        <form class="form-inline d-flex flex-grow-1 mx-3">
+          <input class="flex-grow-1" type="text" name="search" placeholder="Buscar productos">
           <button type="submit"><img src="icons/search.svg" id="lupa"></button>
         </form>
-      </div>
+
 
       <!-- Boton de menu -->
-      <div class="col-2 col-md-1  menu">
-        <button class="navbar-toggler" 
+        <button class="navbar-toggler btn-desplegable" 
         type="button" 
         data-toggle="collapse" 
         data-target="#navbarTogglerDemo02" 
@@ -38,13 +36,11 @@
         aria-label="Toggle navigation">
           <i class="fas fa-bars"></i>
         </button>
-      </div>
       
-      <!-- MENU DESPLEGABLE -->
+      <!-- MENU DESPLEGABLE USUARIO-->
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-
         <!-- Lista de usuario -->
-        <ul class="lista-usuario navbar-nav mr-auto mt-2 mt-lg-0">
+        <ul class="lista-usuario navbar-nav mr-auto mt-2 mt-lg-0 ">
           <li>
             <a href="#"><i class="fas fa-user-circle"></i>Ingresar</a>
           </li>
@@ -52,17 +48,30 @@
             <a href="#"><i class="fas fa-shopping-cart"></i>Carrito</a>
           </li>
         </ul>
-        
-        <ul>
+      </div>
+
+      <!-- MENU DESPLEGABLE LINKS -->
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="lista-menu " >
           <li><a href="">Inicio</a></li>
           <li><a href="">Componentes</a></li>
           <li><a href="">Périfecos</a></li>
         </ul>
+      </div>
+
+
+    
+        
+
+
+
 
         <!-- Lista de links -->
         
       </div>
       </nav>
+
+
 
     </header>
 

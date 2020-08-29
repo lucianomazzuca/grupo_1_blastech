@@ -15,25 +15,15 @@ header{
     width: 100%;
 }
 
-.barra{
-    padding: 0;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
 
 header .logo{
-    text-align: center;
-    padding: 0;
+
 }
 
 .caja-busqueda{
-    padding: 0;
 }
 
 header form{
-    width: 100%;
     display: flex;
     align-items: center;
     position: relative;
@@ -64,11 +54,12 @@ header .menu{
     width: 100%;
 }
 
-header .menu button{
+header .btn-desplegable{
     border: none;
     background-color: black;
     color: white;
     font-size: 1.9rem;
+    padding: 0;
 }
 
 /* Menu desplegable */
@@ -101,5 +92,14 @@ li i{
 
 
 @media(min-width:1024px){
-    
+    .barra{
+        flex-wrap: nowrap;
+    }
+    .caja{
+        display: block;
+    }
+
+    .navbar{
+        flex-wrap: wrap;
+    }
 }
