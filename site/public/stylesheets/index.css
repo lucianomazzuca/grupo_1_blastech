@@ -47,14 +47,14 @@ header .menu{
 
 header .menu button{
     border: none;
-    width: 100%;
     background-color: black;
     color: white;
     font-size: 1.9rem;
 }
 
-
-
-.row{
+.barra{
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
 }
