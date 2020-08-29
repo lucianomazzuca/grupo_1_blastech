@@ -12,21 +12,27 @@
   <body>
     <header class="container-fluid">
 
-      <nav class="navbar navbar-expand-lg px-0 mx-0">
+      <nav class="barra navbar-expand-lg sm-px-0 sm-mx-0">
 
         <!-- LOGO -->
-        
+        <div class="col-2 col-lg-2 px-0 mx-0 logo">
           <a class="logo" href="navbar-brand"><img src="icons/logo-svg.svg"></a>
+        </div>
+          
 
 
         <!-- FORMULARIO -->
-        <form class="form-inline d-flex flex-grow-1 mx-3">
-          <input class="flex-grow-1" type="text" name="search" placeholder="Buscar productos">
-          <button type="submit"><img src="icons/search.svg" id="lupa"></button>
-        </form>
+        <div class="col-8 col-lg-6 px-0 mx-0">
+          <form class="form-inline ">
+            <input class="" type="text" name="search" placeholder="Buscar productos">
+            <button type="submit"><img src="icons/search.svg" id="lupa"></button>
+          </form>
+        </div>
+        
 
 
       <!-- Boton de menu -->
+      <div class="col-2 col-lg-0 px-0 mx-0 desplegable">
         <button class="navbar-toggler btn-desplegable" 
         type="button" 
         data-toggle="collapse" 
@@ -37,8 +43,10 @@
           <i class="fas fa-bars"></i>
         </button>
       
+      </div>
+        
       <!-- MENU DESPLEGABLE USUARIO-->
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <div class="collapse navbar-collapse col-lg-3" id="navbarTogglerDemo02">
         <!-- Lista de usuario -->
         <ul class="lista-usuario navbar-nav mr-auto mt-2 mt-lg-0 ">
           <li>
@@ -51,8 +59,8 @@
       </div>
 
       <!-- MENU DESPLEGABLE LINKS -->
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="lista-menu " >
+      <div class="collapse navbar-collapse col-lg-12 caja-menu" id="navbarTogglerDemo02">
+        <ul class="lista-menu" >
           <li><a href="">Inicio</a></li>
           <li><a href="">Componentes</a></li>
           <li><a href="">Périfecos</a></li>

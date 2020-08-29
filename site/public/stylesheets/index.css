@@ -17,7 +17,7 @@ header{
 
 
 header .logo{
-
+    text-align: center;
 }
 
 .caja-busqueda{
@@ -27,6 +27,7 @@ header form{
     display: flex;
     align-items: center;
     position: relative;
+    padding-right: 0;
 }
 
 header input{
@@ -35,6 +36,7 @@ header input{
     border: none;
     border-radius: 4px;
     padding: 7px;
+    display: block;
 }
 
 
@@ -60,6 +62,11 @@ header .btn-desplegable{
     color: white;
     font-size: 1.9rem;
     padding: 0;
+   
+}
+
+.desplegable{
+    text-align: center;
 }
 
 /* Menu desplegable */
@@ -91,9 +98,16 @@ li i{
 }
 
 
+.barra{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
 @media(min-width:1024px){
     .barra{
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
     }
     .caja{
         display: block;
@@ -102,4 +116,20 @@ li i{
     .navbar{
         flex-wrap: wrap;
     }
+
+    .desplegable{
+        display: none;
+    }
+
+    .caja-menu{
+        justify-content: center;
+    }
+
+    .lista-menu{
+        display: flex;
+        justify-content: center;
+    }
+
+    
+    
 }
