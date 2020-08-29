@@ -9,8 +9,21 @@ header{
     width: 100%;
 }
 
+.barra{
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
 header .logo{
     text-align: center;
+    padding: 0;
+}
+
+.caja-busqueda{
+    padding: 0;
 }
 
 header form{
@@ -52,9 +65,7 @@ header .menu button{
     font-size: 1.9rem;
 }
 
-.barra{
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+
+@media(min-width:1024px){
+    
 }
