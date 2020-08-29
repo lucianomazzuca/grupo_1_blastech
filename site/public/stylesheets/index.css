@@ -1,3 +1,9 @@
+/* VARIABLES */
+
+:root{
+    --color-rojo: #CD0E2F;
+}
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -63,6 +69,34 @@ header .menu button{
     background-color: black;
     color: white;
     font-size: 1.9rem;
+}
+
+/* Menu desplegable */
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    color: var(--color-rojo);
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+    font-size: 1.3rem;
+}
+
+li i{
+    color: white;
+    width: 20px;
+    height: 20px;
+    margin-right: 18px;
+}
+
+.lista-usuario{
+    border-bottom: 1px solid white;
 }
 
 
