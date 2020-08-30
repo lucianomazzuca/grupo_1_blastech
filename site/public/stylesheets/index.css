@@ -9,6 +9,7 @@
     margin: 0;
 }
 
+
 header{
     background-color: black;
     padding: 20px;
@@ -16,12 +17,28 @@ header{
 }
 
 
-header .logo{
-    text-align: center;
+header .barra{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
-.caja-busqueda{
+header .logo{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
 }
+
+header .logo span{
+    display: none;
+    margin-left: 5px;
+    color: var(--color-rojo);
+    font-size: 1.3rem;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
 
 header form{
     display: flex;
@@ -30,7 +47,7 @@ header form{
     padding-right: 0;
 }
 
-header input{
+header form input{
     width: 100%;
     font-size: 1rem;
     border: none;
@@ -62,11 +79,25 @@ header .btn-desplegable{
     color: white;
     font-size: 1.9rem;
     padding: 0;
-   
+}
+
+
+header .caja-usuario{
+    padding: 0;
+    margin-top: 10px;
+    
+}
+
+header .caja-menu{
+    font-weight: 600;
+}
+
+header .navbar-collapse{
+    justify-content: center;
 }
 
 .desplegable{
-    text-align: center;
+    text-align: right;
 }
 
 /* Menu desplegable */
@@ -81,55 +112,70 @@ a:hover{
     text-decoration: none;
 }
 
-li{
+ul li{
     list-style: none;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
-li i{
+ul li i{
     color: white;
     width: 20px;
     height: 20px;
-    margin-right: 18px;
+    margin-right: 5px;
+    margin-top: 5px;
 }
+
 
 .lista-usuario{
-    border-bottom: 1px solid white;
+    
 }
 
 
-.barra{
-    display: flex;
-    flex-flow: wrap;
-    justify-content: center;
-    align-items: center;
+@media(min-width:768px){
+    header .logo span{
+        display: inline-block;
+    }
 }
+
 
 @media(min-width:1024px){
-    .barra{
+    header .barra{
         flex-wrap: wrap;
     }
-    .caja{
-        display: block;
-    }
+
 
     .navbar{
         flex-wrap: wrap;
+    }
+
+    header .nav-search{
+        max-width: 500px;
     }
 
     .desplegable{
         display: none;
     }
 
-    .caja-menu{
+    header .caja-menu{
+        display: flex;
         justify-content: center;
+        margin-top: 15px;
     }
 
     .lista-menu{
         display: flex;
-        justify-content: center;
     }
 
+    header .caja-usuario{
+        justify-content: flex-end;
+        padding: 15px;
+        margin-top: 0;
+    }
+
+
+    header ul li{
+        margin-right: 0.6rem;
+    }
     
     
 }
