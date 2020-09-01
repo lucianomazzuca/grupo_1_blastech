@@ -10,13 +10,11 @@
     margin: 0;
 }
 
-
 header{
     background-color: black;
-    padding: 20px;
+    padding: 10px;
     width: 100%;
 }
-
 
 header .barra{
     display: flex;
@@ -132,6 +130,9 @@ header ul li i{
 
 /* BANNER */
 
+.banner{
+    display: none;
+}
 
 
 .carousel-control-next, .carousel-control-prev{
@@ -140,13 +141,13 @@ header ul li i{
 
 
 @media(min-width:768px){
-    header .logo span{
-        display: inline-block;
-    }
-
     header .logo .logo-text{
         display: inline;
         margin-left: 10px;
+    }
+
+    .banner{
+        display: block;
     }
 }
 
@@ -155,7 +156,6 @@ header ul li i{
     .desplegable{
         display: none;
     }
-
 
     header .caja-menu{
         display: flex;
@@ -168,8 +168,31 @@ header ul li i{
         margin-top: 0;
     }
 
+    header .caja-usuario ul li{
+        font-size: 1.2rem;
+        padding-right: 2rem;
+    }
+
+    header .caja-usuario ul li i{
+        font-size: 1.5rem;
+    }
+
+    header .caja-usuario ul li i:hover{
+        color: var(--color-naranja);
+    }
+
+    header .caja-usuario ul li span{
+        display: none;
+    }
+
+    header .caja-menu ul li{
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+        font-size: 1.1rem;
+    }
+
     header ul li{
-        margin-right: 0.6rem;
+
         padding-top: 0;
     }
 
