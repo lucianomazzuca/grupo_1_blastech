@@ -1,6 +1,6 @@
+
 .container{
     margin-top: 100px;
-
 }
 
 .nuevo{
@@ -16,7 +16,7 @@
 }
 
 .stars{
-    height: 45px;
+    height: 25px;
 }
 
 .precio{
@@ -28,14 +28,14 @@
 }
 
 input{
-    obrder: 1px solid #ccc;
+    border: 1px solid #ccc;
     font-weight: bold;
     height: 33px;
     text-align-last: center;
     width: 30px;
 }
 .boton{
-    background: #FE980F;
+    background: #3ba852;
     color: #FFFFFF;
     font-size: 15px;
     margin-left: 20px;
@@ -46,49 +46,12 @@ input{
 .carousel-inner img{
     height: 500px;
 }
-.derecha{
-   
-}
-
-/* FOOOOOOTER */
-
-*{
-    box-sizing: border-box;
-    margin:0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-}
-
-.footer {
-    width: 100%;
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    background-color: black;
-    color: white;
-    text-align: center;
-    background-image: url('images/fondo_footer.jpg');
-    border-radius: 20px 20px 0px 0px;
-}
-
-
-.divisor{
-        height: 3px;
-        display: block;
-        background-color: grey;
-        margin: 1em 0 1em;
-        width: 100%;
-         text-align: center;
-}
-
-a{
-    text-decoration: none;
-    color: white;
-}
-
-a:hover{
-    text-decoration: none;
-    color: gray;
-}
+div .derecha{
+    padding-left: 100px;
+ }
+ 
+ div .izquierda{
+     padding-top: 40px;
+    
+ }
+ 
