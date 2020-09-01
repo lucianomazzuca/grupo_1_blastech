@@ -1,0 +1,94 @@
+.container{
+    margin-top: 100px;
+
+}
+
+.nuevo{
+    background: green;
+    width:50px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.col-md-7 h2{
+    color: #555;
+}
+
+.stars{
+    height: 45px;
+}
+
+.precio{
+    color: #FE980F;
+    font-size: 26px;
+    font-weight: bold;
+    padding-top: 20px;
+
+}
+
+input{
+    obrder: 1px solid #ccc;
+    font-weight: bold;
+    height: 33px;
+    text-align-last: center;
+    width: 30px;
+}
+.boton{
+    background: #FE980F;
+    color: #FFFFFF;
+    font-size: 15px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.carousel-inner img{
+    height: 500px;
+}
+.derecha{
+   
+}
+
+/* FOOOOOOTER */
+
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.footer {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    text-align: center;
+    background-image: url('images/fondo_footer.jpg');
+    border-radius: 20px 20px 0px 0px;
+}
+
+
+.divisor{
+        height: 3px;
+        display: block;
+        background-color: grey;
+        margin: 1em 0 1em;
+        width: 100%;
+         text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    text-decoration: none;
+    color: gray;
+}
