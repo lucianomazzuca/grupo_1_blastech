@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('partials/head') %> 
+<body>
+  <%- include('partials/header') %> 
+
+  <form class="enviar-email">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Por favor indicanos tu Email</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
+    </div>
+    
+    
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Dejanos tu consulta!</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Enviar</button>
+  </form>
+
+<%- include('./partials/footer.ejs') %> 
+
+</body>
+
+</html>

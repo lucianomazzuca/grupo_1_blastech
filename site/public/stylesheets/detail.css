@@ -44,7 +44,9 @@ input{
 }
 
 .carousel-inner img{
-    height: 500px;
+    width: 100%;
+    height: auto;
+
 }
 div .derecha{
     padding-left: 100px;
@@ -52,6 +54,8 @@ div .derecha{
  
  div .izquierda{
      padding-top: 40px;
+     width: 50%;
+     margin: 0 auto;
     
  }
  
