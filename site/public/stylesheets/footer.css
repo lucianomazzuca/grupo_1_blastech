@@ -8,20 +8,22 @@
 
 
 .footer {
+    position: absolute;
     width: 100%;
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
+    left: 0;
+    right: 0;
     flex-direction: column;
     background-color: black;
     color: white;
     text-align: center;
     background-image: url('../images/fondo_footer.jpg');
-    border-radius: 20px 20px 0px 0px;
 }
 
 
-.divisor{
+.footer .divisor{
         height: 3px;
         display: block;
         background-color: grey;
@@ -30,12 +32,12 @@
          text-align: center;
 }
 
-a{
+.footer a{
     text-decoration: none;
     color: white;
 }
 
-a:hover{
+.footer a:hover{
     text-decoration: none;
     color: gray;
 }
