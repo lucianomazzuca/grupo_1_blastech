@@ -3,11 +3,16 @@
 :root{
     --color-rojo: #CD0E2F;
     --color-naranja: #FF7511;
+    --color-grisClaro: #f1f1f1;
 }
 
 *{
     box-sizing: border-box;
     margin: 0;
+}
+
+body{
+    background-color: var(--color-grisClaro);
 }
 
 header{
@@ -76,7 +81,11 @@ header .menu{
     width: 100%;
 }
 
-header .btn-desplegable{
+header .caja-btn-desplegable{
+    text-align: right;
+}
+
+header .caja-btn-desplegable .btn-desplegable{
     border: none;
     background-color: black;
     color: white;
@@ -88,9 +97,6 @@ header .navbar-collapse{
     justify-content: center;
 }
 
-.desplegable{
-    text-align: right;
-}
 
 /* Menu desplegable */
 
@@ -121,11 +127,8 @@ header ul li{
 
 header ul li i{
     color: white;
-    width: 20px;
-    height: 20px;
     margin-right: 10px;
 }
-
 
 
 /* BANNER */
@@ -134,8 +137,7 @@ header ul li i{
     display: none;
 }
 
-
-.carousel-control-next, .carousel-control-prev{
+.banner .carousel-control-next, .carousel-control-prev{
     width: 3% !important;
 }
 
@@ -153,18 +155,27 @@ header ul li i{
 
 
 @media(min-width: 992px){
-    .desplegable{
+    header .barra{
+        flex-wrap: wrap;
+    }
+
+    header .nav-search{
+        max-width: 500px;
+    }
+
+    header .caja-btn-desplegable{
         display: none;
     }
 
-    header .caja-menu{
-        display: flex;
-        justify-content: center;
-        margin-top: 5px;
+    header ul li{
+        padding-top: 0;
     }
 
     header .caja-usuario{
         border: none;
+        margin-top: 0;
+        justify-content: flex-end;
+        padding: 15px;
         margin-top: 0;
     }
 
@@ -172,11 +183,7 @@ header ul li i{
         font-size: 1.2rem;
         padding-right: 2rem;
     }
-
-    header .caja-usuario ul li i{
-        font-size: 1.5rem;
-    }
-
+    
     header .caja-usuario ul li i:hover{
         color: var(--color-naranja);
     }
@@ -185,47 +192,25 @@ header ul li i{
         display: none;
     }
 
+    header .caja-usuario ul li i{
+        font-size: 1.5rem;
+    }
+
+    header .caja-menu{
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+    }
+
+    header .caja-menu .lista-menu{
+        display: flex;
+    }
+
     header .caja-menu ul li{
         padding-right: 0.5rem;
         padding-left: 0.5rem;
         font-size: 1.1rem;
     }
-
-    header ul li{
-
-        padding-top: 0;
-    }
-
-    header .barra{
-        flex-wrap: wrap;
-    }
-
-
-    .navbar{
-        flex-wrap: wrap;
-    }
-
-    header .nav-search{
-        max-width: 500px;
-    }
-
-    .desplegable{
-        display: none;
-    }
-
-
-
-    .lista-menu{
-        display: flex;
-    }
-
-    header .caja-usuario{
-        justify-content: flex-end;
-        padding: 15px;
-        margin-top: 0;
-    }
-
-
 
     
 }
