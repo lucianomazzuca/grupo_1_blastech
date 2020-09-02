@@ -145,12 +145,20 @@ header ul li i{
 HOME
 */
 
+.titulo h2{
+    font-size: 1.8rem;
+}
+
 .principal{
     margin-top: 20px;
 }
 
 .principal .container .titulo{
     margin-bottom: 20px;
+}
+
+.principal .producto:hover{
+    box-shadow: 0px 0px 10px 0px #888888;
 }
 
 .principal .producto{
@@ -190,6 +198,14 @@ HOME
     font-weight: 700;
 }
 
+.principal .categorias{
+    margin-bottom: 1rem;
+    height: 100px;
+}
+
+.principal .categorias .cat{
+    text-align: center;
+}
 
 @media(min-width:768px){
     header .logo .logo-text{
