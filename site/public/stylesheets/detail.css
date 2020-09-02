@@ -1,0 +1,61 @@
+
+.container{
+    margin-top: 100px;
+}
+
+.nuevo{
+    background: green;
+    width:50px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.col-md-7 h2{
+    color: #555;
+}
+
+.stars{
+    height: 25px;
+}
+
+.precio{
+    color: #FE980F;
+    font-size: 26px;
+    font-weight: bold;
+    padding-top: 20px;
+
+}
+
+input{
+    border: 1px solid #ccc;
+    font-weight: bold;
+    height: 33px;
+    text-align-last: center;
+    width: 30px;
+}
+.boton{
+    background: #3ba852;
+    color: #FFFFFF;
+    font-size: 15px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.carousel-inner img{
+    width: 100%;
+    height: auto;
+
+}
+div .derecha{
+    padding-left: 100px;
+ }
+ 
+ div .izquierda{
+     padding-top: 40px;
+     width: 50%;
+     margin: 0 auto;
+    
+ }
+ 

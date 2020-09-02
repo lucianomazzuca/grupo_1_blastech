@@ -1,0 +1,16 @@
+.enviar-email{
+    
+    padding: 40px;
+    width: 600px;
+    margin: auto;
+    align-items: center;
+    position: relative;
+    padding-right: 0;
+    width: 50%;
+}
+
+.mb-2, .my-2 {
+    position: relative;
+    align-items: center;
+    
+}
