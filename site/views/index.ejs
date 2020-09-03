@@ -1,66 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
     <title><%= title %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <script src="https://kit.fontawesome.com/bd51531853.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+    <link rel='stylesheet' href='/stylesheets/header.css'/>
     <link rel='stylesheet' href='/stylesheets/index.css'/>
-    
+    <link rel='stylesheet' href='/stylesheets/footer.css'/>
   </head>
+
   <body>
-    <header>
-      <nav class="barra navbar-expand-lg sm-px-0 sm-mx-0">
 
-        <!-- LOGO -->
-        <div class="col-2 col-md-4 col-lg-3 col-xl-3 logo">
-          <a class="logo" href=""><img src="logo/logo-img.svg"><img class="logo-text" src="logo/logo-text.svg"></a>
-        </div>
-
-        <!-- FORMULARIO -->
-        <div class="col-8 col-md-7 col-lg-6 col-xl-6 px-0 mx-0 nav-search">
-          <form class="form-inline ">
-            <input class="" type="text" name="search" placeholder="Buscar productos">
-            <button type="submit"><img src="icons/search.svg" id="lupa"></button>
-          </form>
-        </div>
-
-        <!-- Boton de menu -->
-        <div class="col-2 col-md-1 col-lg-0 px-0 mx-0 caja-btn-desplegable">
-          <button class="navbar-toggler btn-desplegable" 
-          type="button" 
-          data-toggle="collapse" 
-          data-target="#navbarTogglerDemo02" 
-          aria-controls="navbarTogglerDemo02" 
-          aria-expanded="false" 
-          aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
-          </button>
-        
-        </div>
-          
-        <!-- MENU DESPLEGABLE USUARIO-->
-        <div class="collapse navbar-collapse col-lg-3 col-xl-3 caja-usuario" id="navbarTogglerDemo02">
-          <!-- Lista de usuario -->
-          <ul class="lista-usuario navbar-nav ">
-            <li><a href="#"><i class="fas fa-user-circle"></i>Ingresar</a></li>
-            <li><a href="#"><i class="fas fa-shopping-cart"></i><span>Carrito</span></a></li>
-          </ul>
-        </div>
-
-        <div class="collapse navbar-collapse col-lg-12 caja-menu" id="navbarTogglerDemo02">
-          <ul class="lista-menu navbar-nav" >
-            <li class=""><a href="">Inicio</a></li>
-            <li class=""><a href="">Componentes</a></li>
-            <li class=""><a href="">Périfericos</a></li>
-            <li class=""><a href="">Ayuda</a></li>
-          </ul>
-        </div>
-
-      </nav>
-    </header>
+    <%- include('./partials/header.ejs') %>
 
  <!-- BANNER -->
 
@@ -229,7 +184,7 @@
       <div class="container">
 
         <div class="col-12 titulo">
-          <h2>Productos Destacados</h2>
+          <h2>Categorias Destacadas</h2>
         </div>
 
         <div class="fila">
@@ -237,118 +192,106 @@
           <div class="columna">
             <div class="cat">
               <figure>
-                <img src="icons/disco.svg" alt="">
+                <img src="icons/cat/cat-disco.svg" alt="">
               </figure>
+              <div class="text">
+                Discos Rigidos
+              </div>
             </div>
             <div class="cat">
               <figure>
-                <img src="icons/disco.svg" alt="">
+                <img src="icons/cat/cat-micro.svg" alt="">
               </figure>
+              <div class="text">
+                Microprocesadores
+              </div>
             </div>
           </div>
           
           <div class="columna">
             <div class="cat">
               <figure>
-                <img src="icons/disco.svg" alt="">
+                <img src="icons/cat/cat-ram.svg" alt="">
               </figure>
+              <div class="text">
+                Discos Rigidos
+              </div>
             </div>
             <div class="cat">
               <figure>
-                <img src="icons/disco.svg" alt="">
+                <img src="icons/cat/cat-video.svg" alt="">
               </figure>
-            </div>
-          </div>
-
-          <div class="columna">
-            <div class="cat">
-              <figure>
-                <img src="icons/disco.svg" alt="">
-              </figure>
-            </div>
-            <div class="cat">
-              <figure>
-                <img src="icons/disco.svg" alt="">
-              </figure>
+              <div class="text">
+                Microprocesadores
+              </div>
             </div>
           </div>
 
           <div class="columna">
             <div class="cat">
               <figure>
-                <img src="icons/disco.svg" alt="">
+                <img src="icons/cat/cat-mother.svg" alt="">
               </figure>
+              <div class="text">
+                Motherboard
+              </div>
             </div>
             <div class="cat">
               <figure>
-                <img src="icons/disco.svg" alt="">
+                <img src="icons/cat/cat-teclado.svg" alt="">
               </figure>
+              <div class="text">
+                Teclado
+              </div>
             </div>
           </div>
 
           <div class="columna">
             <div class="cat">
               <figure>
-                <img src="icons/disco.svg" alt="">
+                <img src="icons/cat/cat-ssd.svg" alt="">
               </figure>
+              <div class="text">
+                SSD
+              </div>
             </div>
             <div class="cat">
               <figure>
-                <img src="icons/disco.svg" alt="">
+                <img src="icons/cat/cat-mouse.svg" alt="">
               </figure>
+              <div class="text">
+                Mouse
+              </div>
+            </div>
+          </div>
+
+          <div class="columna">
+            <div class="cat">
+              <figure>
+                <img src="icons/cat/cat-auri.svg" alt="">
+              </figure>
+              <div class="text">
+                Auricular
+              </div>
+            </div>
+            <div class="cat">
+              <figure>
+                <img src="icons/cat/cat-monitor.svg" alt="">
+              </figure>
+              <div class="text">
+                Monitor
+              </div>
             </div>
           </div>
           
         </div>
+
       </div>
-
-
-      <!-- <div class="container">
-
-        <div class="row">
-
-          <div class="col-12 titulo">
-            <h2>Categorias Populares</h2>
-          </div>
-
-          <div class="col-6 px-0">
-            <div class="cat">
-              <figure>
-                <img src="icons/disco.svg" alt="">
-              </figure>
-            </div>
-            <div class="cat">
-              <figure>
-                <img src="icons/disco.svg" alt="">
-              </figure>
-            </div>
-          </div>
-
-          <div class="col-6 px-0">
-            <div class="cat">
-              <figure>
-                <img src="icons/disco.svg" alt="">
-              </figure>
-            </div>
-            <div class="cat">
-              <figure>
-                <img src="icons/disco.svg" alt="">
-              </figure>
-            </div>
-          </div>
-
-        </div>
-
-      </div> -->
 
     </section>
     
 
-
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <%- include('./partials/footer.ejs') %>
 
   </body>
 </html>
