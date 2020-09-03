@@ -1,91 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://kit.fontawesome.com/eb58c50aeb.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="/public/stylesheets/estilosDeCarga.css">
-</head>
+<html lang="es">
+<%- include('partials/head') %> 
 <body>
-  
-
-
-  <header class="container-fluid">
-
-        <nav class="barra container navbar-expand-lg sm-px-0 sm-mx-0">
-  
-          <!-- LOGO -->
-          <div class="col-2 col-md-3 col-lg-3 px-0 mx-0 logo">
-            <a class="logo" href="navbar-brand"><img src="img/logo-svg.svg"><span>Anonymous PC</span></a>
-          </div>
-            
-  
-          <!-- FORMULARIO -->
-          <div class="col-8 col-md-8 col-lg-6 px-0 mx-0 nav-search">
-            <form class="form-inline ">
-              <input class="" type="text" name="search" placeholder="Buscar productos">
-              <button type="submit"><img src="img/search.svg" id="lupa"></button>
-            </form>
-          </div>
-  
-  
-        <!-- Boton de menu -->
-        <div class="col-2 col-md-1 col-lg-0 px-0 mx-0 desplegable">
-          <button class="navbar-toggler btn-desplegable" 
-          type="button" 
-          data-toggle="collapse" 
-          data-target="#navbarTogglerDemo02" 
-          aria-controls="navbarTogglerDemo02" 
-          aria-expanded="false" 
-          aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
-          </button>
-        
-        </div>
-          
-        <!-- MENU DESPLEGABLE USUARIO-->
-        <div class="collapse navbar-collapse col-lg-3 caja-usuario" id="navbarTogglerDemo02">
-          <!-- Lista de usuario -->
-          <ul class="lista-usuario navbar-nav ">
-            <li><a href="#"><i class="fas fa-user-circle"></i>Ingresar</a></li>
-            <li><a href="#"><i class="fas fa-shopping-cart"></i>Carrito</a></li>
-          </ul>
-        </div>
-  
-        <div class="collapse navbar-collapse caja-menu" id="navbarTogglerDemo02">
-          <ul class="lista-menu navbar-nav" >
-            <li class=""><a href="">Inicio</a></li>
-            <li class=""><a href="">Componentes</a></li>
-            <li class=""><a href="">Périfericos</a></li>
-            <li class=""><a href="">Ayuda</a></li>
-          </ul>
-        </div>
-  
-  
-      
-          
-  
-  
-  
-  
-          <!-- Lista de links -->
-          
-        </div>
-        </nav>
-  
-  
-  
-  </header>
+  <%- include('partials/header') %> 
 
 
   <div>
     
     <div id="prueba">
 
-      <h1>Cargar productos</h1>
+      <h1 id="hombreAraña">Nuevo Producto</h1>
 
       <div id="pos">
         <label for="tipo" id="tipo">Categoria *</label>
@@ -151,55 +75,8 @@
       
 
     
+  <%- include('./partials/footer.ejs') %> 
 
-
-  <footer class="container-fluid">
-        <div class="column footer">
-            <div class="row">
-                <div id="" class="col-12 col-lg-4 links-interes">LINKS DE INTERES
-                  
-                    <div class="divisor"></div>
-                    <ul>
-                        <li><a href="/preguntas-frecuentes">PREGUNTAS FRECUENTES</li></a><br>
-                        <li><a href="/info">LA EMPRESA</li></a><br>
-                        <li><a href="/soporte">SOPORTE TECNICO</li></a><br>
-
-                    </ul>
-                </div>
-                <div id="" class="col-12 col-lg-4 infoyhorarios">INFORMACION Y HORARIOS
-                    <div class="divisor"></div>
-                    <p> <a href="https://www.google.com/maps/place/Av.+Hipolito+Yrigoyen+5555,+B1826DQM+Remedios+de+Escalada,+Provincia+de+Buenos+Aires/@-34.7190302,-58.3964973,17z/data=!3m1!4b1!4m5!3m4!1s0x95bccd3fda6c8ca1:0x3f1bf0560d96825e!8m2!3d-34.7190302!4d-58.3943086">Av. Hipolito Yrigoyen 5555</a><br>
-                        Lanús Oeste, Buenos Aires - Argentina<br>
-                        4626-1085<br>
-                        <a href="/enviar-mail">ventas@anonymouspc.com.ar</a><br>
-                        Lunes a Viernes de 8:30 a 17:00<br>
-                        Sábados de 9 a 12:30
-                    </p>
-
-                </div>
-                <div id="" class="col-12 col-lg-4 redes-sociales">REDES SOCIALES
-                    <div class="divisor"></div>
-
-                    <a href="https://www.facebook.com/anonymouspc">
-                        <p>Facebook
-                    </a><i class="fab fa-facebook"></i>
-                    </p>
-                    <a href="https://www.twitter.com/anonymouspc">
-                        <p>Twitter
-                           </a> <i class="fab fa-twitter"></i>
-                        </p>
-                        <a href="https://www.instagram.com/anonymouspc">
-                            <p>Instagram
-                                </a><i class="fab fa-instagram"></i>
-                            </p>
-                </div>
-            </div>
-        </div>
-  </footer>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
 </body>
 </html>
