@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/eb58c50aeb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/stylesheets/estilosDeCarga.css">
+</head>
+<body>
+  
+
+
+  <header class="container-fluid">
+
+        <nav class="barra container navbar-expand-lg sm-px-0 sm-mx-0">
+  
+          <!-- LOGO -->
+          <div class="col-2 col-md-3 col-lg-3 px-0 mx-0 logo">
+            <a class="logo" href="navbar-brand"><img src="img/logo-svg.svg"><span>Anonymous PC</span></a>
+          </div>
+            
+  
+          <!-- FORMULARIO -->
+          <div class="col-8 col-md-8 col-lg-6 px-0 mx-0 nav-search">
+            <form class="form-inline ">
+              <input class="" type="text" name="search" placeholder="Buscar productos">
+              <button type="submit"><img src="img/search.svg" id="lupa"></button>
+            </form>
+          </div>
+  
+  
+        <!-- Boton de menu -->
+        <div class="col-2 col-md-1 col-lg-0 px-0 mx-0 desplegable">
+          <button class="navbar-toggler btn-desplegable" 
+          type="button" 
+          data-toggle="collapse" 
+          data-target="#navbarTogglerDemo02" 
+          aria-controls="navbarTogglerDemo02" 
+          aria-expanded="false" 
+          aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+          </button>
+        
+        </div>
+          
+        <!-- MENU DESPLEGABLE USUARIO-->
+        <div class="collapse navbar-collapse col-lg-3 caja-usuario" id="navbarTogglerDemo02">
+          <!-- Lista de usuario -->
+          <ul class="lista-usuario navbar-nav ">
+            <li><a href="#"><i class="fas fa-user-circle"></i>Ingresar</a></li>
+            <li><a href="#"><i class="fas fa-shopping-cart"></i>Carrito</a></li>
+          </ul>
+        </div>
+  
+        <div class="collapse navbar-collapse caja-menu" id="navbarTogglerDemo02">
+          <ul class="lista-menu navbar-nav" >
+            <li class=""><a href="">Inicio</a></li>
+            <li class=""><a href="">Componentes</a></li>
+            <li class=""><a href="">Périfericos</a></li>
+            <li class=""><a href="">Ayuda</a></li>
+          </ul>
+        </div>
+  
+  
+      
+          
+  
+  
+  
+  
+          <!-- Lista de links -->
+          
+        </div>
+        </nav>
+  
+  
+  
+  </header>
+
+
+  <div>
+    
+    <div id="prueba">
+
+      <h1>Cargar productos</h1>
+
+      <div id="pos">
+        <label for="tipo" id="tipo">Categoria *</label>
+        <select name="categoria" id="categ">
+          <option value="vacio"> </option>
+          <option value="acces">Accesorio</option>
+          <option value="nete-net">Netebook - Netbooks</option>
+          <option value="cpu">CPU</option>
+          <option value="monitor">Monitor</option>
+          <option value="componente">Componentes</option>
+          <option value="otros">Otros</option>
+        </select>
+      </div>
+
+      <div id="pos">
+        <label for="tipo" id="tipo">Título de anuncio *</label>
+        <input type="text" name="title" id="categ">
+      </div>
+
+      <div id="pos">
+        <label for="tipo" id="tipo"> Número de contacto (+54) </label>
+        <input id="categ" name="number" type="number">
+      </div>
+
+      <div id="pos">
+        <label for="tipo" id="tipo"> descrpcion </label>
+        <textarea name="descrpcion" id="descripcion" ></textarea>
+        <span id="mini">Incluye estado, caracteristicas y motivo de venta</span>
+      </div>
+
+      <div id="pos">
+        <label for="" id="tipo"> Fijar Precio </label>
+        <span id="mini">Monedas</span>
+        <button id="mone">USD</button>
+        <button id="mone">ARG</button>
+
+        <span id="mini">Precio</span>
+        <input id="categ" name="number" type="number">
+        
+
+      </div>
+      
+      <div id="pos">
+        <label for="" id="tipo"> Sube hasta 5 fotos </label>
+
+        <div id="cuadro">
+        <div id="fotos">
+          <button type="button" class="rui-3mpO_ rui-KRXqt" role="button" tabindex="0" data-aut-id="" title=""><svg width="36px" height="36px" viewBox="0 0 1024 1024" data-aut-id="icon" class="" fill-rule="evenodd"><path class="rui-15D7A" d="M861.099 667.008v78.080h77.568v77.653h-77.568v77.141h-77.568v-77.184h-77.611v-77.611h77.611v-78.080h77.568zM617.515 124.16l38.784 116.437h165.973l38.827 38.827v271.659l-38.827 38.357-38.741-38.4v-232.832h-183.125l-38.784-116.48h-176.853l-38.784 116.48h-183.083v426.923h426.667l38.784 38.357-38.784 39.253h-465.493l-38.741-38.869v-504.491l38.784-38.827h165.973l38.827-116.437h288.597zM473.216 318.208c106.837 0 193.92 86.955 193.92 194.048 0 106.923-87.040 194.091-193.92 194.091s-193.963-87.168-193.963-194.091c0-107.093 87.083-194.048 193.963-194.048zM473.216 395.861c-64.213 0-116.352 52.181-116.352 116.395 0 64.256 52.139 116.437 116.352 116.437 64.171 0 116.352-52.181 116.352-116.437 0-64.213-52.181-116.437-116.352-116.437z"></path></svg></button>
+          <div class="e22Bu"><span>Agregar foto</span></div>
+        </div>
+
+        </div>
+      </div>
+      
+      <div id="pos">
+        <button id="public">Publicar</button>
+      </div>
+
+    </div>
+
+  </div>
+
+      
+
+    
+
+
+  <footer class="container-fluid">
+        <div class="column footer">
+            <div class="row">
+                <div id="" class="col-12 col-lg-4 links-interes">LINKS DE INTERES
+                  
+                    <div class="divisor"></div>
+                    <ul>
+                        <li><a href="/preguntas-frecuentes">PREGUNTAS FRECUENTES</li></a><br>
+                        <li><a href="/info">LA EMPRESA</li></a><br>
+                        <li><a href="/soporte">SOPORTE TECNICO</li></a><br>
+
+                    </ul>
+                </div>
+                <div id="" class="col-12 col-lg-4 infoyhorarios">INFORMACION Y HORARIOS
+                    <div class="divisor"></div>
+                    <p> <a href="https://www.google.com/maps/place/Av.+Hipolito+Yrigoyen+5555,+B1826DQM+Remedios+de+Escalada,+Provincia+de+Buenos+Aires/@-34.7190302,-58.3964973,17z/data=!3m1!4b1!4m5!3m4!1s0x95bccd3fda6c8ca1:0x3f1bf0560d96825e!8m2!3d-34.7190302!4d-58.3943086">Av. Hipolito Yrigoyen 5555</a><br>
+                        Lanús Oeste, Buenos Aires - Argentina<br>
+                        4626-1085<br>
+                        <a href="/enviar-mail">ventas@anonymouspc.com.ar</a><br>
+                        Lunes a Viernes de 8:30 a 17:00<br>
+                        Sábados de 9 a 12:30
+                    </p>
+
+                </div>
+                <div id="" class="col-12 col-lg-4 redes-sociales">REDES SOCIALES
+                    <div class="divisor"></div>
+
+                    <a href="https://www.facebook.com/anonymouspc">
+                        <p>Facebook
+                    </a><i class="fab fa-facebook"></i>
+                    </p>
+                    <a href="https://www.twitter.com/anonymouspc">
+                        <p>Twitter
+                           </a> <i class="fab fa-twitter"></i>
+                        </p>
+                        <a href="https://www.instagram.com/anonymouspc">
+                            <p>Instagram
+                                </a><i class="fab fa-instagram"></i>
+                            </p>
+                </div>
+            </div>
+        </div>
+  </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</body>
+</html>
