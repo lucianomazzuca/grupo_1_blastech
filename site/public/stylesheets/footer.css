@@ -24,7 +24,7 @@
         background-color: grey;
         margin: 1em 0 1em;
         width: 100%;
-         text-align: center;
+        
 }
 
 .footer a{
@@ -32,6 +32,9 @@
     color: white;
 }
 
+.footer ul{
+    padding: 20px;
+}
 .footer a:hover{
     text-decoration: none;
     color: gray;
@@ -39,7 +42,11 @@
 
 .links-interes li{
     list-style: none;
+    text-align: center;
 }
+
+
 .infoyhorarios li{
     list-style: none;
+    text-align: center;
 }
