@@ -1,5 +1,8 @@
 module.exports = {
     home: function(req,res){
-        res.render('')
+        res.render('index', { 
+            title: 'Blastech',
+            css:'index.css',
+        });
     }
 }

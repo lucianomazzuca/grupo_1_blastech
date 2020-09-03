@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
+const indexController = require('../controllers/indexController');
+
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Blastech' });
-});
+router.get('/', indexController.home);
 
 router.get('/login', function(req, res, next) {
   res.render('login', { title: 'Iniciamos Sesion!' });
