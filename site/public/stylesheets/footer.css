@@ -1,13 +1,8 @@
-*{
-    box-sizing: border-box;
-    /* margin:0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none; */
-}
+
 
 
 .footer {
+    
     position: absolute;
     width: 100%;
     padding: 20px;
@@ -40,4 +35,11 @@
 .footer a:hover{
     text-decoration: none;
     color: gray;
+}
+
+.links-interes li{
+    list-style: none;
+}
+.infoyhorarios li{
+    list-style: none;
 }
