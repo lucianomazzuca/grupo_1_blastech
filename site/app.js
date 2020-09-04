@@ -10,7 +10,7 @@ var usersRouter = require('./routes/users');
 // var detailRouter = require('./routes/detail')
 var emailRouter = require('./routes/enviar-email')
 var cargaRouter = require('./routes/cargaDeProducto')
-var loginRouter = require('./routes/login')
+
 
 
 var app = express();
@@ -31,7 +31,7 @@ app.use('/users', usersRouter);
 // app.use('/detail', detailRouter)
 app.use('/enviar-email', emailRouter)
 app.use('/cargaDeProducto', cargaRouter)
-app.use('/login', loginRouter)
+
 
 
 

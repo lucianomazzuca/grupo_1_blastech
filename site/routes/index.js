@@ -18,4 +18,8 @@ router.get('/restablecer', function(req, res, next) {
   res.render('restablecer', { title: 'Contraseña Cambiada!' });
 });
 
+router.get('/cargaDeProducto', function(req, res, next) {
+  res.render('cargaDeProducto', { title: 'Producto Cargado' });
+});
+
 module.exports = router;
