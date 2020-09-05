@@ -1,3 +1,13 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    text-decoration: none;
+    color: black;
+}
+
 /* BANNER */
 
 .banner{
@@ -8,10 +18,13 @@
     width: 3% !important;
 }
 
-
 /* 
 HOME
 */
+
+.principal{
+    margin-top: 20px;
+}
 
 .titulo h2{
     font-size: 1.8rem;
@@ -19,8 +32,8 @@ HOME
 
 
 .titulo{
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 .principal .producto:hover{
@@ -33,33 +46,40 @@ HOME
     flex-direction: column;
     align-items: center;
     background-color: white;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 1rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 1px solid rgb(238, 238, 238);
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 4px;
+    padding: 5px;
 }
 
 .principal .producto figure{
     text-align: center;
     border-bottom: 1px solid rgb(207, 207, 207);
     padding: 10px;
-    margin-bottom: 0.5rem;
+    margin: 0;
+    width: 100%;
 }
 
 .principal .producto figure img{
-    width: 90%;
-    padding: 0px;
+    width: 100%;
 }
 
 .principal .producto article{
     text-align: center;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
 }
 
 .principal .producto span{
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 .principal .producto h2{
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     margin-top: 1rem;
     font-weight: 700;
 }
@@ -86,6 +106,8 @@ HOME
 .categorias .fila{
     display: flex;
     flex-wrap: wrap;
+    margin-top: 30px;
+    margin-bottom: 15px;
 }
 
 .categorias .columna{
