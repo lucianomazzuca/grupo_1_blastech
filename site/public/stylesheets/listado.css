@@ -1,0 +1,110 @@
+*{
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+.row{
+    justify-content: center;
+}
+
+.principal{
+    margin-top: 30px;
+}
+
+.filtro{
+    background-color: white;
+}
+
+.filtro #filtrar{
+    display: block;
+    text-align: center;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+.filtro .categorias{
+    margin-left: 5px;
+}
+
+/* Secccion de listado */
+
+.listado{
+    padding: 0 5px;
+}
+
+.contenedor-productos{
+    width: 95%;
+    margin-top: 15px;
+}
+
+.principal .producto:hover{
+    box-shadow: 0px 0px 10px 0px #888888;
+}
+
+.principal .producto{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 10px;
+    border: 1px solid rgb(238, 238, 238);
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 4px;
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.principal .producto figure{
+    text-align: center;
+    border-bottom: 1px solid rgb(207, 207, 207);
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+}
+
+.principal .producto figure img{
+    width: 100%;
+}
+
+.principal .producto article{
+    text-align: center;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 130px;
+}
+
+.principal .producto span{
+    font-size: 1.1rem;
+}
+
+.principal .producto h2{
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    font-weight: 700;
+}
+
+@media(min-width:768px){
+    .contenedor-productos{
+        width: 50%;
+        margin-top: 0;
+    }
+}
+
+@media(min-width:1024px){
+    .contenedor-productos{
+        width: 25%;
+    }
+    
+}
