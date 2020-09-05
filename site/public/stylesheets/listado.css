@@ -1,5 +1,21 @@
+:root{
+    --color-rojo: #CD0E2F;
+    --color-naranja: #FF7511;
+    --color-grisClaro: #f1f1f1;
+}
+
+
 *{
     box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;700&display=swap');
+
+body{
+    /* font-family: 'Roboto', sans-serif;
+    font-family: 'Work Sans', sans-serif; */
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
 }
 
 a{
@@ -20,19 +36,24 @@ a:hover{
     margin-top: 30px;
 }
 
-.filtro{
-    background-color: white;
-}
-
 .filtro #filtrar{
     display: block;
     text-align: center;
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
+    padding: 3px 0;
 }
 
 .filtro .categorias{
-    margin-left: 5px;
+    display: none;
+}
+
+.filtro .categorias .cabecera{
+    margin: 5px 0;
+    padding: 7px;
+    background-color: var(--color-naranja);
+    font-weight: 700;
+    color: white;
 }
 
 /* Secccion de listado */
@@ -96,10 +117,27 @@ a:hover{
 }
 
 @media(min-width:768px){
+    .row{
+        justify-content: left;
+    }
+
     .contenedor-productos{
         width: 50%;
         margin-top: 0;
     }
+
+    .filtro .categorias{
+        display: block;
+    }
+
+    .filtro #filtrar{
+        display: none;
+    }
+
+    
+    .filtro .categorias .cabecera:first-child{
+    margin-top: 0;
+}
 }
 
 @media(min-width:1024px){
