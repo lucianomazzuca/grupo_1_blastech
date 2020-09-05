@@ -3,6 +3,7 @@ body {
     margin: 0;
     background-size: cover;
     background-attachment: fixed;
+    
 }
 
 .cubo{
@@ -214,7 +215,7 @@ a:hover{
 
 ul li{
     list-style: none;
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
 }
 
 ul li i{
@@ -282,4 +283,8 @@ ul li i{
 
 
 
+
+
+
+/* FOOTER */
 
