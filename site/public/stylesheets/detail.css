@@ -17,17 +17,19 @@
 
 .stars{
     height: 15px;
+    padding-top: 0;
+    margin-bottom: 10px;
 }
 
-.precio{
-    color: #FE980F;
-    font-size: 26px;
+ .precio-detail{
+    color: #3ba852;
+    font-size: 30px;
     font-weight: bold;
     padding-top: 20px;
 
 }
 
-input{
+div .derecha input{
     border: 1px solid #ccc;
     font-weight: bold;
     height: 33px;
@@ -49,7 +51,8 @@ input{
 
 }
 div .derecha{
-    padding-left: 100px;
+    padding-left: 50px;
+
  }
  
  div .izquierda{
@@ -59,3 +62,6 @@ div .derecha{
     
  }
  
+ div .descripcion2{
+     padding-top: 40px;
+ }
