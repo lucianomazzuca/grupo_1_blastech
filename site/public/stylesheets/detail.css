@@ -22,7 +22,7 @@
 }
 
  .precio-detail{
-    color: #3ba852;
+    color: #FF7511;
     font-size: 30px;
     font-weight: bold;
     padding-top: 20px;
@@ -37,13 +37,15 @@ div .derecha input{
     width: 30px;
 }
 .boton{
-    background: #3ba852;
+    background: #FF7511;
     color: #FFFFFF;
     font-size: 15px;
     margin-left: 20px;
     margin-bottom: 10px;
     margin-top: 10px;
 }
+
+
 
 
 .carousel-inner img{
@@ -65,9 +67,22 @@ div .derecha{
  
  div .descripcion2{
      padding-top: 40px;
+     padding-bottom: 40px;
+ }
+
+ div .derecha .boton{
+    border-color: black;
+ }
+
+ .derecha .boton:hover{
+    background-color: #c05910;
  }
 
  /* copia del home */
+
+
+
+
  div .similares .producto:hover{
     box-shadow: 0px 0px 10px 0px #888888;
    
