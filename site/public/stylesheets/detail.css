@@ -133,3 +133,12 @@ div .similares .producto h2{
     font-weight: 700;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    text-decoration: none;
+    color: black;
+}
