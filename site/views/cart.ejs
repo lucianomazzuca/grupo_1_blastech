@@ -6,28 +6,118 @@
   <%- include('partials/header') %>
 
 
+    <section class="section-content padding-y">
+    
+      <div class="container">
+  
+      <div class="row">
+          <main class="col-md-9">
+      <div class="card">
 
-  <div class="container productos-cart">
-    <div class="row titulos-cart">
-      <tr>
-        <th class="product-name" colspan="3">PRODUCTO</th>
-        <th class="product-price">PRECIO</th>
-        <th class="product-quantity">CANTIDAD</th>
-        <th class="product-subtotal">SUBTOTAL</th>
-      </tr>
-      
-      <div class="col-md-12 producto1">
-        
-        <td class="product-remove">
-          <a href="" class="remove" aria-label="Borrar este artículo">×</a>	</td>
-          <td class="product-thumbnail">
-						<a href=""><img src="/images/mother1.webp" width="300" height="300" src="" class=""" sizes="(max-width: 300px) 100vw, 300px"></a>						</td>
-
-
-
-
-
-
+        <div class="container">
+          <h2 class="title-page" id="carrito">Carrito</h2>
       </div>
-    </div>
-  </div>
+
+
+      <div class="card mb-3">
+        <div class="card-body">
+        <form>
+            <div class="form-group">
+                <label>Tienes un cupon?</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" name="" placeholder="Codigo">
+                    <span class="input-group-append"> 
+                        <button class="btn btn-primary" id="aplicar">Aplicar</button>
+                    </span>
+                </div>
+            </div>
+        </form>
+        </div> 
+    </div> 
+
+
+  
+      <table id="centro" class="table table-borderless table-shopping-cart">
+      <thead class="text-muted">
+      <tr class="small text-uppercase">
+        <th scope="col">Producto</th>
+        <th scope="col" width="120">Cantidad</th>
+        <th scope="col" width="120">Precio</th>
+        <th scope="col" class="text-right" width="200"> </th>
+      </tr>
+      </thead>
+      <tbody>
+    
+      
+      </tr>
+      <tr>
+          <td>
+              <figure class="itemside">
+                  <div class="aside"><a href="/products/detail"><img src="images/product1.jpg" class="img-sm" id="imagenes"></a></div>
+                  <figcaption class="info">
+                      <a href="/products/detail" class="title text-dark" id="coment">Mother Asus </a>
+                  </figcaption>
+              </figure>
+          </td>
+          <td> 
+              <select class="form-control" id="centros1">
+                  <option>1</option>
+                  <option>2</option>	
+                  <option>3</option>	
+                  <option>4</option>
+              </select> 
+          </td>
+          <td> 
+              <div class="price-wrap" id="centros2"> 
+                  <var class="price" >$1.400,00</var> 
+                  
+              </div> 
+          </td>
+          <td class="text-right" > 
+              <a href="" class="btn btn-light btn-round" id="centros3"> Eliminar</a>
+          </td>
+      </tr>
+      </tbody>
+      </table>
+
+
+      <div class="card">
+        <div class="card-body">
+                <dl class="dlist-align">
+                  <dt>Precio total:</dt>
+                  <dd class="text-right">ARS 1.400</dd>
+                </dl>
+                <dl class="dlist-align">
+                  <dt>Descuento:</dt>
+                  <dd class="text-right">ARS 00</dd>
+                </dl>
+                <dl class="dlist-align">
+                  <dt>Total:</dt>
+                  <dd class="text-right  h5"><strong>$1.400</strong></dd>
+                </dl>
+        </div> 
+    </div>  
+
+
+
+  
+      <div class="card-body border-top">
+          <a href="/" class="btn btn-primary float-md-right" id="aplicar"> Finlizar Compra <i class="fa fa-chevron-right"></i> </a>
+          <a href="/" class="btn btn-light"> <i class="fa fa-chevron-left"></i> Seguir comprando </a>
+      </div>	
+      </div>
+
+  
+          </main> 
+      </div>
+  
+      </div> 
+      </section>
+
+
+        
+  <%- include('./partials/footer.ejs') %> 
+
+
+</body>
+</html>

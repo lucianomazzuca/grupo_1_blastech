@@ -10,3 +10,32 @@ border-spacing: 0;
 box-sizing: border-box;
 }
 
+#carrito{
+    margin-top: -30px;
+    margin-bottom: 20px;
+}
+
+#aplicar{
+    background-color: #FF7511;
+}
+
+#imagenes{
+    width: 100%;
+}
+
+#centros1{
+    margin-top: 100%;
+}
+
+#centros2{
+    margin-top: 105%;
+}
+
+#centros3{
+    margin-right: 80px;
+    margin-top: 55%;
+}
+
+#coment{
+    margin-left: 10px;
+}
