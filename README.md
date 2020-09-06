@@ -1,7 +1,7 @@
 # BLASTECH
 
 ## Primer Sprint (17/8)
-
+![alt text](https://github.com/lucianomazzuca/grupo_1_blastech/blob/master/site/public/images/logo.png "Logo BLASTECH")
 
 ##  Integrantes
 * **Lizarraga Franco**
