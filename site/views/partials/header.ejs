@@ -32,7 +32,6 @@
     <div class="collapse navbar-collapse col-lg-3 col-xl-3 caja-usuario" id="navbarTogglerDemo02">
       <!-- Lista de usuario -->
       <ul class="navbar-nav lista-usuario ">
-        <li><a href="/products/cargar"><i class="fas fa-user-circle"></i>Admin</a></li>
         <li><a href="/users/login"><i class="fas fa-user-circle"></i>Ingresar</a></li>
         <li><a href="/products/cart"><i class="fas fa-shopping-cart"></i><span>Carrito</span></a></li>
       </ul>
@@ -54,7 +53,14 @@
           </div>
         </li>
         <li class=""><a href="">Périfericos</a></li>
-        <li class=""><a href="">Ayuda</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Admin
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/products/cargar">Subir producto</a>
+          </div>
+        </li>
       </ul>
     </div>
 
