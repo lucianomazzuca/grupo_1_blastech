@@ -5,7 +5,7 @@
 <body>
   <%- include('partials/header') %>
 
-
+<!-- 
     <section class="section-content padding-y">
     
       <div class="container">
@@ -116,9 +116,137 @@
       </div>
   
       </div> 
-      </section>
+      </section> -->
 
+    <section class="principal">
+      <div class="container">
 
+        <div class="col-12 titulo">
+          <h2>Carrito</h2>
+        </div>
+
+        <div class="row row-product">
+
+          <div class="col-3 col-md-3 col-lg-2 contenedor-imagen">
+            <figure>
+              <img src="/images/product1.jpg" alt="" srcset="">
+            </figure>
+          </div>
+
+          <div class="col-8 col-md-8 col-lg-9 contenedor-descripcion">
+            <div class="contenedor-nombre">
+              <div class="col-11">
+                <span>Motherboard ASUS</span>
+              </div>
+            </div>
+
+            <div class="contenedor-opciones">
+              <div class="col-6 col-md-6 col-lg-4">
+                <select class="form-control form-control-sm"  id="centros1">
+                  <option>1</option>
+                  <option>2</option>	
+                  <option>3</option>	
+                  <option>4</option>
+                </select> 
+              </div>
+
+              <div class="col-6 col-md-6 col-lg-8">
+                <h2>$1500</h2>
+              </div>
+
+            </div>
+
+            
+
+          </div>
+
+          <div class="col-1 contenedor-eliminar">
+            <i class="fas fa-trash-alt"></i>
+          </div>
+
+        </div>
+
+        <div class="row row-product">
+
+          <div class="col-3 col-md-3 col-lg-2 contenedor-imagen">
+            <figure>
+              <img src="/images/product1.jpg" alt="" srcset="">
+            </figure>
+          </div>
+
+          <div class="col-8 col-md-8 col-lg-9 contenedor-descripcion">
+            <div class="contenedor-nombre">
+              <div class="col-11">
+                <span>Motherboard ASUS</span>
+              </div>
+            </div>
+
+            <div class="contenedor-opciones">
+              <div class="col-6 col-md-6 col-lg-4">
+                <select class="form-control form-control-sm"  id="centros1">
+                  <option>1</option>
+                  <option>2</option>	
+                  <option>3</option>	
+                  <option>4</option>
+                </select> 
+              </div>
+
+              <div class="col-6 col-md-6 col-lg-8">
+                <h2>$1500</h2>
+              </div>
+
+            </div>
+
+            
+
+          </div>
+
+          <div class="col-1 contenedor-eliminar">
+            <i class="fas fa-trash-alt"></i>
+          </div>
+
+        </div>
+
+        <div class="venta">
+
+          <div class="row">
+  
+            <div class="col-12 container-compra">
+  
+              <div class="total">
+                <div>
+                  Subtotal
+                </div>
+                <div>
+                  <h2>Total</h2>
+                </div>
+              </div>
+  
+              <div class="precio">
+                <div>
+                  $1500
+                </div>
+                <div>
+                  <h2>$1500</h2>
+                </div>
+              </div>
+  
+  
+            </div>
+  
+            <div class="col-12 botones">
+              <button id="btn-finalizar">Finalizar Compra</button>
+              <button id="btn-continuar">Continuar Comprando</button>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </section>
+
+    <section class="venta">
+
+    </section>
         
   <%- include('./partials/footer.ejs') %> 
 

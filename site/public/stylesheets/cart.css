@@ -1,6 +1,6 @@
 @import "style.css";
 
-div .titulos-cart{
+/* div .titulos-cart{
 
 line-height: 1.6;
 font-size: 100%;
@@ -38,4 +38,133 @@ box-sizing: border-box;
 
 #coment{
     margin-left: 10px;
+} */
+
+
+.principal{
+    margin-top: 30px;
+}
+
+.principal .container{
+    max-width: 900px;
+}
+
+.principal .row-product{
+    background-color: white;
+    border: 1px solid rgb(201, 201, 201);
+
+}
+
+.principal .titulo{
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.contenedor-imagen{
+    padding: 0;
+}
+
+figure{
+    width: 100%;
+    margin: 0; 
+    max-width: 150px;
+    padding: 5px;
+}
+
+figure img{
+    width: 100%;
+
+}
+
+.contenedor-descripcion{
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-nombre{
+    align-items: center;
+    flex: 50%;
+    display: flex;
+}
+
+.contenedor-opciones{
+    flex: 50%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-opciones h2{
+    font-size: 1.2rem;
+    text-align: right;
+}
+
+.contenedor-eliminar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+}
+
+
+
+.venta{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+.venta .row{
+    max-width: 300px;
+    padding: 10px;
+}
+
+.container-compra{
+    display: flex;
+
+}
+
+.container-compra h2{
+    font-size: 1.5rem;
+}
+
+.container-compra .total{
+    flex: 50%;
+}
+
+.container-compra .precio{
+    flex: 50%;
+    text-align: right;
+}
+
+.botones button{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding: 5px;
+    border: 1px solid gray;
+}
+
+.botones #btn-finalizar{
+    color: white;
+    background-color: #FF7511;
+}
+
+
+
+@media(min-width: 768px){
+    .contenedor-descripcion{
+        flex-direction: row;
+    }
+
+    .contenedor-nombre{
+        flex: 60%;
+    }
+
+    .contenedor-opciones{
+        flex: 40%;
+    }
 }
