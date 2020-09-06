@@ -4,7 +4,7 @@
     home: function(req,res){
         res.render('listado', { 
             title: 'Blastech',
-            css:'index.css',
+            css:'listado.css',
         })
         
     },
@@ -23,7 +23,7 @@
     cargaDeProducto: function (req, res) {
         res.render('cargaDeProducto', {
             title: 'Carga de productos',
-            css: '',
+            css: 'carga-producto.css',
         })
     }
 

@@ -10,7 +10,7 @@ module.exports = {
     email: function (req, res) {
         res.render('email', {
             title: 'Dejanos tu email!',
-            css: '',
+            css: 'enviar-email.css',
         })
     }
 }

@@ -3,13 +3,13 @@ module.exports = {
     login: function (req, res) {
         res.render('login', {
             title: 'Ingresa tus datos',
-            css: 'listado.css',
+            css: 'login.css',
         })
     },
     registro: function (req, res) {
         res.render('registro', {
             title: 'Registrate',
-            css: 'registro.css',
+            css: 'login.css',
         })
     },
     restablecer: function (req, res) {
