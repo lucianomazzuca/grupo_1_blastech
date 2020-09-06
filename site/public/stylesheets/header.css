@@ -93,11 +93,6 @@ header .caja-btn-desplegable .btn-desplegable{
     padding: 0;
 }
 
-header .navbar-collapse{
-    justify-content: center;
-}
-
-
 /* Menu desplegable */
 
 header a{
@@ -129,6 +124,36 @@ header ul li i{
     color: white;
     margin-right: 10px;
 }
+
+
+/* Bootstrap overwrite */
+
+.navbar{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.nav-link{
+    padding: 0;
+} 
+
+.dropdown-menu{
+    background-color: black;
+    color: white;
+}
+
+.dropdown-item:hover{
+    color: var(--color-naranja); 
+    text-decoration: none;
+    background-color: black;
+}
+
+.dropdown-item{
+    color: white;
+}
+
+
+
 
 @media(min-width:768px){
     header .logo .logo-text{

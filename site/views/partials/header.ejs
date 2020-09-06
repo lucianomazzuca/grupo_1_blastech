@@ -31,17 +31,28 @@
     <!-- MENU DESPLEGABLE USUARIO-->
     <div class="collapse navbar-collapse col-lg-3 col-xl-3 caja-usuario" id="navbarTogglerDemo02">
       <!-- Lista de usuario -->
-      <ul class="lista-usuario navbar-nav ">
+      <ul class="navbar-nav lista-usuario ">
         <li><a href="/cargaDeProducto"><i class="fas fa-user-circle"></i>Admi</a></li>
         <li><a href="/login"><i class="fas fa-user-circle"></i>Ingresar</a></li>
         <li><a href="#"><i class="fas fa-shopping-cart"></i><span>Carrito</span></a></li>
       </ul>
     </div>
 
-    <div class="collapse navbar-collapse col-lg-12 caja-menu" id="navbarTogglerDemo02">
+    <div class="navbar collapse navbar-collapse col-lg-12 caja-menu" id="navbarTogglerDemo02">
       <ul class="lista-menu navbar-nav" >
         <li class=""><a href="/">Inicio</a></li>
-        <li class=""><a href="/products/listado">Componentes</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Componentes
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/products/listado">Microprocesadores</a>
+            <a class="dropdown-item" href="/products/listado">Placas de Video</a>
+            <a class="dropdown-item" href="/products/listado">Memorias</a>
+            <a class="dropdown-item" href="/products/listado">Almacenamiento</a>
+            <a class="dropdown-item" href="/products/listado">Motherboards</a>
+          </div>
+        </li>
         <li class=""><a href="">Périfericos</a></li>
         <li class=""><a href="">Ayuda</a></li>
       </ul>
