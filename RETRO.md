@@ -1,5 +1,6 @@
-📌 Sprint 2: Retro
-Continuamos basando nuestra retrospectiva en Starfish retrospective: 📝
+# :pushpin: Sprint 2: Retro
+
+## Continuamos basando nuestra retrospectiva en Starfish retrospective: :pencil:
 
 ✔️ Comenzar a hacer:
 Medir las dificultad de las tareas.
@@ -19,6 +20,12 @@ Empezar el trabajo sin puliarlo.
 
 ✔️ Dejar de hacer:
 Dejar de usar todas herramientas conocidas, ya que algunas no nos beneficia con el TP. 
+
+
+
+
+
+
 
 📌 Sprint 1: Retro
 Basandonos en la Starfish retrospective, obtuvimos las siguientes conclusiones:📝
