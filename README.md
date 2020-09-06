@@ -1,7 +1,7 @@
 # BLASTECH
 
 ## Primer Sprint (17/8)
-
+![alt text](https://github.com/lucianomazzuca/grupo_1_blastech/blob/master/site/public/images/logo.png "Logo BLASTECH")
 
 ##  Integrantes
 * **Lizarraga Franco**
@@ -35,3 +35,17 @@ Para la creación de nuestros wireframes reunimos diversos sitios dedicados a la
 
 
 
+
+## :pushpin: Segundo Sprint (06/09)
+
+### :clipboard: [Tablero de Trabajo](https://trello.com/b/VTdL0zEm/grupo1blastech)
+
+### :mag_right: Retrospectiva: [retro.md](https://github.com/lucianomazzuca/grupo_1_blastech/blob/master/retro.md)
+
+### :page_facing_up: Páginas (views)
+- HOME: index.ejs
+- DETALLE PRODUCTO: detail.ejs        
+- CARRITO DE COMPRAS: cart.ejs      
+- CARGA DE PRODUCTOS: cargaDeProducto.ejs         
+- REGISTRO DE USUARIOS: registro.ejs    
+- LOGIN DE USUARIOS: login.ejs 
