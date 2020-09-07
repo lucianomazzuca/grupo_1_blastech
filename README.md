@@ -40,7 +40,7 @@ Para la creación de nuestros wireframes reunimos diversos sitios dedicados a la
 
 ### :clipboard: [Tablero de Trabajo](https://trello.com/b/VTdL0zEm/grupo1blastech)
 
-### :mag_right: Retrospectiva: [retro.md](https://github.com/lucianomazzuca/grupo_1_blastech/blob/master/retro.md)
+### :mag_right: Retrospectiva: [retro.md](https://github.com/lucianomazzuca/grupo_1_blastech/blob/master/RETRO.md)
 
 ### :page_facing_up: Páginas (views)
 - HOME: index.ejs
