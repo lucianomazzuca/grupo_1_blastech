@@ -10,7 +10,6 @@
         <div class="container">
             <div class="row">
 
-
                 <div class="col-12 col-md-4 col-lg-3">
                     <div class="filtro">
 
@@ -35,15 +34,17 @@
                 <div class="col-12 col-md-8 col-lg-9">
                     <div class="row">
 
+                    <% productos.forEach(producto => { %>
+                     
                         <div class="contenedor-productos">
 
                             <div class="producto">
                                 <a href="/products/detail">
                                     <figure>
-                                    <img src="/images/product1.jpg" alt="">
+                                    <img src="/images/products/<%= producto.image %> " alt="">
                                     </figure>
                                     <article>
-                                    <span>Mother ASUS</span>
+                                    <span><%= producto.marca %> </span>
                                     <h2>$1.500</h2>
                                     </article>
                                 </a>
@@ -51,23 +52,8 @@
 
                         </div>
 
-                        <div class="contenedor-productos">
-
-                            <div class="producto">
-                                <a href="/products/detail">
-                                    <figure>
-                                    <img src="/images/product1.jpg" alt="">
-                                    </figure>
-                                    <article>
-                                    <span>Mother ASUS</span>
-                                    <h2>$1.500</h2>
-                                    </article>
-                                </a>
-                            </div>
-                            
-                        </div>
-
-                        <div class="contenedor-productos">
+                    <% }) %>
+                        <!-- <div class="contenedor-productos">
 
                             <div class="producto">
                                 <a href="/products/detail">
@@ -130,11 +116,26 @@
                             </div>
                             
                         </div>
+
+                        <div class="contenedor-productos">
+
+                            <div class="producto">
+                                <a href="/products/detail">
+                                    <figure>
+                                    <img src="/images/product1.jpg" alt="">
+                                    </figure>
+                                    <article>
+                                    <span>Mother ASUS</span>
+                                    <h2>$1.500</h2>
+                                    </article>
+                                </a>
+                            </div>
+                            
+                        </div> -->
 
                     </div>
                  </div>
                     
-        
             </div>
 
         </div>

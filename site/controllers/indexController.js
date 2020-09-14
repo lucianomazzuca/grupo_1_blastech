@@ -8,8 +8,8 @@ module.exports = {
             css:'index.css',
         })
         
+        
     },
-    
     email: function (req, res) {
         res.render('email', {
             title: 'Dejanos tu email!',

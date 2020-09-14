@@ -3,10 +3,13 @@ const dbProducts = require(path.join(__dirname, '..', 'data', 'dbProducts'));
 const fs = require('fs');
  
  module.exports = {
-    home: function(req,res){
+    listado: function(req,res){
+        let productos = dbProducts;
+        
         res.render('listado', { 
             title: 'Blastech',
             css:'listado.css',
+            productos: productos,
         })
         
     },
