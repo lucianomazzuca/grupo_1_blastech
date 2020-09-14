@@ -1,3 +1,5 @@
+const dbProducts = require(path.join(__dirname, '..', 'data', 'dbProducts'));
+
 module.exports = {
     home: function(req,res){
         res.render('index', { 

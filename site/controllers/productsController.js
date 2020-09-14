@@ -1,4 +1,6 @@
-
+const path = require('path');
+const dbProducts = require(path.join(__dirname, '..', 'data', 'dbProducts'));
+const fs = require('fs');
  
  module.exports = {
     home: function(req,res){
