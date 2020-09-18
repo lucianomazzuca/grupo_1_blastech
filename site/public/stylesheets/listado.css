@@ -20,15 +20,7 @@ body{
     font-weight: 300;
 }
 
-a{
-    text-decoration: none;
-    color: black;
-}
 
-a:hover{
-    text-decoration: none;
-    color: black;
-}
 
 .row{
     justify-content: center;
@@ -58,6 +50,21 @@ a:hover{
     color: white;
 }
 
+.filtro .categorias ul{
+    padding: 0;
+    list-style: none;
+}
+
+.filtro .categorias ul li a{
+    color: black;
+    text-decoration: none;
+}
+
+.filtro .categorias ul li a:hover{
+    color: var(--color-naranja);
+    text-decoration: underline;
+}
+
 /* Secccion de listado */
 
 .listado{
@@ -67,6 +74,16 @@ a:hover{
 .contenedor-productos{
     width: 95%;
     margin-top: 15px;
+}
+
+.contenedor-productos a{
+    text-decoration: none;
+    color: black;
+}
+
+.contenedor-productos .a:hover{
+    text-decoration: none;
+    color: black;
 }
 
 .principal .producto:hover{

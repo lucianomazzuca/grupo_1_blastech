@@ -9,7 +9,8 @@
 
         <div class="container">
             <div class="row">
-
+            
+            <!-- Filtro -->
                 <div class="col-12 col-md-4 col-lg-3">
                     <div class="filtro">
 
@@ -17,20 +18,20 @@
 
                         <div class="categorias" id="filtros" >
                             <div class="cabecera">CATEGORIAS</div>
-                            <div>Microprocesadores</div>
-                            <div>Placas de Video</div>
-                            <div>Memorias</div>
-                            <div>Almacenamiento</div>
-                            <div>Perifericos</div>
-                            <div>Monitores</div>
-                            <div>Teclados</div>
 
+                            <ul>
+                                <% categoria.forEach(cat => { %>
+                                <li><a href="/products/<%= cat.toLowerCase() %>"><%= cat %></a></li>
+                                <% }) %>
+                            </ul>
+                            
                             <div class="cabecera">MARCAS</div>
                         </div>
                         
                     </div>
                 </div>
 
+            <!-- Productos -->
                 <div class="col-12 col-md-8 col-lg-9">
                     <div class="row">
 
