@@ -11,4 +11,7 @@ router.get('/detail/:id', productsController.detail);
 router.get('/cargar', productsController.cargaDeProducto);
 router.get('/cart', productsController.cart);
 
+router.get('/cargar/productos', productsController.cargar);
+router.post('/cargar/productos', productsController.subir);
+
 module.exports = router;

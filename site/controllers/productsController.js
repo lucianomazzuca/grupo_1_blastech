@@ -71,6 +71,34 @@ const fs = require('fs');
             title: 'Carga de productos',
             css: 'carga-producto.css',
         })
+    },
+    cargar: function (req, res) {
+        res.render('cargaDeProducto', {
+            title: 'Carga de productos',
+            css: 'carga-producto.css',
+        })
+    },
+    subir: function (req, res) {
+        let lastID = 1;
+       dbProducts.forEach(producto=>{
+           if(producto.id > lastID){
+               lastID = producto.id
+           }
+       })
+       let newProduct = {
+           id:lastID +1,
+           categoria:req.body.categoria,
+           modelo:req.body.modelo,
+           marca:req.body.marca,
+           precio: Number(req.body.precio),
+           descuento: Number(req.body.descuento),
+           image: "",
+           descripcion: req.body.descripcion,
+       }
+
+       dbProducts.push(newProduct);
+       fs.writeFileSync(path.join(__dirname,"..","data","productsDataBase.json"),JSON.stringify(dbProducts),'utf-8')
+       res.redirect('/products')
     }
 
 }

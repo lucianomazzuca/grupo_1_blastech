@@ -22,7 +22,7 @@ module.exports = {
         })
 
         res.render('index', { 
-            title: 'Mercado Liebre',
+            title: 'Blastech',
             css:'index.css',
             destacados: destacados,
             ofertas:ofertas
