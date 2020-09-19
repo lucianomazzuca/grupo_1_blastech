@@ -50,9 +50,14 @@ const fs = require('fs');
         })
     },
     detail: function (req, res) {
+        idProducto = req.params.id;
+        let producto = dbProducts.filter(producto=>{
+            return producto.id == idProducto
+        });
         res.render('detail', {
             title: 'Detalle de producto',
             css: 'detail.css',
+            producto: producto[0]
         })
     },
     cart: function (req, res) {
