@@ -218,15 +218,5 @@
         "image": "razer-pio2020.jpg",
         "descripcion": "Este teclado Razer de alto rendimiento permite que puedas disfrutar de horas ilimitadas de juegos. Está diseñado especialmente para que puedas expresar tanto tus habilidades como tu estilo. Mejorá muchísimo tu experiencia de gaming, ya seas un aficionado o todo un experto, y hacé que tus jugadas alcancen otro nivel.",
         "status": "in-sale"
-    },
-    {
-        "id": 21,
-        "categoria": "monitor",
-        "modelo": "2018",
-        "marca": "china",
-        "precio": 333333,
-        "descuento": 33,
-        "image": "",
-        "descripcion": "wdqwdqwe"
     }
 ]
