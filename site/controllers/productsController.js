@@ -96,6 +96,7 @@ const fs = require('fs');
            descripcion: req.body.descripcion,
        }
 
+       console.log(newProduct)
        dbProducts.push(newProduct);
        fs.writeFileSync(path.join(__dirname,"..","data","productsDataBase.json"),JSON.stringify(dbProducts),'utf-8')
        res.redirect('/products')
