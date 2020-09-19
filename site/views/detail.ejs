@@ -38,7 +38,10 @@
             <div class="col-md-7 derecha">
                 <p class="nuevo">Nuevo</p>
                 <h2><%= producto.categoria+" "+ producto.marca + " " + producto.modelo %>  </h2>
-                <p class="precio-detail">$<%= producto.precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %> </p>
+                <p class=""><strike>$<%= producto.precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></strike> <strong> <%= producto.descuento %>  % OFF</strong></p>
+                <h2 class="precio-detail">
+                    $<%- (producto.precio - producto.precio * producto.descuento / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %> 
+                  </h2>
                 <p><b>Codigo de producto: <%= producto.modelo %> </b></p>
                 <img class="stars" src="/images/stars.png" alt="stars">
                 <p><b>Acerca de este producto:</b> </p>
