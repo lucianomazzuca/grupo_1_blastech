@@ -38,70 +38,26 @@
           <div class="col-12 titulo">
             <h2>Productos Destacados</h2>
           </div>
+          <% destacados.forEach(producto => { %>
+ 
 
           <div class="col-12 col-md-6 col-lg-3 contenedor">
 
             <div class="producto">
-              <a href="/products/detail/<%= producto.id %> ">
+              <a href="/products/detail/<%= producto.id %>   ">
                 <figure>
-                  <img src="/images/products/<%= producto.image %> " alt="">
+                  <img src="images/products/<%= producto.image %> " alt="">
                 </figure>
                 <article>
-                  <span>Mother ASUSMother ASUSMother ASUS</span>
-                  <h2>$1.500</h2>
+                  <span> <%= producto.categoria + " " + producto.marca %>  </span>
+                  <h2>$<%= producto.precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")  %> </h2>
                 </article>
              </a>
             </div>
 
           </div>
-
-          <div class="col-12 col-md-6 col-lg-3 contenedor">
-
-            <div class="producto">
-              <a href="/products/detail">
-                <figure>
-                  <img src="/images/product1.jpg" alt="">
-                </figure>
-                <article>
-                  <span>Mother ASUS</span>
-                  <h2>$1.500</h2>
-                </article>
-              </a>
-            </div>
-
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-3 contenedor">
-
-            <div class="producto">
-              <a href="/products/detail">
-                <figure>
-                  <img src="/images/product1.jpg" alt="">
-                </figure>
-                <article>
-                  <span>Mother ASUS</span>
-                  <h2>$1.500</h2>
-                </article>
-              </a>
-            </div>
-
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-3 contenedor">
-
-            <div class="producto">
-              <a href="/products/detail">
-                <figure>
-                  <img src="/images/product1.jpg" alt="">
-                </figure>
-                <article>
-                  <span>Mother ASUS</span>
-                  <h2>$1.500</h2>
-                </article>
-              </a>
-            </div>
-
-          </div>
+          <% }) %>
+        
 
           
 
@@ -113,71 +69,25 @@
             <h2>Ofertas</h2>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-3 contenedor">
+          <% ofertas.forEach(producto => { %>
+ 
 
-            <div class="producto">
-              <a href="/products/detail">
-                <figure>
-                  <img src="/images/product1.jpg" alt="">
-                </figure>
-                <article>
-                  <span>Mother ASUS</span>
-                  <h2>$1.500</h2>
-                </article>
-              </a>
+            <div class="col-12 col-md-6 col-lg-3 contenedor">
+  
+              <div class="producto">
+                <a href="/products/detail/<%= producto.id %>  ">
+                  <figure>
+                    <img src="images/products/<%= producto.image %> " alt="">
+                  </figure>
+                  <article>
+                    <span> <%= producto.categoria + " " + producto.marca %>  </span>
+                    <h2>$<%= producto.precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")  %> </h2>
+                  </article>
+               </a>
+              </div>
+  
             </div>
-
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-3 contenedor">
-
-            <div class="producto">
-              <a href="/products/detail">
-                <figure>
-                  <img src="/images/product1.jpg" alt="">
-                </figure>
-                <article>
-                  <span>Mother ASUS</span>
-                  <h2>$1.500</h2>
-                </article>
-              </a>
-            </div>
-
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-3 contenedor">
-
-            <div class="producto">
-              <a href="/products/detail">
-                <figure>
-                  <img src="/images/product1.jpg" alt="">
-                </figure>
-                <article>
-                  <span>Mother ASUS</span>
-                  <h2>$1.500</h2>
-                </article>
-              </a>
-            </div>
-
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-3 contenedor">
-
-            <div class="producto">
-              <a href="/products/detail">
-                <figure>
-                  <img src="/images/product1.jpg" alt="">
-                </figure>
-                <article>
-                  <span>Mother ASUS</span>
-                  <h2>$1.500</h2>
-                </article>
-              </a>
-            </div>
-
-          </div>
-
-        </div>
+            <% }) %>
 
 
         
