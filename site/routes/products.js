@@ -17,4 +17,6 @@ router.post('/cargar/productos', productsController.subir);
 router.get('/edit', productsController.editList);
 router.get('/edit/:id', productsController.edit)
 
+router.delete('/delete/:id',productsController.eliminar)
+
 module.exports = router;

@@ -84,7 +84,7 @@ const fs = require('fs');
                lastID = producto.id
            }
        })
-       let newProduct = {
+       let nuevoProducto = {
            id:lastID +1,
            categoria:req.body.categoria,
            modelo:req.body.modelo,
@@ -95,8 +95,8 @@ const fs = require('fs');
            descripcion: req.body.descripcion,
        }
 
-       console.log(newProduct)
-       dbProducts.push(newProduct);
+       console.log(nuevoProducto)
+       dbProducts.push(nuevoProducto);
        fs.writeFileSync(path.join(__dirname,"..","data","productsDataBase.json"),JSON.stringify(dbProducts),'utf-8')
        res.redirect('/products')
     },
@@ -124,8 +124,18 @@ const fs = require('fs');
             title: 'Editar producto',
             css: 'editForm.css'
         })
+    },
+    eliminar:function(req,res){
+        let idProducto = req.params.id;
+        dbProducts.forEach(producto =>{
+            if(producto.id == idProducto){
+                var eliminar = dbProducts.indexOf(producto)
+                dbProducts.splice(eliminar,1)
+            }
+        })
+        fs.writeFileSync(path.join(__dirname,'../data/productsDataBase.json'),JSON.stringify(dbProducts))
+        res.redirect('/products/edit')
     }
-
 }
 
 
