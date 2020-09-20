@@ -49,10 +49,18 @@ const fs = require('fs');
         })
     },
     detail: function (req, res) {
-        idProducto = req.params.id;
-        let producto = dbProducts.filter(producto=>{
+
+        let idProducto = req.params.id;
+
+        let productoSeleccionado = dbProducts.filter(producto=>{
             return producto.id == idProducto
         });
+
+        let productosRelacionados = dbProducts.filter( producto => {
+            return producto.categoria == productoSeleccionado[0].categoria
+        })
+
+
         res.render('detail', {
             title: 'Detalle de producto',
             css: 'detail.css',
@@ -118,11 +126,25 @@ const fs = require('fs');
             categoria: categoriaProductos,
         })
     },
-    edit: function(req,res){
+    show: function(req,res){
+
+        let productoSeleccionado = dbProducts.filter(producto => {
+            return producto.id == req.params.id
+        })
+
+        let categorias = [];
+        dbProducts.forEach( producto => {
+            if(categorias.indexOf(producto.categoria) == -1){
+                categorias.push(producto.categoria)
+            }
+        })
 
         res.render('editForm', {
             title: 'Editar producto',
-            css: 'editForm.css'
+            css: 'editForm.css',
+            productos: dbProducts,
+            productoSeleccionado: productoSeleccionado[0],
+            categorias
         })
     },
     eliminar:function(req,res){

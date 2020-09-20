@@ -5,35 +5,64 @@
     <body>
         <%- include('partials/header') %>
 
-        <section class="principal">
-
-            <div class="container">
-                
-                <h2>Editar producto</h2>
-
-                <form action="">
-                    <div class="input-group col-12 col-md-6">
-                        <label for="">Modelo</label>
-                        <input type="text">
-                    </div>
-                    <div class="input-group col-12 col-md-6">
-                        <label for="">Marca</label>
-                        <input type="text">
-                    </div>
-                    <div class="input-group">
-                        <label for="">Precio</label>
-                        <input type="text">
-                    </div>
-                    <div class="input-group">
-                        <label for="">Descuento</label>
-                        <input type="text">
-                    </div>
-
-                </form>
-
+    <section class="principal">
+        <div class="container">
+            <form action="" method="POST">
+        
+            <h2 class="col-12">Editar Producto</h2>
+        
+            <div class="form-group col-12 col-md-6">
+                <label for="tipo" id="tipo">Modelo *</label>
+                <input type="text" name="modelo" id="categ" value="<%= productoSeleccionado.modelo%>">
             </div>
-        </section>
+        
+            <div class="form-group col-12 col-md-6">
+                <label for="tipo"> Marca </label>
+                <input type="text" name="marca" id="categ" value="<%= productoSeleccionado.marca%>">
+            </div>
 
+            <div class="form-group col-12 col-md-4">
+                <label for="">Imagen</label>
+                    <figure>
+                        <img src="/images/products/<%= productoSeleccionado.image %> " alt="" srcset="">
+                    </figure>
+            </div>
+
+              <div class="form-group col-12 col-md-8">
+                <label for="tipo" id="tipo"> Descripcion </label>
+                <textarea name="descripcion" id="descripcion"><%= productoSeleccionado.descripcion%>"</textarea>
+              </div>
+                      
+              <div class="form-group col-12 col-md-12 col-lg-4" categorias">
+                <label for="tipo">Categoria</label>
+                    <select name="categoria">
+                    <option value="<%= productoSeleccionado.categoria%>" selected><%= productoSeleccionado.categoria%></option>
+                    <% categorias.forEach(categoria => { %>
+                        <% if (categoria != productoSeleccionado.categoria) { %>
+                            <option value=" <%= categoria %>"> <%= categoria %></option>
+                        <% } %>
+                    <% }) %>
+                    </select>
+              </div>
+        
+              <div class="form-group col-12 col-md-6 col-lg-4">
+                <label for="" id="tipo"> Precio</label>
+                <input id="categ" name="precio" type="number" value="<%= productoSeleccionado.precio%>">
+              </div>
+        
+              <div class="form-group col-12  col-md-6 col-lg-4">
+                <label for="tipo" id="tipo"> Descuento </label>
+                <input id="categ" name="descuento" type="number" value="<%= productoSeleccionado.descuento%>">
+              </div>
+        
+              <div class="btn-group">
+                <button id="public" type="">Cancelar</button>
+                <button id="public" type="submit">Guardar</button>
+              </div>
+              
+           </form>
+        </div>
+    </section>  
 
             <%- include('partials/footer') %>
     </body>

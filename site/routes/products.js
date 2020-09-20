@@ -15,7 +15,7 @@ router.get('/cargar/productos', productsController.cargar);
 router.post('/cargar/productos', productsController.subir);
 
 router.get('/edit', productsController.editList);
-router.get('/edit/:id', productsController.edit)
+router.get('/show/:id', productsController.show)
 
 router.delete('/delete/:id',productsController.eliminar)
 
