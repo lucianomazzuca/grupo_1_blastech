@@ -49,23 +49,59 @@ const fs = require('fs');
         })
     },
     detail: function (req, res) {
-
+        let productos = dbProducts;
         let idProducto = req.params.id;
-
-        let productoSeleccionado = dbProducts.filter(producto=>{
+        let producto = dbProducts.filter(producto=>{
             return producto.id == idProducto
         });
 
-        let productosRelacionados = dbProducts.filter( producto => {
-            return producto.categoria == productoSeleccionado[0].categoria
-        })
+      
+      let productoSeleccionado = dbProducts.filter(producto=>{
+          return producto.id == idProducto
+      });
 
-
+      let productosRelacionados = dbProducts.filter( producto => {
+          return producto.categoria == productoSeleccionado[0].categoria
+      })
+        // productos.forEach(producto => {
+        //     if(producto.categoria == idProducto.categoria){
+        //         productosRelacionados.push(producto)
+        //     }
+        // })
+      
         res.render('detail', {
             title: 'Detalle de producto',
             css: 'detail.css',
-            producto: producto[0]
+            producto: producto[0],
+            productos: productosRelacionados
         })
+    },
+
+    search:function(req,res){
+        let categoriaProductos = [];
+        let busqueda = req.query.search;
+        if(busqueda == ""){
+            res.redirect('/')
+        }else{
+            let productos = [];
+            dbProducts.forEach(producto=>{
+                if(producto.categoria.toLowerCase().includes(busqueda.toLowerCase())){
+                    productos.push(producto)
+                }
+            })
+            dbProducts.forEach(producto=>{
+                if(producto.marca.toLowerCase().includes(busqueda.toLowerCase())){
+                    productos.push(producto)
+                }
+            })
+            res.render('listado',{
+                title: "Resultado de la busqueda",
+                css:"listado.css",
+                productos:productos,
+                categoria: categoriaProductos
+            })
+        }
+     
     },
     cart: function (req, res) {
         res.render('cart', {
@@ -146,6 +182,24 @@ const fs = require('fs');
             productoSeleccionado: productoSeleccionado[0],
             categorias
         })
+    },
+    edit: function(req,res){
+        
+        dbProducts.forEach(producto => {
+            if(producto.id == req.body.id){
+                producto.id = Number(req.body.id);
+                producto.modelo = req.body.modelo.trim();
+                producto.marca = req.body.marca.trim();
+                producto.categoria = req.body.categoria;
+                producto.descripcion = req.body.descripcion;
+                producto.descuento = Number(req.body.descuento);
+                producto.precio = Number(req.body.precio);
+                producto.image = producto.image;
+            }
+        })
+
+        fs.writeFileSync(path.join(__dirname,'../data/productsDataBase.json'),JSON.stringify(dbProducts),'utf-8');
+        res.redirect('/products/editlist')
     },
     eliminar:function(req,res){
         let idProducto = req.params.id;

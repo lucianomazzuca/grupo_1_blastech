@@ -10,12 +10,14 @@ router.get('/category/:categoria', productsController.category);
 router.get('/detail/:id', productsController.detail);
 router.get('/cargar', productsController.cargaDeProducto);
 router.get('/cart', productsController.cart);
+router.get('/search',productsController.search);
 
 router.get('/cargar/productos', productsController.cargar);
 router.post('/cargar/productos', productsController.subir);
 
-router.get('/edit', productsController.editList);
+router.get('/editlist', productsController.editList);
 router.get('/show/:id', productsController.show)
+router.put('/edit/:id', productsController.edit)
 
 router.delete('/delete/:id',productsController.eliminar)
 
