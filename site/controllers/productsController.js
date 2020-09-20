@@ -89,6 +89,11 @@ const fs = require('fs');
                     productos.push(producto)
                 }
             })
+            dbProducts.forEach(producto=>{
+                if(producto.marca.toLowerCase().includes(busqueda.toLowerCase())){
+                    productos.push(producto)
+                }
+            })
             res.render('listado',{
                 title: "Resultado de la busqueda",
                 css:"listado.css",
