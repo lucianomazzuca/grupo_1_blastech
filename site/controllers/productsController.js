@@ -49,14 +49,31 @@ const fs = require('fs');
         })
     },
     detail: function (req, res) {
-        idProducto = req.params.id;
+        let productos = dbProducts;
+        let idProducto = req.params.id;
         let producto = dbProducts.filter(producto=>{
             return producto.id == idProducto
         });
+
+      
+      let productoSeleccionado = dbProducts.filter(producto=>{
+          return producto.id == idProducto
+      });
+
+      let productosRelacionados = dbProducts.filter( producto => {
+          return producto.categoria == productoSeleccionado[0].categoria
+      })
+        // productos.forEach(producto => {
+        //     if(producto.categoria == idProducto.categoria){
+        //         productosRelacionados.push(producto)
+        //     }
+        // })
+      
         res.render('detail', {
             title: 'Detalle de producto',
             css: 'detail.css',
-            producto: producto[0]
+            producto: producto[0],
+            productos: productosRelacionados
         })
     },
     cart: function (req, res) {
