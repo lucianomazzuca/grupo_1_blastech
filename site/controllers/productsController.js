@@ -1,6 +1,7 @@
 const path = require('path');
 const dbProducts = require(path.join(__dirname, '..', 'data', 'dbProducts'));
 const fs = require('fs');
+
  
  module.exports = {
     listado: function(req,res){
@@ -183,7 +184,7 @@ const fs = require('fs');
             categorias
         })
     },
-    edit: function(req,res){
+    edit: function(req,res,next){
         
         dbProducts.forEach(producto => {
             if(producto.id == req.body.id){
@@ -191,10 +192,10 @@ const fs = require('fs');
                 producto.modelo = req.body.modelo.trim();
                 producto.marca = req.body.marca.trim();
                 producto.categoria = req.body.categoria;
-                producto.descripcion = req.body.descripcion;
+                producto.descripcion = req.body.descripcion.trim();
                 producto.descuento = Number(req.body.descuento);
                 producto.precio = Number(req.body.precio);
-                producto.image = producto.image;
+                producto.image = (req.files[0]) ? req.files[0].filename: producto.image;
             }
         })
 

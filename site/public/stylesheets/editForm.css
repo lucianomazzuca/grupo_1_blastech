@@ -21,6 +21,7 @@
 
 .principal form textarea{
     height: 100%;
+    min-height: 100px;
 }
 
 .principal form figure img{
