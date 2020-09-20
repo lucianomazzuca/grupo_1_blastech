@@ -1,0 +1,19 @@
+@import "style.css";
+
+
+.principal h2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.principal form{
+    background-color: white;
+    padding: 20px;
+    border: 1px solid lightgray;
+}
+
+.principal form .input-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}

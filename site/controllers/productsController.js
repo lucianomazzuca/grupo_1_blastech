@@ -41,7 +41,6 @@ const fs = require('fs');
             }
         })
 
-
         res.render('listado', {
             title: req.params.categoria,
             css:'listado.css',
@@ -100,6 +99,31 @@ const fs = require('fs');
        dbProducts.push(newProduct);
        fs.writeFileSync(path.join(__dirname,"..","data","productsDataBase.json"),JSON.stringify(dbProducts),'utf-8')
        res.redirect('/products')
+    },
+    editList: function(req,res){
+        let productos = dbProducts;
+        let categoriaProductos = [];
+
+        //Obtener categorias no repetidas
+        productos.forEach(producto => {
+            if(categoriaProductos.includes(producto.categoria) == false){
+                categoriaProductos.push(producto.categoria)
+            }
+        })
+
+        res.render('listadoEdit', {
+            title: 'Edit',
+            css: 'listadoEdit.css',
+            productos: productos,
+            categoria: categoriaProductos,
+        })
+    },
+    edit: function(req,res){
+
+        res.render('editForm', {
+            title: 'Editar producto',
+            css: 'editForm.css'
+        })
     }
 
 }
