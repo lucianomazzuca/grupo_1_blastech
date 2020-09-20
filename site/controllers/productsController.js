@@ -91,7 +91,7 @@ const fs = require('fs');
             })
             res.render('listado',{
                 title: "Resultado de la busqueda",
-                css:"index.css",
+                css:"listado.css",
                 productos:productos,
                 categoria: categoriaProductos
             })
