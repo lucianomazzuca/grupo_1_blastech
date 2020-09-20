@@ -76,6 +76,28 @@ const fs = require('fs');
             productos: productosRelacionados
         })
     },
+
+    search:function(req,res){
+        let categoriaProductos = [];
+        let busqueda = req.query.search;
+        if(busqueda == ""){
+            res.redirect('/')
+        }else{
+            let productos = [];
+            dbProducts.forEach(producto=>{
+                if(producto.categoria.toLowerCase().includes(busqueda.toLowerCase())){
+                    productos.push(producto)
+                }
+            })
+            res.render('listado',{
+                title: "Resultado de la busqueda",
+                css:"index.css",
+                productos:productos,
+                categoria: categoriaProductos
+            })
+        }
+     
+    },
     cart: function (req, res) {
         res.render('cart', {
             title: 'Carrito de compras',
