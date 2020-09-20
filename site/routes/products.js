@@ -14,4 +14,6 @@ router.get('/cart', productsController.cart);
 router.get('/cargar/productos', productsController.cargar);
 router.post('/cargar/productos', productsController.subir);
 
+// router.get('/editar', productsController.)
+
 module.exports = router;
