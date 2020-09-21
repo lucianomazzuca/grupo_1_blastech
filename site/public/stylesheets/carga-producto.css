@@ -1,7 +1,7 @@
 @import "style.css";
 
 #hombreAraña{
-    margin-left: 100px;
+    margin-left: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -9,7 +9,7 @@
 #prueba{
     border: 2px solid black;
     margin: auto;
-    width: 70%;
+    
     margin-top: 5%;
     margin-bottom: 5%;
     border-radius: 2%;
@@ -17,7 +17,7 @@
 }
 
 #pos{
-    margin-left: 100px;
+    margin-left: 20px;
     margin-bottom: 30px;
     margin-top: 10px;
 

@@ -136,7 +136,7 @@ const fs = require('fs');
            marca:req.body.marca,
            precio: Number(req.body.precio),
            descuento: Number(req.body.descuento),
-           image: "",
+           image: (req.files[0]) ? req.files[0].filename: producto.image,
            descripcion: req.body.descripcion,
        }
 
