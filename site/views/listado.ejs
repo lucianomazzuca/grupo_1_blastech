@@ -25,7 +25,7 @@
                                 <% }) %>
                             </ul>
                             
-                            <div class="cabecera">MARCAS</div>
+                            <!-- <div class="cabecera">MARCAS</div> -->
                         </div>
                         
                     </div>
@@ -34,7 +34,10 @@
             <!-- Productos -->
                 <div class="col-12 col-md-8">
                     <div class="row">
-
+                    
+                    <% if (productos.length == 0) { %>
+                        <div >No tenemos productos de esta categoria</div>
+                    <% } %>
                     <% productos.forEach(producto => { %>
                      
                         <div class="contenedor-productos">
