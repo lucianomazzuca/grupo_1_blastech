@@ -211,7 +211,7 @@ const fs = require('fs');
             }
         })
         fs.writeFileSync(path.join(__dirname,'../data/productsDataBase.json'),JSON.stringify(dbProducts))
-        res.redirect('/products/edit')
+        res.redirect('/products/editlist')
     }
 }
 
