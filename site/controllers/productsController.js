@@ -95,6 +95,12 @@ const fs = require('fs');
                     productos.push(producto)
                 }
             })
+        
+            dbProducts.forEach(producto => {
+                if(categoriaProductos.includes(producto.categoria) == false){
+                    categoriaProductos.push(producto.categoria)
+                }
+            })
             res.render('listado',{
                 title: "Resultado de la busqueda",
                 css:"listado.css",
