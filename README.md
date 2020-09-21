@@ -49,3 +49,36 @@ Para la creación de nuestros wireframes reunimos diversos sitios dedicados a la
 - CARGA DE PRODUCTOS: cargaDeProducto.ejs         
 - REGISTRO DE USUARIOS: registro.ejs    
 - LOGIN DE USUARIOS: login.ejs 
+
+
+
+
+
+
+
+## :pushpin: Tercer Sprint (24/07)
+
+### :mag_right: Retrospectiva: [retro.md](https://github.com/lucianomazzuca/grupo_1_blastech/blob/master/RETRO.md)
+
+### :calendar: Daily [daily.md]()
+
+### :clipboard: [Tablero de Trabajo](https://trello.com/b/VTdL0zEm/grupo1blastech)
+
+### :briefcase: Archivos [productsDataBase.json](https://github.com/lucianomazzuca/grupo_1_blastech/blob/master/site/data/productsDataBase.json) y [users.json](https://github.com/lucianomazzuca/grupo_1_blastech/blob/master/site/data/users.json)
+
+### :fire: Aplicación Node + Express + EJS
+- Home
+- Listado de productos                          /products
+- Detalle del producto                          /products/detail/:id
+- Formulario de carga y edición de productos    /products/cargar/productos   &   /products/editlist
+- Formulario de registro y login                /users/registro y /users/login
+
+### :scroll: Funcionalidad de listado, detalle, alta, modificación y baja de productos.
+
+- /products :arrow_right: (GET) muestra una lista de todos los productos. Se puede acceder desde la categoría "española" en el home o desde el header "nuestras delicias" y luego "ver todos".
+- /products/detail/:id :arrow_right: (GET) muestra el detalle de un producto. Se puede acceder clickeando en cada uno de los productos de los listados.
+- /productos/create :arrow_right: (GET) muestra el formulario de carga de productos. Se puede acceder al mismo en el menú "ADMINISTRACIÓN" , "Añadir producto".
+- /productos :arrow_right: (POST) Método que guarda los datos luego de haber cargado los mismos a través del formulario.
+- /productos/:id/edit :arrow_right: (GET) muestra el formulario de edición de producto. Se accede al mismo desde el botón editar producto en opciones de Admin.
+- /productos/:id :arrow_right: (PUT) método que actualiza la base de datos. 
+- /productos/:id :arrow_right: (DELETE) método que se ocupa de borrar un registro en particular. Se utiliza desde el listado de productos con el boton eliminar 
