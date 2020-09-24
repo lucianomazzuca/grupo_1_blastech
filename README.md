@@ -60,8 +60,6 @@ Para la creación de nuestros wireframes reunimos diversos sitios dedicados a la
 
 ### :mag_right: Retrospectiva: [retro.md](https://github.com/lucianomazzuca/grupo_1_blastech/blob/master/RETRO.md)
 
-### :calendar: Daily [daily.md]()
-
 ### :clipboard: [Tablero de Trabajo](https://trello.com/b/VTdL0zEm/grupo1blastech)
 
 ### :briefcase: Archivos [productsDataBase.json](https://github.com/lucianomazzuca/grupo_1_blastech/blob/master/site/data/productsDataBase.json) y [users.json](https://github.com/lucianomazzuca/grupo_1_blastech/blob/master/site/data/users.json)
