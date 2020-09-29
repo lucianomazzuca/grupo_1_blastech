@@ -2,7 +2,9 @@ const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcrypt');
 const {validationResult} = require('express-validator');
+const { runInNewContext } = require('vm');
 const dbUsers = require(path.join(__dirname,'..','data','dbUsers'));
+
 
 module.exports = {
     login: function (req, res) {
@@ -12,9 +14,19 @@ module.exports = {
         })
     },
     processLogin: function(req, res) {
-        res.send(req.body);
+        let errors = validationResult(req);
 
-        
+        if(errors.isEmpty()){
+            res.send('Logeado exitosamente')
+        }
+        else{
+            errors.errors.forEach(element => {
+                res.write(element.msg + '\n')
+            });
+            res.end(); 
+        }
+
+
     },
     registro: function (req, res) {
         res.render('registro', {
