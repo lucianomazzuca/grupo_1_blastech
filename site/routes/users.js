@@ -7,7 +7,7 @@ const loginValidator = require('../validations/loginValidator');
 router.get('/registro', usersController.registro);
 
 router.get('/login', usersController.login);
-router.post('/login', loginValidator ,usersController.processLogin);
+router.post('/login', loginValidator, usersController.processLogin);
 
 router.get('/restablecer', usersController.restablecer);
 

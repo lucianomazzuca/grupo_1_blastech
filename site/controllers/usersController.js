@@ -17,7 +17,18 @@ module.exports = {
         let errors = validationResult(req);
 
         if(errors.isEmpty()){
-            res.send('Logeado exitosamente')
+            for( user of dbUsers){
+                if(user.email == req.body.email){
+                    req.session.user = {
+                        id: user.id,
+                        nombre: user.nombre,
+                        apellido: user.apellido, 
+                        email: user.email,
+                        avatar: user.avatar
+                    }
+                }
+            }
+            res.redirect('/');
         }
         else{
             errors.errors.forEach(element => {
@@ -25,7 +36,6 @@ module.exports = {
             });
             res.end(); 
         }
-
 
     },
     registro: function (req, res) {
@@ -40,7 +50,6 @@ module.exports = {
             css: '',
         })
     },
-    
 
 }
 
