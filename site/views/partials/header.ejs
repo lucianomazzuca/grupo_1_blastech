@@ -32,8 +32,16 @@
     <div class="collapse navbar-collapse col-lg-3 col-xl-3 caja-usuario" id="navbarTogglerDemo02">
       <!-- Lista de usuario -->
       <ul class="navbar-nav lista-usuario ">
-        <li><a href="/users/login"><i class="fas fa-user-circle"></i>Ingresar</a></li>
-        <li><a href="/products/cart"><i class="fas fa-shopping-cart"></i><span>Carrito</span></a></li>
+        
+        <% if (locals.user) { %>
+          <li><a href=""><img src="/images/user/<%= locals.user.image %> " alt="avatar" width="50px" height="50px" class="avatar"></i>Mi cuenta</a></li>
+          <li><a href="/products/cart"><i class="fas fa-shopping-cart"></i><span>Carrito</span></a></li>
+
+        <% } else { %>
+          <li><a href="/users/login"><i class="fas fa-user-circle"></i>Ingresar</a></li>
+          <li><a href="/products/cart"><i class="fas fa-shopping-cart"></i><span>Carrito</span></a></li>
+        <% }%>
+
       </ul>
     </div>
 

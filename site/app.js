@@ -11,6 +11,8 @@ let productsRouter = require('./routes/products')
 var usersRouter = require('./routes/users');
 
 
+const localsUserCheck = require('./middlewares/localsUserCheck');
+
 var app = express();
 
 // view engine setup
@@ -25,11 +27,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride("_method"));
 app.use(session({secret: 'secreto'}))
 
+app.use(localsUserCheck)
 app.use('/', indexRouter);
 app.use('/products', productsRouter)
 app.use('/users', usersRouter);
-
-
 
 
 

@@ -21,13 +21,15 @@ module.exports = {
                 if(user.email == req.body.email){
                     req.session.user = {
                         id: user.id,
-                        nombre: user.nombre,
-                        apellido: user.apellido, 
+                        nombre: user.first_name,
+                        apellido: user.last_name, 
                         email: user.email,
-                        avatar: user.avatar
+                        image: user.image
                     }
                 }
             }
+            // res.locals.user = req.session.user;
+            // console.log(res.locals.user);
             res.redirect('/');
         }
         else{
