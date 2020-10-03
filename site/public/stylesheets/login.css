@@ -31,12 +31,14 @@ h1{
     font-size: 40px;
 }
 
-#txtpas{
+#txtpas,#nombre,#pass,#pass2,#email{
     font-size: 20px;
     width: 82%;
     padding: 10px;
     border: none;
 }
+
+
 
 .input-contenedor{
     margin-bottom: 15px;
