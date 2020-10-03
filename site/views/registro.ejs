@@ -28,7 +28,7 @@
         <label for="email"></label>
         <input type="email"
           class="form-control <%= (typeof old != 'undefined' && old.email && !errors.email)?"is-valid":(typeof errors != 'undefined' && errors.email)?"is-invalid": ""  %>"
-          id="email" value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>" placeholder="txtpas"
+          id="email" value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>" placeholder="email"
           name="email" />
         <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %>
         </small>
