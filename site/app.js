@@ -10,7 +10,6 @@ var indexRouter = require('./routes/index');
 let productsRouter = require('./routes/products')
 var usersRouter = require('./routes/users');
 
-
 const localsUserCheck = require('./middlewares/localsUserCheck');
 
 var app = express();

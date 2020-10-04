@@ -26,6 +26,7 @@ module.exports = {
                         email: user.email,
                         image: user.image
                     }
+                    break;
                 }
             }
             // res.locals.user = req.session.user;
