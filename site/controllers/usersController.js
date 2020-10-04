@@ -24,7 +24,8 @@ module.exports = {
                         nombre: user.first_name,
                         apellido: user.last_name, 
                         email: user.email,
-                        image: user.image
+                        image: user.image,
+                        category: user.category
                     }
                     break;
                 }
