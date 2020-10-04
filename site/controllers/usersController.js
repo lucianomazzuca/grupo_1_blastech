@@ -3,8 +3,9 @@ const fs = require('fs');
 const bcrypt = require('bcrypt');
 const {validationResult} = require('express-validator');
 const { runInNewContext } = require('vm');
-const dbUsers = require(path.join(__dirname,'..','data','dbUsers'));
 
+const dbUsers = require(path.join(__dirname,'..','data','dbUsers'));
+const dbProducts = require(path.join(__dirname, "..", "data", "dbProducts"));
 
 module.exports = {
     login: function (req, res) {
@@ -87,10 +88,29 @@ module.exports = {
     restablecer: function (req, res) {
         res.render('restablecer', {
             title: 'Reestablecer contraseña',
-            css: '',
+            css: 'login.css',
         })
     },
 
+    perfil: function (req, res) {
+        
+        let usuarios = dbUsers
+
+        res.render('perfilUser', {
+            title: 'Perfil de Usuario',
+            css: 'perfil.css',
+            usuarios: dbUsers,
+            
+            
+            
+            productos: dbProducts.filter(producto =>{
+                return producto.category != "visited" && producto.category != "in-sale"
+            })
+        })
+    }
+
 }
+
+
 
 

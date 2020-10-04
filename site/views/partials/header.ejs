@@ -34,7 +34,7 @@
       <ul class="navbar-nav lista-usuario ">
         
         <% if (locals.user) { console.log(locals.user)%>
-          <li><a href=""><img src="/images/user/<%= locals.user.image %> " alt="avatar" width="50px" height="50px" class="avatar"></i>Mi cuenta</a></li>
+          <li><a href="/users/perfiles"><img src="/images/user/<%= locals.user.image %> " alt="avatar" width="50px" height="50px" class="avatar"></i>Mi cuenta</a></li>
           <li><a href="/products/cart"><i class="fas fa-shopping-cart"></i><span>Carrito</span></a></li>
 
         <% } else { %>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('partials/head') %> 
+<body>
+  <%- include('partials/header') %> 
+
+  <div class="container">
+		<section class="">
+			<div class="row principal">
+
+				<div class="titulo col-12">
+					<h2>
+						<%= title %> 
+					</h2>
+				</div>
+				<div class="col-12">
+
+          <div class="perfil">
+					<div class="contenido">
+
+
+						<ul class="nav nav-tabs " id="myTab" role="tablist">
+							<li class="nav-item "  role="presentation">
+								<a class="nav-link " id="home-tab" data-toggle="tab" href="#datos" role="tab"
+									aria-controls="home" aria-selected="true">Mis Datos</a>
+							</li>
+							<li class="nav-item " role="presentation">
+								<a class="nav-link active" id="profile-tab" data-toggle="tab" href="#productos"
+									role="tab" aria-controls="profile" aria-selected="false">Mis Productos</a>
+							</li>
+            </ul>
+            
+						<div class="tab-content" id="myTabContent">
+
+							<div class="tab-pane fade " id="datos" role="tabpanel" aria-labelledby="home-tab">
+								<div class="contenedor">
+                  
+                  <form action="">
+
+                  <div class="input-contenedor">
+                      <i class="fas fa-user icon"></i>
+                      <span id="AuLetra"> Nombre de Usuario: </span>
+                      <p id="txtpas"> <%= nombre %> </p>
+                  </div>
+      
+                  <div class="input-contenedor">
+                      <i class="fas fa-envelope icon"></i>
+                      <span id="AuLetra"> Correo Electronico: </span>
+                      <p id="txtpas"> <%= email %> </p>
+                  </div>
+      
+                  <div class="input-contenedor">
+                      <i class="fas fa-key icon"></i>
+                      <span id="AuLetra"> Contraseña : </span>
+                      <p id="txtpas"> <%= password %> </p>  
+                  </div> 
+
+              
+                  
+                  <div id="pos">
+                    
+                      <button type="submit" class="button">Guardar Cambios</a></button>
+                    
+                  </div>
+
+                  </form>
+              
+                </div>
+							</div>
+
+							<div class="tab-pane fade show active " id="productos" role="tabpanel"
+								aria-labelledby="profile-tab">
+
+								<div class="col-12 col-md-8 col-lg-9">
+                  <div class="row">
+
+                  <% productos.forEach(producto => { %>
+                   
+                      <div class="contenedor-productos">
+
+                          <div class="producto">
+                              <a href="">
+                                  <figure>
+                                    <a href="/products/editlist">
+                                      <img src="/images/products/<%= producto.image %> " alt="">
+                                    </a>
+                                  </figure>
+                                  <article>
+                                  <span><%= producto.marca + ' ' + producto.modelo%> </span>
+                                  <h2>$<%= producto.precio %> </h2>
+                                  </article>
+                                  
+                              </a>
+                          </div>
+
+                      </div>
+
+                  <% }) %>
+
+                  </div>
+               </div>
+								<!--finaliza el row-->
+							</div>
+            </div>
+            
+          </div>
+          </div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+
+  
+  <%- include('./partials/footer.ejs') %> 
+
+
+</body>
+</html>

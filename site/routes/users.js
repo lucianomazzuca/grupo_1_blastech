@@ -14,5 +14,7 @@ router.post('/login', loginValidator, usersController.processLogin);
 
 router.get('/restablecer', usersController.restablecer);
 
+router.get('/perfiles',usersController.perfil);
+
 
 module.exports = router;
