@@ -5,7 +5,6 @@ const {validationResult} = require('express-validator');
 const { runInNewContext } = require('vm');
 const dbUsers = require(path.join(__dirname,'..','data','dbUsers'));
 
-
 module.exports = {
     login: function (req, res) {
         res.render('login', {
@@ -19,14 +18,7 @@ module.exports = {
         if(errors.isEmpty()){
             for( user of dbUsers){
                 if(user.email == req.body.email){
-                    req.session.user = {
-                        id: user.id,
-                        nombre: user.first_name,
-                        apellido: user.last_name, 
-                        email: user.email,
-                        image: user.image,
-                        category: user.category
-                    }
+                    req.session.user = user;
                     break;
                 }
             }

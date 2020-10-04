@@ -4,7 +4,8 @@ var router = express.Router();
 const productsController = require('../controllers/productsController.js')
 
 const multer = require('multer');
-const path = require('path')
+const path = require('path');
+const adminCheck = require('../middlewares/adminCheck');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -28,9 +29,10 @@ router.get('/search',productsController.search);
 router.get('/cargar/productos', upload.any(), productsController.cargar);
 router.post('/cargar/productos', upload.any(), productsController.subir);
 
-router.get('/editlist', productsController.editList);
-router.get('/show/:id', productsController.show)
-router.put('/edit/:id', upload.any(), productsController.edit)
+//Admin
+router.get('/editlist', adminCheck,productsController.editList);
+router.get('/show/:id', adminCheck, productsController.show)
+router.put('/edit/:id', adminCheck, upload.any(), productsController.edit)
 
 router.delete('/delete/:id',productsController.eliminar)
 

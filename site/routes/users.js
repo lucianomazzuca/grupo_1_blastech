@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const logCheck = require('../middlewares/logCheck')
 
 const usersController = require('../controllers/usersController.js');
 const loginValidator = require('../validations/loginValidator');
