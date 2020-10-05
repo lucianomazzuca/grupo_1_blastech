@@ -14,15 +14,14 @@ body {
 
 .contenedor{
     width: 100%;
-    padding: 15px;
+    padding: 5px;
 }
 
 .formulario{
-    border: solid 3px black;
+    border: solid 1px grey;
     background: #fff;
     margin-top: 150px;
-    padding: 3px;
-    
+    padding: 15px;
 }
 
 h1{
@@ -31,21 +30,22 @@ h1{
     font-size: 40px;
 }
 
-#txtpas,#nombre,#pass,#pass2,#email, #apellido{
+.txtpas,#nombre,#pass,#pass2,#email, #apellido{
     font-size: 20px;
-    width: 82%;
+    width: 100%;
     padding: 10px;
     border: none;
+    display: flex;
+    justify-content: left;
 }
 
 .input-contenedor{
     margin-bottom: 15px;
     border: 1px solid #aaa;
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: left;
 }
 
 .icon{
@@ -71,6 +71,7 @@ h1{
 
 p{
     text-align: center;
+    margin-top: 1rem;
 }
 
 .link{
@@ -90,7 +91,7 @@ p{
         width: 500px;
         margin-top: 75px;
         margin-bottom: 75px;
-        border-radius: 2%;
+        border-radius: 3px;
     }
 }
 .cuentas{
