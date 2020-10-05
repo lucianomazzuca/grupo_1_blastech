@@ -15,19 +15,28 @@
 
             <div class="input-contenedor">
                 <i class="fas fa-envelope icon"></i>
-                <input id="txtpas" type="text" placeholder="Correo Electronico" name="email">
+                <input id="txtpas" 
+                <%= (typeof old != 'undefined' && old.email && !errors.email)?"is-valid":
+                (typeof errors != 'undefined' && errors.email)?"is-invalid":
+                '' %>" 
+                type="email" placeholder="Correo Electronico" name="email">
+                <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
             </div>
 
             <div class="input-contenedor">
                 <i class="fas fa-key icon"></i>
-                <input id="txtpas" type="password" placeholder="Contraseña" name="password">
+                <input id="txtpas"
+                class="<%= (typeof errors != 'undefined' && errors.pass)?"is-invalid":
+                '' %>"
+                type="password" placeholder="Contraseña" name="password">
+                <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password)?errors.password.msg: "" %> </small>
             </div>
             
             <div id="pos">
                 <button type="submit" class="button">Iniciar Sesion</button>
             </div>
-            <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
-            <p><a class="link" href="/users/restablecer"> ¿Restablecer Contraseña? </a></p>
+            <!-- <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+            <p><a class="link" href="/users/restablecer"> ¿Restablecer Contraseña? </a></p> -->
             <p>¿No tienes una cuenta? <a class="link" href="/users/registro">Registrate </a></p>
         </div>
     </form>

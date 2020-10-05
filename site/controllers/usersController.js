@@ -24,17 +24,16 @@ module.exports = {
                     break;
                 }
             }
-            // res.locals.user = req.session.user;
-            // console.log(res.locals.user);
             res.redirect('/');
         }
         else{
-            errors.errors.forEach(element => {
-                res.write(element.msg + '\n')
-            });
-            res.end(); 
+            res.render('login',{
+                title: "Ingresar",
+                css:"login.css",
+                errors:errors.mapped(),
+                old:req.body
+            })
         }
-
     },
     registro: function (req, res) {
         res.render('registro', {
