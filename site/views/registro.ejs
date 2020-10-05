@@ -13,6 +13,8 @@
     <h1>Registrate</h1>
     <div class="contenedor">
 
+     
+
       <div class="input-contenedor">
         
         <input type="text"
@@ -22,6 +24,18 @@
         <small class="text-danger"><%= (typeof errors != 'undefined' && errors.nombre)?errors.nombre.msg: "" %>
         </small>
       </div>
+
+      <div class="input-contenedor">
+        
+        <input type="text"
+          class="form-control <%= (typeof old != 'undefined' && old.apellido)?"is-valid":(typeof errors != 'undefined' && errors.apellido)?"is-invalid": ""  %>"
+          id="apellido" name="apellido" value="<%= (typeof old != 'undefined' && old.apellido)?old.apellido76826:'' %>"
+          placeholder="Apellido" />
+        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.apellido)?errors.apellido.msg: "" %>
+        </small>
+      </div>
+
+
 
 
       <div class="input-contenedor">

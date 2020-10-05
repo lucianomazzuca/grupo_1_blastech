@@ -136,5 +136,14 @@
         "avatar": "default.png",
         "password": "$2b$10$z2cIqi99C.f7RCIQbbWzX.WIZJQiLTNBBtzcFzPHf2IJxD/3n3GRW",
         "rol": "user"
+    },
+    {
+        "id": 17,
+        "first_name": "Julio",
+        "last_name": "Boca",
+        "email": "julio@boca.com",
+        "image": "default.png",
+        "password": "$2b$10$Xd1n1Uv8y2s4XpO944DzvuSU5itHkJAI/1.lDQ6VZdu4YTl8fRBw2",
+        "category": "user"
     }
 ]
