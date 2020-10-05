@@ -1,21 +1,34 @@
-## :pushpin: Cuarto Sprint (11/08)
 
-### :clipboard: [Tablero de Trabajo](https://trello.com/b/VTdL0zEm/grupo1blastech)
+# :pushpin: Sprint 4: Retro
 
-### :bust_in_silhouette: Registro de usuarios
+## Continuamos basando nuestra retrospectiva en Starfish retrospective: :pencil:
 
-- Accesible desde /users/registro o desde el header, clickeando en "Ingresar" y luego en "Registrate", se verican que los mismos sean correctos y en caso de no serlo devuelve los errores debajo de cada campo del formulario, la contraseña es encriptada antes de guardarse en en JSON de usuarios
+:heavy_check_mark: **Comenzar a hacer:**
+- Empezar a pulir los detalles y las funcionalidades de cada botón, views y rutas.
+- Chequear códigos.
 
-### :closed_umbrella: Login de usuarios
+:heavy_check_mark: **Hacer más:**
+- Compartir código en nuestro Discord/Whatsapp.
+- Comunicarse sobre las dificultades que venimos teniendo
 
-- Accesible desde /users/login o desde el link "Ingresar" en el header. Se verifica la información enviada por el usuario y en caso de haber un error lo devuelve debajo del input donde se produjo, en caso de login correcto, se redirije al home y en el caso de que el usuarios tenga privilegios de administrador le mostrara en el header un menú de "Administración"
-- Función de recordar usuario implementada
+:heavy_check_mark: **Continuar haciendo:**
+- Mantener los medios de comunicación activos y el diálogo fluido.
+- Conservar el Trello ordenado.
 
-### :vertical_traffic_light: Rutas de huéspedes y de usuarios
+:heavy_check_mark:**Hacer menos:** 
+- Dejar de comunicar lo que se esta haciendo
 
-- Los huéspedes pueden, por el momento sólo acceder al home y al login/registro, cualquier otra acción los redirige al login
-- Los usuarios logueados pueden acceder al detalle de los productos, y al carrito
-- Los usuarios logueados como administrador pueden acceder a todo lo anterior + el menu de administración
+
+:heavy_check_mark: **Dejar de hacer:**
+- Por ahora nada
+
+
+
+
+
+
+
+
 
 
 # :pushpin: Sprint 3: Retro

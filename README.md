@@ -80,3 +80,29 @@ Para la creación de nuestros wireframes reunimos diversos sitios dedicados a la
 - /productos/:id/edit :arrow_right: (GET) muestra el formulario de edición de producto. Se accede al mismo desde el botón editar producto en opciones de Admin.
 - /productos/:id :arrow_right: (PUT) método que actualiza la base de datos. 
 - /productos/:id :arrow_right: (DELETE) método que se ocupa de borrar un registro en particular. Se utiliza desde el listado de productos con el boton eliminar 
+
+
+
+
+
+
+
+## :pushpin: Cuarto Sprint (11/08)
+
+### :clipboard: [Tablero de Trabajo](https://trello.com/b/VTdL0zEm/grupo1blastech)
+
+### :bust_in_silhouette: Registro de usuarios
+
+- Accesible desde /users/registro o desde el header, clickeando en "Ingresar" y luego en "Registrate", se verican que los mismos sean correctos y en caso de no serlo devuelve los errores debajo de cada campo del formulario, la contraseña es encriptada antes de guardarse en en JSON de usuarios
+
+### :closed_umbrella: Login de usuarios
+
+- Accesible desde /users/login o desde el link "Ingresar" en el header. Se verifica la información enviada por el usuario y en caso de haber un error lo devuelve debajo del input donde se produjo, en caso de login correcto, se redirije al home y en el caso de que el usuarios tenga privilegios de administrador le mostrara en el header un menú de "Administración"
+- Función de recordar usuario implementada
+
+### :vertical_traffic_light: Rutas de huéspedes y de usuarios
+
+- Los huéspedes pueden, por el momento sólo acceder al home y al login/registro, cualquier otra acción los redirige al login
+- Los usuarios logueados pueden acceder al detalle de los productos, y al carrito
+- Los usuarios logueados como administrador pueden acceder a todo lo anterior y ademas al menu de administración
+
