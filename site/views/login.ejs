@@ -26,7 +26,7 @@
             <div class="input-contenedor">
                 <i class="fas fa-key icon"></i>
                 <input id="txtpas"
-                class="<%= (typeof errors != 'undefined' && errors.pass)?"is-invalid":
+                class="form-control <%= (typeof errors != 'undefined' && errors.password)?"is-invalid":
                 '' %>"
                 type="password" placeholder="Contraseña" name="password">
                 <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password)?errors.password.msg: "" %> </small>

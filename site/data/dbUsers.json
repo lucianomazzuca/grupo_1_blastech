@@ -145,6 +145,14 @@
         "image": "default.png",
         "password": "$2b$10$Xd1n1Uv8y2s4XpO944DzvuSU5itHkJAI/1.lDQ6VZdu4YTl8fRBw2",
         "category": "user"
+    },
+    {
+        "id": 18,
+        "first_name": "1234",
+        "last_name": "1234",
+        "email": "432@hotmail.com",
+        "image": "default.png",
+        "password": "$2b$10$V6XFTPC7E0VoX3oXwg3dAOf5Sjy9X66sdp5ir4t9GPYQzqsAdo0NG",
+        "category": "user"
     }
-   
 ]

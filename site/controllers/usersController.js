@@ -38,7 +38,7 @@ module.exports = {
     registro: function (req, res) {
         res.render('registro', {
             title: 'Registro de Usuario',
-            css: 'login.css',
+            css: 'register.css',
         })
     },
     processRegister:function(req,res){

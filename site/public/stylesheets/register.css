@@ -31,7 +31,7 @@ h1{
     font-size: 40px;
 }
 
-#txtpas,#nombre,#pass,#pass2,#email, #apellido{
+.txtpas,#nombre,#pass,#pass2,#email, #apellido{
     font-size: 20px;
     width: 82%;
     padding: 10px;
