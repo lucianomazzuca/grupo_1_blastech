@@ -95,7 +95,7 @@ module.exports = {
             usuarios: dbUsers,
             
             
-            
+    
             productos: dbProducts.filter(producto =>{
                 return producto.category != "visited" && producto.category != "in-sale"
             })

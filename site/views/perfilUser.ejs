@@ -40,19 +40,19 @@
                   <div class="input-contenedor">
                       <i class="fas fa-user icon"></i>
                       <span id="AuLetra"> Nombre de Usuario: </span>
-                      <p id="txtpas">  </p>
+                      <p id="txtpas"><%- locals.user.nombre %> </p>
                   </div>
       
                   <div class="input-contenedor">
                       <i class="fas fa-envelope icon"></i>
                       <span id="AuLetra"> Correo Electronico: </span>
-                      <p id="txtpas">  </p>
+                      <p id="txtpas"> <%- locals.user.email %></p>
                   </div>
       
                   <div class="input-contenedor">
                       <i class="fas fa-key icon"></i>
                       <span id="AuLetra"> Contraseña : </span>
-                      <p id="txtpas">  </p>  
+                      <p id="txtpas">  <%- locals.user.password %></p>  
                   </div> 
 
               
