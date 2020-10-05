@@ -87,7 +87,7 @@ Para la creación de nuestros wireframes reunimos diversos sitios dedicados a la
 
 
 
-## :pushpin: Cuarto Sprint (11/08)
+## :pushpin: Cuarto Sprint (05/10)
 
 ### :clipboard: [Tablero de Trabajo](https://trello.com/b/VTdL0zEm/grupo1blastech)
 
