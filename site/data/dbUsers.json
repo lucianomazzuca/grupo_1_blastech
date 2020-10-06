@@ -156,5 +156,14 @@
         "image": "default.png",
         "password": "$2b$10$CDVedot4H/2EXWyD0OI6J.BCGi5la22RiQlewJa8PnWZMhSfMZHI.",
         "category": "user"
+    },
+    {
+        "id": 20,
+        "first_name": "Santiago",
+        "last_name": "Ramallo",
+        "email": "pepitoo12312311@gmail.com",
+        "image": "default.png",
+        "password": "$2b$10$YspGo2YrxekvxjYqHc/q3OE2MfvH0xXc0Z4YqYashK85IUjBi.XpO",
+        "category": "user"
     }
 ]

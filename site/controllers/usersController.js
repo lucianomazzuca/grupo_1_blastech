@@ -59,8 +59,8 @@ module.exports = {
         if(errors.isEmpty()){
             let newUser = {
                 id: lastID + 1,
-                first_name: req.body.nombre.trim(),
-                last_name: req.body.apellido.trim(),
+                first_name: req.body.first_name.trim(),
+                last_name: req.body.last_name.trim(),
                 email: req.body.email.trim(),
                 image: (req.files[0])?req.files[0].filename:"default.png",
                 password:bcrypt.hashSync(req.body.pass,10),
@@ -71,15 +71,16 @@ module.exports = {
     
             return res.redirect('/users/login')
         }else{
-            res.render('userRegister',{
+            res.render('registro',{
                 title:"Registro de Usuario",
-                css:"index.css",
+                css:"login.css",
                 errors:errors.mapped(),
                 old:req.body
             })
         }
        
     },
+
 
     restablecer: function (req, res) {
         res.render('restablecer', {

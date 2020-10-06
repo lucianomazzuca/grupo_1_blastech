@@ -18,20 +18,20 @@
       <div class="input-contenedor">
         
         <input type="text"
-          class="form-control <%= (typeof old != 'undefined' && old.nombre)?"is-valid":(typeof errors != 'undefined' && errors.nombre)?"is-invalid": ""  %>"
-          id="nombre" name="nombre" value="<%= (typeof old != 'undefined' && old.nombre)?old.nombre:'' %>"
+          class="form-control <%= (typeof old != 'undefined' && old.first_name)?"is-valid":(typeof errors != 'undefined' && errors.first_name)?"is-invalid": ""  %>"
+          id="first_name" name="first_name" value="<%= (typeof old != 'undefined' && old.first_name)?old.first_name:'' %>"
           placeholder="Nombre" />
-        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.nombre)?errors.nombre.msg: "" %>
+        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.first_name)?errors.first_name.msg: "" %>
         </small>
       </div>
 
       <div class="input-contenedor">
         
         <input type="text"
-          class="form-control <%= (typeof old != 'undefined' && old.apellido)?"is-valid":(typeof errors != 'undefined' && errors.apellido)?"is-invalid": ""  %>"
-          id="apellido" name="apellido" value="<%= (typeof old != 'undefined' && old.apellido)?old.apellido76826:'' %>"
+          class="form-control <%= (typeof old != 'undefined' && old.last_name)?"is-valid":(typeof errors != 'undefined' && errors.last_name)?"is-invalid": ""  %>"
+          id="last_name" name="last_name" value="<%= (typeof old != 'undefined' && old.last_name)?old.last_name:'' %>"
           placeholder="Apellido" />
-        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.apellido)?errors.apellido.msg: "" %>
+        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.last_name)?errors.last_name.msg: "" %>
         </small>
       </div>
 
@@ -70,7 +70,7 @@
       </div>
 
       <div id="pos">
-        <button class="button">Registrarse</a></button>
+        <button type= "sumbit" class="button">Registrarse</a></button>
       </div>
       <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
       <button class="cuentas" type="button"><a class="link" href="https://www.Facebook.com"> <span> <i
