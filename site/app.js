@@ -11,6 +11,7 @@ let productsRouter = require('./routes/products')
 var usersRouter = require('./routes/users');
 
 const localsUserCheck = require('./middlewares/localsUserCheck');
+const cookieAuth = require('./middlewares/cookieAuth');
 
 var app = express();
 
@@ -25,6 +26,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride("_method"));
 app.use(session({secret: 'secreto'}))
+app.use(cookieAuth)
 
 app.use(localsUserCheck)
 app.use('/', indexRouter);

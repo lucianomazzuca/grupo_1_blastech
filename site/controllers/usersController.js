@@ -24,6 +24,9 @@ module.exports = {
                     break;
                 }
             }
+            if(req.body.recordar != undefined){
+                res.cookie('user', req.session.user, {maxAge: 1000*60*60});
+            }
             res.redirect('/');
         }
         else{
