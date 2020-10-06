@@ -73,7 +73,7 @@ module.exports = {
         }else{
             res.render('registro',{
                 title:"Registro de Usuario",
-                css:"login.css",
+                css:"register.css",
                 errors:errors.mapped(),
                 old:req.body
             })
