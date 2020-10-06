@@ -21,8 +21,8 @@
         "id": 3,
         "first_name": "Luciano",
         "last_name": "Mazzuca",
-        "email": "123@hotmail.com",
-        "password": "$2b$10$ARaeV6ZL0nfMTFzF5YPlDuH2Wnh3z6kBjcPPLKlRu.usW5wsg5MLu",
+        "email": "luciano@blastech.com",
+        "password": "$2b$10$oV86jBgMBkEZ6YpQPDZzuushIufiw6pKQGmOO1aZICZfFvKUrpe9e",
         "category": "admin",
         "image": "avatar-luciano.jpg"
     },
@@ -209,6 +209,15 @@
         "email": "pepitoo1231234@gmail.com",
         "image": "default.png",
         "password": "$2b$10$AdpUBOIPmzhuNh3lPvV7WeZzqJwYlmybsZ7lJqQoM6oia3IB7sNqK",
+        "category": "user"
+    },
+    {
+        "id": 26,
+        "first_name": "test",
+        "last_name": "test",
+        "email": "test@hotmail.com",
+        "image": "default.png",
+        "password": "$2b$10$oV86jBgMBkEZ6YpQPDZzuushIufiw6pKQGmOO1aZICZfFvKUrpe9e",
         "category": "user"
     }
 ]
