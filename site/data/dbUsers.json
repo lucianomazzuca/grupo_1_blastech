@@ -131,14 +131,6 @@
         "rol": "user"
     },
     {
-        "id": 16,
-        "nombre": "Franco",
-        "email": "lizarraga@gmail.com",
-        "avatar": "default.png",
-        "password": "$2b$10$z2cIqi99C.f7RCIQbbWzX.WIZJQiLTNBBtzcFzPHf2IJxD/3n3GRW",
-        "rol": "user"
-    },
-    {
         "id": 17,
         "first_name": "Julio",
         "last_name": "Boca",
@@ -154,6 +146,15 @@
         "email": "432@hotmail.com",
         "image": "default.png",
         "password": "$2b$10$V6XFTPC7E0VoX3oXwg3dAOf5Sjy9X66sdp5ir4t9GPYQzqsAdo0NG",
+        "category": "user"
+    },
+    {
+        "id": 19,
+        "first_name": "Franco",
+        "last_name": "Lizarraga",
+        "email": "lizarraga@gmail.com",
+        "image": "default.png",
+        "password": "$2b$10$CDVedot4H/2EXWyD0OI6J.BCGi5la22RiQlewJa8PnWZMhSfMZHI.",
         "category": "user"
     }
 ]

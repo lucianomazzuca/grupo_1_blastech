@@ -99,6 +99,22 @@ module.exports = {
             })
         })
     },
+    perfilEdit: function (req, res) {
+
+        let perfilEdit = {
+            id: lastID + 1,
+            first_name: req.body.nombre,
+            last_name: req.body.apellido,
+            email: req.body.email,
+        }
+        dbUsers.push(newUser);
+        fs.writeFileSync(path.join(__dirname,'..','data','dbUsers.json'),JSON.stringify(dbUsers),'utf-8')
+        res.render('perfilUser', {
+            title: 'Perfil de Usuario',
+            css: 'perfil.css',
+            
+        })
+    },
     logout:function(req,res){
         req.session.destroy()
         if(req.cookies.user){

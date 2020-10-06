@@ -17,6 +17,7 @@ router.post('/login', loginValidator, usersController.processLogin);
 router.get('/restablecer', usersController.restablecer);
 
 router.get('/perfiles', logCheck, usersController.perfil);
+router.post('/perfiles',usersController.perfilEdit);
 
 router.get('/logout', usersController.logout);
 

@@ -34,28 +34,28 @@
 
 							<div class="tab-pane fade " id="datos" role="tabpanel" aria-labelledby="home-tab">
 								<div class="contenedor">
-                  
-                  <form action="">
+                  <% if (locals.user) { %>
+                  <form action="" method="POST">
 
                   <div class="input-contenedor">
                       <i class="fas fa-user icon"></i>
-                      <span id="AuLetra"> Nombre de Usuario: </span>
-                      <p id="txtpas"><%- locals.user.first_name %> </p>
+                      <span id="AuLetra"> Nombre de Usuario: <%- locals.user.first_name %></span>
+                      <input id="txtpas" type="text" placeholder="Nuevo Nombre">
                   </div>
-      
+
+                  <div class="input-contenedor">
+                    <i class="fas fa-user icon"></i>
+                    <span id="AuLetra"> Apellido de Usuario: <%- locals.user.last_name %></span>
+                    <input id="txtpas" type="text" placeholder="Nuevo Apellido">
+                  </div>
+
                   <div class="input-contenedor">
                       <i class="fas fa-envelope icon"></i>
-                      <span id="AuLetra"> Correo Electronico: </span>
-                      <p id="txtpas"> <%- locals.user.email %></p>
+                      <span id="AuLetra"> Correo Electronico: <%- locals.user.email %></span>
+                      
+                      <input id="txtpas" type="text" placeholder="Nuevo Email">
                   </div>
       
-                  <div class="input-contenedor">
-                      <i class="fas fa-key icon"></i>
-                      <span id="AuLetra"> Contraseña : </span>
-                      <p id="txtpas">  <%- locals.user.password %></p>  
-                  </div> 
-
-              
                   
                   <div id="pos">
                     
@@ -64,6 +64,7 @@
                   </div>
 
                   </form>
+                  <% } %>
               
                 </div>
 							</div>
@@ -99,7 +100,7 @@
 
                   </div>
                </div>
-								<!--finaliza el row-->
+								
 							</div>
             </div>
             
