@@ -115,11 +115,12 @@
     },
     {
         "id": 14,
-        "nombre": "pipo",
+        "first_name": "Trent",
+        "last_name": "Flippini",
         "email": "pipo@hotmail.com",
-        "avatar": "default.png",
+        "image": "default.png",
         "password": "$2b$10$ARaeV6ZL0nfMTFzF5YPlDuH2Wnh3z6kBjcPPLKlRu.usW5wsg5MLu",
-        "rol": "user"
+        "category": "user"
     },
     {
         "id": 15,

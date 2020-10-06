@@ -84,24 +84,25 @@ module.exports = {
             css: 'login.css',
         })
     },
-
     perfil: function (req, res) {
-        
         let usuarios = dbUsers
 
         res.render('perfilUser', {
             title: 'Perfil de Usuario',
             css: 'perfil.css',
             usuarios: dbUsers,
-            
-            
-    
             productos: dbProducts.filter(producto =>{
                 return producto.category != "visited" && producto.category != "in-sale"
             })
         })
+    },
+    logout:function(req,res){
+        req.session.destroy()
+        if(req.cookies.userMercadoLiebre){
+            res.cookie('userMercadoLiebre',' ',{maxAge:-1});
+        }
+        return res.redirect('/')
     }
-
 }
 
 

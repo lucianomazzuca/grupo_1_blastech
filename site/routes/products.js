@@ -5,6 +5,7 @@ const productsController = require('../controllers/productsController.js')
 
 const multer = require('multer');
 const path = require('path');
+const logCheck = require('../middlewares/logCheck')
 const adminCheck = require('../middlewares/adminCheck');
 
 var storage = multer.diskStorage({
@@ -26,14 +27,14 @@ router.get('/cargar', productsController.cargaDeProducto);
 router.get('/cart', productsController.cart);
 router.get('/search',productsController.search);
 
-router.get('/cargar/productos', upload.any(), productsController.cargar);
+router.get('/cargar/productos',logCheck, adminCheck, upload.any(), productsController.cargar);
 router.post('/cargar/productos', upload.any(), productsController.subir);
 
 //Admin
-router.get('/editlist', adminCheck,productsController.editList);
-router.get('/show/:id', adminCheck, productsController.show)
-router.put('/edit/:id', adminCheck, upload.any(), productsController.edit)
+router.get('/editlist', logCheck, adminCheck,productsController.editList);
+router.get('/show/:id', logCheck, adminCheck, productsController.show)
+router.put('/edit/:id', logCheck, adminCheck, upload.any(), productsController.edit)
 
-router.delete('/delete/:id',productsController.eliminar)
+router.delete('/delete/:id',adminCheck, productsController.eliminar)
 
 module.exports = router;
