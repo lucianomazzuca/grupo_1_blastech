@@ -20,8 +20,6 @@ body{
     font-weight: 300;
 }
 
-
-
 .row{
     justify-content: center;
 }
@@ -30,37 +28,48 @@ body{
     margin-top: 30px;
 }
 
-.filtro #filtrar{
+/* FILTRO */
+
+.filtro #btn-filtro{
     display: block;
     text-align: center;
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
     padding: 3px 0;
+    cursor: pointer;
 }
 
-.filtro .categorias{
+.filtro .filtro-categorias{
     display: none;
+    justify-content: center;
+    padding-top: 0.5em;
 }
 
-.filtro .categorias .cabecera{
+.filtro .filtro-categorias.active {
+    display: block;
+}
+
+.filtro .filtro-categorias .cabecera{
     margin: 5px 0;
     padding: 7px;
     background-color: var(--color-naranja);
     font-weight: 700;
     color: white;
+    display: none;
 }
 
-.filtro .categorias ul{
+.filtro .filtro-categorias ul{
     padding: 0;
     list-style: none;
+    text-align: center;
 }
 
-.filtro .categorias ul li a{
+.filtro .filtro-categorias ul li a{
     color: black;
     text-decoration: none;
 }
 
-.filtro .categorias ul li a:hover{
+.filtro .filtro-categorias ul li a:hover{
     color: var(--color-naranja);
     text-decoration: underline;
 }
@@ -145,16 +154,25 @@ body{
         margin-top: 0;
     }
 
-    .filtro .categorias{
+    .filtro .filtro-categorias{
+        display: block;
+        padding-top: 0;
+    }
+
+    .filtro .filtro-categorias ul{
+        text-align: left;
+    }
+
+    .filtro .filtro-categorias .cabecera {
         display: block;
     }
 
-    .filtro #filtrar{
+    .filtro #btn-filtro{
         display: none;
     }
 
     
-    .filtro .categorias .cabecera:first-child{
+    .filtro .filtro-categorias .cabecera:first-child{
     margin-top: 0;
 }
 }
