@@ -104,5 +104,5 @@ Para la creación de nuestros wireframes reunimos diversos sitios dedicados a la
 
 - Los huéspedes pueden, por el momento sólo acceder al home y al login/registro, cualquier otra acción los redirige al login
 - Los usuarios logueados pueden acceder al detalle de los productos, y al carrito
-- Los usuarios logueados como administrador pueden acceder a todo lo anterior y ademas al menu de administración
+- Los usuarios logueados como administrador pueden acceder a todo lo anterior y ademas al menu de administración (cuenta de admin luciano@blastech.com, contraseña: 123456)
 
