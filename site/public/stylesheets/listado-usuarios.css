@@ -1,0 +1,84 @@
+@import 'style.css';
+
+body {
+    font-family:  sans-serif
+}
+
+.principal {
+    padding-top: 2em;
+    padding-bottom: 400px;
+}
+
+.titulo {
+    font-size: 2em;
+}
+
+
+/*****
+    TABLA 
+*****/
+.tabla {
+    margin-top: 2em;
+    overflow-wrap: break-word;
+    overflow-x: auto;
+}
+
+.fila {
+    display: flex;
+    text-align: center;
+    min-width: 600px;
+    background-color: white;
+}
+
+.fila.head {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.fila .campo {
+    border-left: 1px solid lightgray;
+    border-top:  1px solid lightgray;
+    padding: 10px 0;
+    flex: 25%;
+}
+
+.fila .nombre {
+    flex: 15%;
+}
+
+.fila .apellido {
+    flex: 15%;
+} 
+
+.fila .email {
+    flex: 30%;
+}
+
+.fila .registro {
+    flex: 10%;
+}
+
+.fila .acciones {
+    flex: 10%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.fila .campo:last-child{
+    border-right:  1px solid lightgray;
+}
+
+.fila:last-of-type {
+    border-bottom: 1px solid lightgray;
+}
+
+.tabla .fa{
+    font-size: 18px;
+}
+.tabla .fas{
+    font-size: 18px;
+}
+
+.campo .btn {
+    padding: 0 15px;
+}

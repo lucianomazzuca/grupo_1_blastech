@@ -122,6 +122,13 @@ module.exports = {
             res.cookie('user',' ',{maxAge:-1});
         }
         return res.redirect('/')
+    },
+    list: function(req, res) {
+
+        res.render('listado-usuarios', {
+            title: 'Listado de usuarios',
+            css: 'listado-usuarios.css',
+        })
     }
 }
 

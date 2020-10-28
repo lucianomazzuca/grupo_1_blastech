@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+
+<body>
+    <%- include('./partials/header.ejs') %>
+
+    <section class="principal">
+        <div class="container-lg">
+            <h2 class="titulo">Listado de Usuarios</h1>
+        </div>
+
+        <div class="container-lg tabla">
+            <div class="fila head">
+                <div class="campo nombre">Nombre</div>
+                <div class="campo apellido">Apellido</div>
+                <div class="campo email">Email</div>
+                <div class="campo registro">Registro</div>
+                <div class="campo acciones">Acciones</div>
+            </div>
+            <div class="fila">
+                <div class="campo nombre">Luciano</div>
+                <div class="campo apellido">Mazzuca</div>
+                <div class="campo email">luciano@blastech.com</div>
+                <div class="campo registro">10/10/2020</div>
+                <div class="campo acciones">
+                    <button class="btn btn-outline-light">
+                        <h4 class="fas fa-edit text-primary"></h4>
+                    </button>
+                    <button class="btn btn-outline-light" type="submit">
+                        <h4 class="fas fa-trash-alt text-danger"></h4>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <%- include('./partials/footer.ejs')%>
+</body>
+</html>

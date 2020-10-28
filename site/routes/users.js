@@ -22,5 +22,7 @@ router.post('/perfiles',usersController.perfilEdit);
 
 router.get('/logout', usersController.logout);
 
+router.get('/listado', usersController.list);
+
 
 module.exports = router;

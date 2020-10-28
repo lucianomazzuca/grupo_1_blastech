@@ -1,3 +1,4 @@
+//Menu desplegable de filtros
 const btnFilter = document.querySelector('#btn-filtro');
 const menuFilter = document.querySelector('.filtro-categorias');
 
