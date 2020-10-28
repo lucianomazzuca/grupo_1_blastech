@@ -91,9 +91,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `blastech_db`.`cart`
+-- Table `blastech_db`.`carts`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `blastech_db`.`cart` (
+CREATE TABLE IF NOT EXISTS `blastech_db`.`carts` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `product_id` INT NOT NULL,
   `user_id` INT NOT NULL,

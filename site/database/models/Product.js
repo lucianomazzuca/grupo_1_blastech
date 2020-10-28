@@ -9,6 +9,12 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true,
             primaryKey: true
         },
+        category_id: {
+            type: dataTypes.INTEGER,
+        },
+        brand_id: {
+            type: dataTypes.INTEGER,
+        },
         model: {
             type: dataTypes.STRING(45),
             allowNull: false
@@ -46,7 +52,7 @@ module.exports = (sequelize, dataTypes) => {
 
 
 
-    const Products = sequelize.define(alias, cols, config);
+    const Product = sequelize.define(alias, cols, config);
 
-    return Products;
+    return Product;
 }
