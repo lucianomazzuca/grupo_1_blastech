@@ -1,6 +1,7 @@
 const {check,validationResult,body} = require('express-validator');
 
-const dbUsers = require('../data/dbUsers')
+const dbUsers = require('../data/dbUsers');
+const db = require('../database/models');
 
 module.exports = [
     
@@ -21,15 +22,26 @@ module.exports = [
     .withMessage("Debes ingresar un email válido"),
 
     body('email')
-    .custom(function(value){
-        for(let i = 0; i<dbUsers.length;i++){
-            if(dbUsers[i].email == value){
-                return false
+    // .custom(function(value){
+    //     for(let i = 0; i<dbUsers.length;i++){
+    //         if(dbUsers[i].email == value){
+    //             return false
+    //         }
+    //     }
+    //     return true
+    // })
+    .custom( function(value) {
+        return db.Users.findOne({
+            where: {
+                email: value,
             }
-        }
-        return true
-    })
-    .withMessage("Este mail ya está registrado"),
+        })
+        .then( user => {
+            if(user) {
+                return Promise.reject('Este mail ya está registrado')
+            }
+        })
+    }),
 
     check('pass')
     .isLength({

@@ -129,6 +129,13 @@ module.exports = {
             .catch(error => {
                 res.send(error);
             });
+        } else {
+            res.render('registro', {
+                title: "Registro de usuario",
+                css: 'register.css',
+                errors: errors.mapped(),
+                old: req.body,
+            })
         }
     },
 
