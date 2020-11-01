@@ -2,7 +2,9 @@ const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcrypt');
 const {validationResult} = require('express-validator');
-const { runInNewContext } = require('vm');
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const { Op } = require('sequelize');
 
 const dbUsers = require(path.join(__dirname,'..','data','dbUsers'));
 const dbProducts = require(path.join(__dirname, "..", "data", "dbProducts"));
@@ -124,10 +126,12 @@ module.exports = {
         return res.redirect('/')
     },
     list: function(req, res) {
-
-        res.render('listado-usuarios', {
+        db.Users.findAll().then(usuarios => {
+            res.render('listadoUsuarios', {
             title: 'Listado de usuarios',
             css: 'listado-usuarios.css',
+            usuarios,
+             })
         })
     }
 }
