@@ -23,6 +23,7 @@ router.post('/perfiles',usersController.perfilEdit);
 router.get('/logout', usersController.logout);
 
 router.get('/listado', usersController.list);
+router.get('/listado/search', usersController.listSearch);
 
 
 module.exports = router;

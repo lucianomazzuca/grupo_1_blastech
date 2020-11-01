@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const {validationResult} = require('express-validator');
 const db = require('../database/models');
 const sequelize = db.sequelize;
-const { Op } = require('sequelize');
+const { Op, where } = require('sequelize');
 
 const dbUsers = require(path.join(__dirname,'..','data','dbUsers'));
 const dbProducts = require(path.join(__dirname, "..", "data", "dbProducts"));
@@ -132,6 +132,26 @@ module.exports = {
             css: 'listado-usuarios.css',
             usuarios,
              })
+        })
+    },
+    listSearch: function(req, res) {
+        let term = req.query.term;
+        term = term.trim().toLowerCase();
+
+        db.Users.findAll({ 
+            where: {
+                [Op.or]: [
+                    { first_name: { [Op.like] : '%' + term + '%'}},
+                    {last_name : { [Op.like] : '%' + term + '%'}},
+                    {email: { [Op.like] : '%' + term + '%'}},
+                ]
+            }
+        }).then(usuarios => {
+            res.render('listadoUsuarios', {
+                title: 'Listado de usuarios',
+                css: 'listado-usuarios.css',
+                usuarios,
+            })
         })
     }
 }

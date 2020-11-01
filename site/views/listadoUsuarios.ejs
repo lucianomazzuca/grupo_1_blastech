@@ -10,6 +10,13 @@
             <h2 class="titulo">Listado de Usuarios</h1>
         </div>
 
+        <div class="container-lg">
+            <form id="searchForm" action="/users/listado/search">
+                <input type="text" name="term">
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+
         <div class="container-lg tabla">
             <!-- Header de la tabla -->
             <div class="fila head">
