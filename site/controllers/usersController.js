@@ -19,26 +19,59 @@ module.exports = {
     processLogin: function (req, res) {
         let errors = validationResult(req);
 
-        if (errors.isEmpty()) {
-            for (user of dbUsers) {
-                if (user.email == req.body.email) {
-                    req.session.user = user;
-                    break;
+        // if (errors.isEmpty()) {
+        //     for (user of dbUsers) {
+        //         if (user.email == req.body.email) {
+        //             req.session.user = user;
+        //             break;
+        //         }
+        //     }
+        //     if (req.body.recordar != undefined) {
+        //         res.cookie("user", req.session.user, {
+        //             maxAge: 1000 * 60 * 60,
+        //         });
+        //     }
+        //     res.redirect("/");
+        // } else {
+        //     res.render("login", {
+        //         title: "Ingresar",
+        //         css: "login.css",
+        //         errors: errors.mapped(),
+        //         old: req.body,
+        //     });
+        // }
+
+        if(errors.isEmpty()) {
+            db.Users.findOne({
+                where: {
+                    email: req.body.email,
                 }
-            }
-            if (req.body.recordar != undefined) {
-                res.cookie("user", req.session.user, {
-                    maxAge: 1000 * 60 * 60,
-                });
-            }
-            res.redirect("/");
+            })
+            .then( user => {
+                req.session.user = {
+                    id: user.id,
+                    first_name: user.first_name,
+                    last_name: user.last_name,
+                    email: user.email,
+                    image: user.image,
+                    category: user.category,
+                }
+                if(req.body.recordar){
+                    res.cookie('user', req.session.user, {maxAge: 1000 * 60 * 60})
+                } 
+                res.locals.user = req.session.user;
+                return res.redirect('/');
+            })
+            .catch( error => {
+                res.send(error)
+            })
         } else {
-            res.render("login", {
+            res.render('Login', {
                 title: "Ingresar",
                 css: "login.css",
                 errors: errors.mapped(),
                 old: req.body,
-            });
+            })
         }
     },
     registro: function (req, res) {
