@@ -26,7 +26,7 @@ body {
 .fila {
     display: flex;
     text-align: center;
-    min-width: 600px;
+    min-width: 750px;
     background-color: white;
 }
 
@@ -39,27 +39,28 @@ body {
     border-left: 1px solid lightgray;
     border-top:  1px solid lightgray;
     padding: 10px 0;
-    flex: 25%;
+    overflow-wrap: break-word;
+
 }
 
 .fila .nombre {
-    flex: 15%;
+    width: 20%;
 }
 
 .fila .apellido {
-    flex: 15%;
+    width: 20%;
 } 
 
 .fila .email {
-    flex: 30%;
+    width: 35%;
 }
 
 .fila .registro {
-    flex: 10%;
+    width: 12.5%;
 }
 
 .fila .acciones {
-    flex: 10%;
+    width: 12.5%;
     display: flex;
     justify-content: space-evenly;
 }
