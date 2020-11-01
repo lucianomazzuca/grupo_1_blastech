@@ -12,8 +12,8 @@
 
         <div class="container-lg">
             <form id="searchForm" action="/users/listado/search">
-                <input type="text" name="term">
-                <button type="submit">Buscar</button>
+                <input type="text" placeholder="Buscar nombre, apellido o email" name="term">
+                <button type="submit" >Buscar</button>
             </form>
         </div>
 
@@ -34,7 +34,7 @@
                     <div class="campo nombre"><%- usuario.first_name %></div>
                     <div class="campo apellido"><%- usuario.last_name %></div>
                     <div class="campo email"><%- usuario.email %></div>
-                    <div class="campo registro"><%- usuario.date %></div>
+                    <div class="campo registro"><%- usuario.createdAt %></div>
                     <div class="campo acciones">
                         <form action="">
                             <button class="btn btn-outline-light">

@@ -1,161 +1,177 @@
-const path = require('path');
-const fs = require('fs');
-const bcrypt = require('bcrypt');
-const {validationResult} = require('express-validator');
-const db = require('../database/models');
+const path = require("path");
+const fs = require("fs");
+const bcrypt = require("bcrypt");
+const { validationResult } = require("express-validator");
+const db = require("../database/models");
 const sequelize = db.sequelize;
-const { Op, where } = require('sequelize');
+const { Op, where } = require("sequelize");
 
-const dbUsers = require(path.join(__dirname,'..','data','dbUsers'));
+const dbUsers = require(path.join(__dirname, "..", "data", "dbUsers"));
 const dbProducts = require(path.join(__dirname, "..", "data", "dbProducts"));
 
 module.exports = {
     login: function (req, res) {
-        res.render('login', {
-            title: 'Ingresa tus datos',
-            css: 'login.css',
-        })
+        res.render("login", {
+            title: "Ingresa tus datos",
+            css: "login.css",
+        });
     },
-    processLogin: function(req, res) {
+    processLogin: function (req, res) {
         let errors = validationResult(req);
 
-        if(errors.isEmpty()){
-            for( user of dbUsers){
-                if(user.email == req.body.email){
+        if (errors.isEmpty()) {
+            for (user of dbUsers) {
+                if (user.email == req.body.email) {
                     req.session.user = user;
                     break;
                 }
             }
-            if(req.body.recordar != undefined){
-                res.cookie('user', req.session.user, {maxAge: 1000*60*60});
+            if (req.body.recordar != undefined) {
+                res.cookie("user", req.session.user, {
+                    maxAge: 1000 * 60 * 60,
+                });
             }
-            res.redirect('/');
-        }
-        else{
-            res.render('login',{
+            res.redirect("/");
+        } else {
+            res.render("login", {
                 title: "Ingresar",
-                css:"login.css",
-                errors:errors.mapped(),
-                old:req.body
-            })
+                css: "login.css",
+                errors: errors.mapped(),
+                old: req.body,
+            });
         }
     },
     registro: function (req, res) {
-        res.render('registro', {
-            title: 'Registro de Usuario',
-            css: 'register.css',
-        })
+        res.render("registro", {
+            title: "Registro de Usuario",
+            css: "register.css",
+        });
     },
-    processRegister:function(req,res){
-        //res.send(req.body)
-        //res.send(req.files)
+    processRegister: function (req, res) {
         let errors = validationResult(req);
-        let lastID = 0;
-        if(dbUsers.length != 0){
-            dbUsers.forEach(user => {
-                if(user.id > lastID){
-                    lastID = user.id
-                }
-            })
-        }
-        if(errors.isEmpty()){
-            let newUser = {
-                id: lastID + 1,
+        // let lastID = 0;
+        // if(dbUsers.length != 0){
+        //     dbUsers.forEach(user => {
+        //         if(user.id > lastID){
+        //             lastID = user.id
+        //         }
+        //     })
+        // }
+        // if(errors.isEmpty()){
+        //     let newUser = {
+        //         id: lastID + 1,
+        //         first_name: req.body.first_name.trim(),
+        //         last_name: req.body.last_name.trim(),
+        //         email: req.body.email.trim(),
+        //         image: (req.files[0])?req.files[0].filename:"default.png",
+        //         password:bcrypt.hashSync(req.body.pass,10),
+        //         category:"user"
+        //     }
+        //     dbUsers.push(newUser);
+        //     fs.writeFileSync(path.join(__dirname,'..','data','dbUsers.json'),JSON.stringify(dbUsers),'utf-8')
+
+        //     return res.redirect('/users/login')
+        // }else{
+        //     res.render('registro',{
+        //         title:"Registro de Usuario",
+        //         css:"register.css",
+        //         errors:errors.mapped(),
+        //         old:req.body
+        //     })
+        // }
+
+        if (errors.isEmpty()) {
+            db.Users.create({
                 first_name: req.body.first_name.trim(),
                 last_name: req.body.last_name.trim(),
                 email: req.body.email.trim(),
-                image: (req.files[0])?req.files[0].filename:"default.png",
-                password:bcrypt.hashSync(req.body.pass,10),
-                category:"user"
-            }
-            dbUsers.push(newUser);
-            fs.writeFileSync(path.join(__dirname,'..','data','dbUsers.json'),JSON.stringify(dbUsers),'utf-8')
-    
-            return res.redirect('/users/login')
-        }else{
-            res.render('registro',{
-                title:"Registro de Usuario",
-                css:"register.css",
-                errors:errors.mapped(),
-                old:req.body
+                password: bcrypt.hashSync(req.body.pass, 10),
+                image: req.files[0] ? req.files[0].filename : "default.png",
+                category: "user",
             })
+            .then((usuario) => {
+                console.log(usuario);
+                return res.redirect('/users/login');
+            })
+            .catch(error => {
+                res.send(error);
+            });
         }
-       
     },
-
 
     restablecer: function (req, res) {
-        res.render('restablecer', {
-            title: 'Reestablecer contraseña',
-            css: 'login.css',
-        })
+        res.render("restablecer", {
+            title: "Reestablecer contraseña",
+            css: "login.css",
+        });
     },
     perfil: function (req, res) {
-        let usuarios = dbUsers
+        let usuarios = dbUsers;
 
-        res.render('perfilUser', {
-            title: 'Perfil de Usuario',
-            css: 'perfil.css',
+        res.render("perfilUser", {
+            title: "Perfil de Usuario",
+            css: "perfil.css",
             usuarios: dbUsers,
-            productos: dbProducts.filter(producto =>{
-                return producto.category != "visited" && producto.category != "in-sale"
-            })
-        })
+            productos: dbProducts.filter((producto) => {
+                return (
+                    producto.category != "visited" &&
+                    producto.category != "in-sale"
+                );
+            }),
+        });
     },
     perfilEdit: function (req, res) {
-
         let perfilEdit = {
             id: lastID + 1,
             first_name: req.body.nombre,
             last_name: req.body.apellido,
             email: req.body.email,
-        }
+        };
         dbUsers.push(newUser);
-        fs.writeFileSync(path.join(__dirname,'..','data','dbUsers.json'),JSON.stringify(dbUsers),'utf-8')
-        res.render('perfilUser', {
-            title: 'Perfil de Usuario',
-            css: 'perfil.css',
-            
-        })
+        fs.writeFileSync(
+            path.join(__dirname, "..", "data", "dbUsers.json"),
+            JSON.stringify(dbUsers),
+            "utf-8"
+        );
+        res.render("perfilUser", {
+            title: "Perfil de Usuario",
+            css: "perfil.css",
+        });
     },
-    logout:function(req,res){
-        req.session.destroy()
-        if(req.cookies.user){
-            res.cookie('user',' ',{maxAge:-1});
+    logout: function (req, res) {
+        req.session.destroy();
+        if (req.cookies.user) {
+            res.cookie("user", " ", { maxAge: -1 });
         }
-        return res.redirect('/')
+        return res.redirect("/");
     },
-    list: function(req, res) {
-        db.Users.findAll().then(usuarios => {
-            res.render('listadoUsuarios', {
-            title: 'Listado de usuarios',
-            css: 'listado-usuarios.css',
-            usuarios,
-             })
-        })
+    list: function (req, res) {
+        db.Users.findAll().then((usuarios) => {
+            res.render("listadoUsuarios", {
+                title: "Listado de usuarios",
+                css: "listado-usuarios.css",
+                usuarios,
+            });
+        });
     },
-    listSearch: function(req, res) {
+    listSearch: function (req, res) {
         let term = req.query.term;
         term = term.trim().toLowerCase();
 
-        db.Users.findAll({ 
+        db.Users.findAll({
             where: {
                 [Op.or]: [
-                    { first_name: { [Op.like] : '%' + term + '%'}},
-                    {last_name : { [Op.like] : '%' + term + '%'}},
-                    {email: { [Op.like] : '%' + term + '%'}},
-                ]
-            }
-        }).then(usuarios => {
-            res.render('listadoUsuarios', {
-                title: 'Listado de usuarios',
-                css: 'listado-usuarios.css',
+                    { first_name: { [Op.like]: "%" + term + "%" } },
+                    { last_name: { [Op.like]: "%" + term + "%" } },
+                    { email: { [Op.like]: "%" + term + "%" } },
+                ],
+            },
+        }).then((usuarios) => {
+            res.render("listadoUsuarios", {
+                title: "Listado de usuarios",
+                css: "listado-usuarios.css",
                 usuarios,
-            })
-        })
-    }
-}
-
-
-
-
+            });
+        });
+    },
+};
