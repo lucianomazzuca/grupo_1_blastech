@@ -114,7 +114,7 @@ module.exports = {
     perfilEdit: function (req, res) {
         db.Users.update({
             date: req.body.date,
-            image:(req.files[0])?req.files[0].filename:req.session.user.image,
+           
             adress: req.body.adress,
             city: req.body.city,
             province: req.body.province
@@ -167,5 +167,5 @@ module.exports = {
                 usuarios,
             });
         });
-    },
+    }
 };

@@ -36,7 +36,7 @@
 							<div class="tab-pane fade " id="datos" role="tabpanel" aria-labelledby="home-tab">
 								<div class="contenedor">
                   
-                  <form aaction="/users/perfiles/<%= user.id %> ?_method=PUT" method="POST">
+                  <form action="/users/perfiles/<%= user.id %> ?_method=PUT" method="POST">
                  
                     <div>
                       <div class="col-12 col-md-4 mt-3 d-flex flex-column align-items-center">
@@ -44,7 +44,7 @@
                         <img src="/images/logos/<%= user.image %>" class="avatarImg" alt="avatar" width="75%"
                           style="object-fit: cover; object-position: top;">
                           <% } else { %>
-                        <img src="/images/users/<%= user.image %>" class="avatarImg" alt="avatar" width="75%"
+                        <img src="/images/user/<%= user.image %>" class="avatarImg" alt="avatar" width="75%"
                           style="object-fit: cover; object-position: top;">
                           <% } %>
                         <div class="form-group w-75">
@@ -125,6 +125,8 @@
                   </div>
 
                   </form>
+
+
                   
               
                 </div>
