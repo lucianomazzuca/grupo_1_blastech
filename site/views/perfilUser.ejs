@@ -31,40 +31,101 @@
             </ul>
             
 						<div class="tab-content" id="myTabContent">
+              
 
 							<div class="tab-pane fade " id="datos" role="tabpanel" aria-labelledby="home-tab">
 								<div class="contenedor">
-                  <% if (locals.user) { %>
-                  <form action="" method="POST">
+                  
+                  <form aaction="/users/perfiles/<%= user.id %> ?_method=PUT" method="POST">
+                 
+                    <div>
+                      <div class="col-12 col-md-4 mt-3 d-flex flex-column align-items-center">
+                          <% if (user.rol == "store") { %>
+                        <img src="/images/logos/<%= user.image %>" class="avatarImg" alt="avatar" width="75%"
+                          style="object-fit: cover; object-position: top;">
+                          <% } else { %>
+                        <img src="/images/users/<%= user.image %>" class="avatarImg" alt="avatar" width="75%"
+                          style="object-fit: cover; object-position: top;">
+                          <% } %>
+                        <div class="form-group w-75">
+                          <input type="file" class="form-control" id="avatarImput" name="image" placeholder="Actualizar Nombre">
+                        </div>
+                      </div>
+                    </div>
+
+
 
                   <div class="input-contenedor">
                       <i class="fas fa-user icon"></i>
-                      <span id="AuLetra"> Nombre de Usuario: <%- locals.user.first_name %></span>
-                      <input id="txtpas" type="text" placeholder="Nuevo Nombre">
+                      <span id="AuLetra"> Nombre de Usuario:</span>
+                      <input id="txtpas" type="text" name="first_name" value="<%= user.first_name %>" placeholder="Actualizar Nombre" disabled>
                   </div>
 
                   <div class="input-contenedor">
                     <i class="fas fa-user icon"></i>
-                    <span id="AuLetra"> Apellido de Usuario: <%- locals.user.last_name %></span>
-                    <input id="txtpas" type="text" placeholder="Nuevo Apellido">
+                    <span id="AuLetra"> Apellido de Usuario:</span>
+                    <input id="txtpas" type="text" name="last_name" value="<%= user.last_name %>" placeholder="Actualizar Apellido" disabled>
                   </div>
 
                   <div class="input-contenedor">
                       <i class="fas fa-envelope icon"></i>
-                      <span id="AuLetra"> Correo Electronico: <%- locals.user.email %></span>
-                      
-                      <input id="txtpas" type="text" placeholder="Nuevo Email">
+                      <span id="AuLetra"> Correo Electronico:</span>
+                      <input id="txtpas" type="text" name="email" value="<%= user.email%>" placeholder="Actualizar Email" disabled>
+                  </div>
+
+                  <div class="input-contenedor">
+                    <i class="fas icon">
+                      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
+                      <path fill-rule="evenodd" d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                      </svg>
+                    </i>
+                    <span id="AuLetra"> Fecha de Nacimiento:</span>
+                    <input id="txtpas" type="date" name="date" value="<%= user.date %>" placeholder="Actualizar fecha">
+                  </div>
+
+                  <div class="input-contenedor">
+                    <i class="fas icon">
+                      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-map" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103zM10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98l4-.8V1.11l-4 .8v12.98zm-6-.8V1.11l-4 .8v12.98l4-.8z"/>
+                      </svg>
+                    </i>
+                    <span id="AuLetra"> Provincia:</span>
+                    <input id="txtpas" type="text" name="province" value="<%= user.province %>" placeholder="Actualizar Provincia">
+                  </div>
+
+                  <div class="input-contenedor">
+                    <i class="fas icon">
+                      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-signpost" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 1.414V4h2V1.414a1 1 0 0 0-2 0z"/>
+                        <path fill-rule="evenodd" d="M12.532 5H2v4h10.532l1.666-2-1.666-2zM2 4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h10.532a1 1 0 0 0 .768-.36l1.933-2.32a.5.5 0 0 0 0-.64L13.3 4.36a1 1 0 0 0-.768-.36H2z"/>
+                        <path d="M7 10h2v6H7v-6z"/>
+                      </svg>
+                    </i>
+                    <span id="AuLetra"> Ciudad: </span>
+                    <input id="txtpas" type="text" name="city" value="<%= user.city %>" placeholder="Actualizar Ciudad">
+                  </div>
+
+                  <div class="input-contenedor">
+                    <i class="fas icon">
+                      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-door-closed" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2zm1 13h8V2H4v13z"/>
+                        <path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0z"/>
+                      </svg>
+                    </i>
+                    <span id="AuLetra"> Dirección:</span>
+                    <input id="txtpas" type="text" name="adress" value="<%= user.adress %>" placeholder="Actualizar Dirección">
                   </div>
       
                   
                   <div id="pos">
-                    
-                      <button type="submit" class="button">Guardar Cambios</a></button>
+                      <button type="button" class="btn-sm btn-secondary m-1"><a href="/" class="text-light">Salir</a></button>
+                      <button type="submit" class="button">Actualizar datos</a></button>
                     
                   </div>
 
                   </form>
-                  <% } %>
+                  
               
                 </div>
 							</div>

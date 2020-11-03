@@ -96,37 +96,41 @@ module.exports = {
         });
     },
     perfil: function (req, res) {
-        let usuarios = dbUsers;
-
-        res.render("perfilUser", {
-            title: "Perfil de Usuario",
-            css: "perfil.css",
-            usuarios: dbUsers,
-            productos: dbProducts.filter((producto) => {
-                return (
-                    producto.category != "visited" &&
-                    producto.category != "in-sale"
-                );
-            }),
-        });
+        db.Users.findByPk(req.session.user.id)
+          .then(user => {
+            res.render('perfilUser', {
+                title: 'Perfil de Usuario',
+                css: 'perfil.css',
+                usuarios: user,
+                productos: dbProducts.filter(producto =>{
+                    return producto.category != "visited" && producto.category != "in-sale"
+                })
+            })
+          })
+          .catch( error => {
+            res.send(error)
+          })
     },
     perfilEdit: function (req, res) {
-        let perfilEdit = {
-            id: lastID + 1,
-            first_name: req.body.nombre,
-            last_name: req.body.apellido,
-            email: req.body.email,
-        };
-        dbUsers.push(newUser);
-        fs.writeFileSync(
-            path.join(__dirname, "..", "data", "dbUsers.json"),
-            JSON.stringify(dbUsers),
-            "utf-8"
-        );
-        res.render("perfilUser", {
-            title: "Perfil de Usuario",
-            css: "perfil.css",
-        });
+        db.Users.update({
+            date: req.body.date,
+            image:(req.files[0])?req.files[0].filename:req.session.user.image,
+            adress: req.body.adress,
+            city: req.body.city,
+            province: req.body.province
+        },
+        {
+            where : {
+                id : req.params.id
+            }
+        })
+        .then( result => {
+            console.log(result)
+            return res.redirect("/users/perfiles");
+        })
+        .catch( err => {
+            res.send(err)
+        })
     },
     logout: function (req, res) {
         req.session.destroy();
