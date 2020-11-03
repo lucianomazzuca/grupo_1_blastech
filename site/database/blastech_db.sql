@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `blastech_db`.`products` (
   `price` DECIMAL(8,2) NOT NULL,
   `discount` INT NOT NULL,
   `images` VARCHAR(100) NOT NULL,
-  `description` VARCHAR(200) NOT NULL,
+  `description` VARCHAR(500) NOT NULL,
   `features` VARCHAR(500) NULL,
   `status` VARCHAR(45) NOT NULL,
   `created_at` TIMESTAMP NULL,
