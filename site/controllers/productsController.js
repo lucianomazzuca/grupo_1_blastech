@@ -5,23 +5,7 @@ const db = require("../database/models");
 
 module.exports = {
     listado: function (req, res) {
-        // let productos = dbProducts;
-        // let categoriaProductos = [];
-
-        // //Obtener categorias no repetidas
-        // productos.forEach((producto) => {
-        //   if (categoriaProductos.includes(producto.categoria) == false) {
-        //     categoriaProductos.push(producto.categoria);
-        //   }
-        // });
-
-        // res.render("listado", {
-        //   title: "Blastech",
-        //   css: "listado.css",
-        //   productos: productos,
-        //   categoria: categoriaProductos,
-        // });
-        db.Products.findAll({
+        let productos = db.Products.findAll({
             include: [
                 {
                     association: 'brands',
@@ -30,19 +14,20 @@ module.exports = {
                     association: 'categories',
                 },
             ]
-        })
-            .then((productos) => {
-                res.send(productos.brands)
-                // res.render("listado", {
-                //     title: "Blastech",
-                //     css: "listado.css",
-                //     productos: productos,
-                //     categoria: productos,
-                // });
+        });
+
+        let categorias = db.Categories.findAll();
+
+        Promise.all([productos, categorias])
+        .then(([productos, categorias]) => {
+            res.render('listado',{
+                title: "Blastech",
+                css: "listado.css",
+                productos: productos,
+                categorias: categorias,
             })
-            .catch((error) => {
-                res.send(error);
-            });
+        })
+
     },
     category: function (req, res) {
         let productos = dbProducts;

@@ -20,8 +20,8 @@
                             <div class="cabecera">CATEGORIAS</div>
 
                             <ul>
-                                <% categoria.forEach(cat => { %>
-                                <li><a href="/products/category/<%= cat.toLowerCase() %>"><%= cat %></a></li>
+                                <% categorias.forEach(cat => { %>
+                                <li><a href="/products/category/<%= cat.category_name.toLowerCase() %>"><%= cat.category_name %></a></li>
                                 <% }) %>
                             </ul>
                             
@@ -45,10 +45,10 @@
                             <div class=" producto">
                                 <a href="/products/detail/<%= producto.id %>">
                                     <figure>
-                                    <img src="/images/products/<%= producto.image %> " alt="">
+                                    <img src="/images/products/<%= producto.images %> " alt="">
                                     </figure>
                                     <article>
-                                    <span><%= producto.brand + ' ' + producto.model%> </span>
+                                    <span><%= producto.brands.brand_name + ' ' + producto.model%> </span>
                                     <h2>$<%= producto.price %> </h2>
                                     </article>
                                 </a>
