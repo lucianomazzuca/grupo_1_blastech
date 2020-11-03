@@ -101,7 +101,7 @@ module.exports = {
             res.render('perfilUser', {
                 title: 'Perfil de Usuario',
                 css: 'perfil.css',
-                usuarios: user,
+                user: user,
                 productos: dbProducts.filter(producto =>{
                     return producto.category != "visited" && producto.category != "in-sale"
                 })
