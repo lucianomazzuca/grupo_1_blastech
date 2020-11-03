@@ -19,59 +19,39 @@ module.exports = {
     processLogin: function (req, res) {
         let errors = validationResult(req);
 
-        // if (errors.isEmpty()) {
-        //     for (user of dbUsers) {
-        //         if (user.email == req.body.email) {
-        //             req.session.user = user;
-        //             break;
-        //         }
-        //     }
-        //     if (req.body.recordar != undefined) {
-        //         res.cookie("user", req.session.user, {
-        //             maxAge: 1000 * 60 * 60,
-        //         });
-        //     }
-        //     res.redirect("/");
-        // } else {
-        //     res.render("login", {
-        //         title: "Ingresar",
-        //         css: "login.css",
-        //         errors: errors.mapped(),
-        //         old: req.body,
-        //     });
-        // }
-
-        if(errors.isEmpty()) {
+        if (errors.isEmpty()) {
             db.Users.findOne({
                 where: {
                     email: req.body.email,
-                }
+                },
             })
-            .then( user => {
-                req.session.user = {
-                    id: user.id,
-                    first_name: user.first_name,
-                    last_name: user.last_name,
-                    email: user.email,
-                    image: user.image,
-                    category: user.category,
-                }
-                if(req.body.recordar){
-                    res.cookie('user', req.session.user, {maxAge: 1000 * 60 * 60})
-                } 
-                res.locals.user = req.session.user;
-                return res.redirect('/');
-            })
-            .catch( error => {
-                res.send(error)
-            })
+                .then((user) => {
+                    req.session.user = {
+                        id: user.id,
+                        first_name: user.first_name,
+                        last_name: user.last_name,
+                        email: user.email,
+                        image: user.image,
+                        category: user.category,
+                    };
+                    if (req.body.recordar) {
+                        res.cookie("user", req.session.user, {
+                            maxAge: 1000 * 60 * 60,
+                        });
+                    }
+                    res.locals.user = req.session.user;
+                    return res.redirect("/");
+                })
+                .catch((error) => {
+                    res.send(error);
+                });
         } else {
-            res.render('Login', {
+            res.render("Login", {
                 title: "Ingresar",
                 css: "login.css",
                 errors: errors.mapped(),
                 old: req.body,
-            })
+            });
         }
     },
     registro: function (req, res) {
@@ -82,36 +62,6 @@ module.exports = {
     },
     processRegister: function (req, res) {
         let errors = validationResult(req);
-        // let lastID = 0;
-        // if(dbUsers.length != 0){
-        //     dbUsers.forEach(user => {
-        //         if(user.id > lastID){
-        //             lastID = user.id
-        //         }
-        //     })
-        // }
-        // if(errors.isEmpty()){
-        //     let newUser = {
-        //         id: lastID + 1,
-        //         first_name: req.body.first_name.trim(),
-        //         last_name: req.body.last_name.trim(),
-        //         email: req.body.email.trim(),
-        //         image: (req.files[0])?req.files[0].filename:"default.png",
-        //         password:bcrypt.hashSync(req.body.pass,10),
-        //         category:"user"
-        //     }
-        //     dbUsers.push(newUser);
-        //     fs.writeFileSync(path.join(__dirname,'..','data','dbUsers.json'),JSON.stringify(dbUsers),'utf-8')
-
-        //     return res.redirect('/users/login')
-        // }else{
-        //     res.render('registro',{
-        //         title:"Registro de Usuario",
-        //         css:"register.css",
-        //         errors:errors.mapped(),
-        //         old:req.body
-        //     })
-        // }
 
         if (errors.isEmpty()) {
             db.Users.create({
@@ -122,20 +72,20 @@ module.exports = {
                 image: req.files[0] ? req.files[0].filename : "default.png",
                 category: "user",
             })
-            .then((usuario) => {
-                console.log(usuario);
-                return res.redirect('/users/login');
-            })
-            .catch(error => {
-                res.send(error);
-            });
+                .then((usuario) => {
+                    console.log(usuario);
+                    return res.redirect("/users/login");
+                })
+                .catch((error) => {
+                    res.send(error);
+                });
         } else {
-            res.render('registro', {
+            res.render("registro", {
                 title: "Registro de usuario",
-                css: 'register.css',
+                css: "register.css",
                 errors: errors.mapped(),
                 old: req.body,
-            })
+            });
         }
     },
 

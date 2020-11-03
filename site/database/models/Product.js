@@ -20,7 +20,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         price: {
-            type: dataTypes.DECIMAL(5, 2).UNSIGNED,
+            type: dataTypes.DECIMAL(8, 2).UNSIGNED,
             allowNull: false
         },
         discount: {
@@ -57,16 +57,21 @@ module.exports = (sequelize, dataTypes) => {
     Product.associate = function(models){
         Product.belongsTo(models.Categories,{
             as: "categories",
-            foreignKey: "id_category"
+            foreignKey: "category_id"
+        })
+
+        Product.belongsTo(models.Brands,{
+            as: "brands",
+            foreignKey: "brand_id"
         })
     }
 
-    Product.associate = function(models){
-        Product.belongsTo(models.Brands,{
-            as: "brands",
-            foreignKey: "id_brand"
-        })
-    }
+    // Product.associate = function(models){
+    //     Product.belongsTo(models.Brands,{
+    //         as: "brands",
+    //         foreignKey: "id_brand"
+    //     })
+    // }
 
     return Product;
 }
