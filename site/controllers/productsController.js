@@ -90,43 +90,77 @@ module.exports = {
     },
 
     search: function (req, res) {
-        let categoriaProductos = [];
-        let busqueda = req.query.search;
-        if (busqueda == "") {
-            res.redirect("/");
-        } else {
-            let productos = [];
-            dbProducts.forEach((producto) => {
-                if (
-                    producto.categoria
-                        .toLowerCase()
-                        .includes(busqueda.toLowerCase())
-                ) {
-                    productos.push(producto);
-                }
-            });
-            dbProducts.forEach((producto) => {
-                if (
-                    producto.marca
-                        .toLowerCase()
-                        .includes(busqueda.toLowerCase())
-                ) {
-                    productos.push(producto);
-                }
-            });
+        // let categoriaProductos = [];
+        // let busqueda = req.query.search;
+        // if (busqueda == "") {
+        //     res.redirect("/");
+        // } else {
+        //     let productos = [];
+        //     dbProducts.forEach((producto) => {
+        //         if (
+        //             producto.categoria
+        //                 .toLowerCase()
+        //                 .includes(busqueda.toLowerCase())
+        //         ) {
+        //             productos.push(producto);
+        //         }
+        //     });
+        //     dbProducts.forEach((producto) => {
+        //         if (
+        //             producto.marca
+        //                 .toLowerCase()
+        //                 .includes(busqueda.toLowerCase())
+        //         ) {
+        //             productos.push(producto);
+        //         }
+        //     });
 
-            dbProducts.forEach((producto) => {
-                if (categoriaProductos.includes(producto.categoria) == false) {
-                    categoriaProductos.push(producto.categoria);
-                }
-            });
-            res.render("listado", {
-                title: "Resultado de la busqueda",
+        //     dbProducts.forEach((producto) => {
+        //         if (categoriaProductos.includes(producto.categoria) == false) {
+        //             categoriaProductos.push(producto.categoria);
+        //         }
+        //     });
+        //     res.render("listado", {
+        //         title: "Resultado de la busqueda",
+        //         css: "listado.css",
+        //         productos: productos,
+        //         categoria: categoriaProductos,
+        //     });
+        // }
+        let term = req.query.search;
+        term = term.trim().toLowerCase();
+
+        let productosFiltrados = db.Products.findAll({
+            include: [
+                {
+                    model: db.Categories,
+                    as: 'categories',
+                },
+                {
+                    model: db.Brands,
+                    as: 'brands',
+                },
+            ],
+            where: {
+                [Op.or]: [
+                    { model: { [Op.like]: "%" + term + "%" } },
+                    { '$categories.category_name$': { [Op.like]: "%" + term + "%" } },
+                    { '$brands.brand_name$': { [Op.like]: "%" + term + "%" } },
+                ],
+            }
+        })
+        
+        let categorias = db.Categories.findAll();
+
+        Promise.all([productosFiltrados, categorias])
+        .then(([productosFiltrados, categorias]) => {
+            res.render('listado',{
+                title: "Blastech",
                 css: "listado.css",
-                productos: productos,
-                categoria: categoriaProductos,
-            });
-        }
+                productos: productosFiltrados,
+                categorias,
+            })
+        })
     },
     cart: function (req, res) {
         res.render("cart", {
