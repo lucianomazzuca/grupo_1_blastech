@@ -224,28 +224,23 @@ module.exports = {
         });
     },
     edit: function (req, res, next) {
-        dbProducts.forEach((producto) => {
-            if (producto.id == req.body.id) {
-                producto.id = Number(req.body.id);
-                producto.modelo = req.body.modelo.trim();
-                producto.marca = req.body.marca.trim();
-                producto.categoria = req.body.categoria;
-                producto.descripcion = req.body.descripcion.trim();
-                producto.descuento = Number(req.body.descuento);
-                producto.precio = Number(req.body.precio);
-                producto.image = req.files[0]
-                    ? req.files[0].filename
-                    : producto.image;
-            }
-        });
+        db.Products.update({
+            model: req.body.modelo,
+            price: req.body.price,
+            description: req.body.descripcion,
+            id_category: req.body.category,
+            id_brand: req.body.marca,
+            images: (req.files[0]) ? req.files[0].filename : req.body.image
+        },
+            {
+                where: {
+                    id: req.params.id
+                }
+            })
 
-        fs.writeFileSync(
-            path.join(__dirname, "../data/productsDataBase.json"),
-            JSON.stringify(dbProducts),
-            "utf-8"
-        );
-        console.log(req.session.user)
-        return res.redirect("/products/editlist");
+            .then(() => {
+                res.redirect('/products/editList/')
+           })
     },
     eliminar: function (req, res) {
         let idProducto = req.params.id;
