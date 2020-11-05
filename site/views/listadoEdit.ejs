@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include('./partials/head.ejs') %>
+<%- include('./partials/head.ejs') %>
+
 <body>
 
     <%- include('./partials/header.ejs') %>
@@ -9,69 +10,73 @@
 
         <div class="container">
             <div class="row">
-            
-            <!-- Filtro -->
+
+                <!-- Filtro -->
                 <div class="col-12 col-md-4 col-lg-3">
                     <div class="filtro">
 
                         <a id="filtrar" onclick="$('#filtros').toggle()"><i class="fa fa-sliders-h"></i> FILTRAR</a>
 
-                        <div class="categorias" id="filtros" >
+                        <div class="categorias" id="filtros">
                             <div class="cabecera">CATEGORIAS</div>
 
                             <ul>
-                                <% categoria.forEach(cat => { %>
-                                <li><a href="/products/category/<%= cat.toLowerCase() %>"><%= cat %></a></li>
+                                <% categorias.forEach(cat => { %>
+                                <li><a
+                                        href="/products/category/<%= cat.category_name.toLowerCase() %>"><%= cat.category_name %></a>
+                                </li>
                                 <% }) %>
                             </ul>
-                            
+
                             <div class="cabecera">MARCAS</div>
                         </div>
-                        
+
                     </div>
                 </div>
 
-            <!-- Productos -->
+                <!-- Productos -->
                 <div class="col-12 col-md-8 col-lg-9">
                     <div class="row">
 
-                    <% productos.forEach(producto => { %>
-                     
+                        <% productos.forEach(producto => { %>
+
                         <div class="contenedor-productos">
 
                             <div class="producto">
                                 <a href=""">
                                     <figure>
-                                    <img src="/images/products/<%= producto.image %> " alt="">
+                                        <img src=" /images/products/<%= producto.images %> " alt="">
                                     </figure>
                                     <article>
-                                    <span><%= producto.marca + ' ' + producto.modelo%> </span>
-                                    <h2>$<%= producto.precio %> </h2>
+                                        <span><%= producto.brands.brand_name + ' ' + producto.model%> </span>
+                                        <h2>$<%= producto.price %> </h2>
                                     </article>
-                                    <div class="btn-container">
-                                        <form action="/products/show/<%= producto.id %>" method="GET">
-                                            <button class="btn btn-outline-light">
-                                                <h4 class="fas fa-edit text-primary"></h4>
-                                            </button>
-                                        </form>
-                                        <form action="/products/delete/<%= producto.id %>?_method=DELETE"
-                                            method="POST">
-                                            <button class="btn btn-outline-light" type="submit">
-                                                <h4 class="fas fa-trash-alt text-danger"></h4>
-                                            </button>
-                                        </form>
-                                    </div>
-                                </a>
+                                    <div class=" btn-container">
+                                    <form action="/products/show/<%= producto.id %>" method="GET">
+                                        <button class="btn btn-outline-light">
+                                            <h4 class="fas fa-edit text-primary"></h4>
+                                        </button>
+                                    </form>
+                                    <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST">
+                                        <button class="btn btn-outline-light" type="submit">
+                                            <h4 class="fas fa-trash-alt text-danger"></h4>
+                                        </button>
+                                    </form>
                             </div>
-
+                            </a>
                         </div>
+
+                    </div>
 
                     <% }) %>
 
-                    </div>
-                 </div>
-                    
+                </div>
             </div>
+
+        </div>
+        </div>
+
+        </div>
 
         </div>
 
@@ -79,7 +84,7 @@
 
 
     <%- include('./partials/footer.ejs') %>
-    
-</body>
-</html>
 
+</body>
+
+</html>

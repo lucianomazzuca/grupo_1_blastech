@@ -179,22 +179,29 @@ module.exports = {
         }
     },
     editList: function (req, res) {
-        let productos = dbProducts;
-        let categoriaProductos = [];
-
-        //Obtener categorias no repetidas
-        productos.forEach((producto) => {
-            if (categoriaProductos.includes(producto.categoria) == false) {
-                categoriaProductos.push(producto.categoria);
-            }
+        let productos = db.Products.findAll({
+            include: [
+                {
+                    association: 'brands',
+                },
+                {
+                    association: 'categories',
+                },
+            ]
         });
 
-        res.render("listadoEdit", {
-            title: "Edit",
-            css: "listadoEdit.css",
-            productos: productos,
-            categoria: categoriaProductos,
-        });
+        let categorias = db.Categories.findAll();
+
+        Promise.all([productos, categorias])
+        .then(([productos, categorias]) => {
+            res.render('listadoEdit',{
+                title: "Blastech",
+                css: "listadoEdit.css",
+                productos: productos,
+                categorias: categorias,
+            })
+        })
+
     },
     show: function (req, res) {
         let productoSeleccionado = dbProducts.filter((producto) => {
