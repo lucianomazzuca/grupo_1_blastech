@@ -34,7 +34,7 @@
                 <textarea name="descripcion"><%= productoSeleccionado.descripcion%>"</textarea>
               </div>
                       
-              <div class="form-group col-12 col-md-12 col-lg-4" categorias">
+              <div class="form-group col-12 col-md-12 col-lg-4 categorias">
                 <label for="tipo">Categoria</label>
                     <select name="categoria">
                     <option value="<%= productoSeleccionado.categoria%>" selected><%= productoSeleccionado.categoria%></option>
@@ -56,7 +56,7 @@
                 <input name="descuento" type="number" value="<%= productoSeleccionado.descuento%>">
               </div>
               <div class="btn-group">
-                <button id="public" type="">Cancelar</button>
+                <button id="public" href="/products/editList" type="">Cancelar</button>
                 <button id="public" type="submit" name="id" value="<%= productoSeleccionado.id %> ">Guardar</button>
               </div>
            </form>

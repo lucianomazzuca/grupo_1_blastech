@@ -3,6 +3,8 @@ const dbProducts = require(path.join(__dirname, "..", "data", "dbProducts"));
 const fs = require("fs");
 const db = require("../database/models");
 const {validationResult} = require('express-validator');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
 
 module.exports = {
     listado: function (req, res) {
@@ -31,30 +33,33 @@ module.exports = {
 
     },
     category: function (req, res) {
-        let productos = dbProducts;
-        let categoriaSolicitada = req.params.categoria.toLowerCase();
-        let categoriaProductos = [];
+        let categorias = db.Categories.findAll();
 
-        //filtrar productos por categoria
-        let productosFiltrados = productos.filter((producto) => {
-            if (producto.categoria.toLowerCase() == categoriaSolicitada) {
-                return producto;
-            }
-        });
+        let productosFiltrados = db.Products.findAll({
+            include: [
+                {
+                    model: db.Categories,
+                    as: 'categories',
+                    where: {
+                        category_name: { [Op.eq]: req.params.categoria.toLowerCase() } 
+                    }
+                },
+                {
+                    association: 'brands',
+                },
+            ],
+        })
 
-        //Obtener categorias no repetidas
-        productos.forEach((producto) => {
-            if (categoriaProductos.includes(producto.categoria) == false) {
-                categoriaProductos.push(producto.categoria);
-            }
-        });
+        Promise.all([productosFiltrados, categorias])
+        .then(([productosFiltrados, categorias]) => {
+            res.render('listado',{
+                title: "Blastech",
+                css: "listado.css",
+                productos: productosFiltrados,
+                categorias,
+            })
+        })
 
-        res.render("listado", {
-            title: req.params.categoria,
-            css: "listado.css",
-            productos: productosFiltrados,
-            categoria: categoriaProductos,
-        });
     },
     detail: function (req, res) {
         let productos = dbProducts;
@@ -234,7 +239,8 @@ module.exports = {
             JSON.stringify(dbProducts),
             "utf-8"
         );
-        res.redirect("/products/editlist");
+        console.log(req.session.user)
+        return res.redirect("/products/editlist");
     },
     eliminar: function (req, res) {
         let idProducto = req.params.id;
