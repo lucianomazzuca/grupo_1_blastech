@@ -17,48 +17,46 @@
 
       <div id="pos">
         <label for="tipo" id="tipo">Categoria *</label>
-        <select name="categoria" id="categ">
-          <option value="vacio"> </option>
-          <option value="mother">Mother</option>
-          <option value="placaDeVideo">Placa de video</option>
-          <option value="monitor">Monitor</option>
-          <option value="procesador">Procesador</option>
-          <option value="componente">Fuente</option>
-          <option value="discoRigido">Disco rigido</option>
-          <option value="gabinete">Gabinete</option>
-          <option value="teclado">Teclado</option>
+        <select name="id_categoria" id="categ">
+          <% categorias.forEach(categorias => { %>
+            <option value="<%= categorias.id %>"><%= categorias.category_name %></option>
+        <%})%>
         </select>
       </div>
 
       <div id="pos">
         <label for="tipo" id="tipo">Modelo *</label>
-        <input type="text" name="modelo" id="categ">
+        <input type="text" name="model" id="categ">
       </div>
 
       <div id="pos">
         <label for="tipo" id="tipo"> Marca </label>
-        <input type="text" name="marca" id="categ">
+        <select name="brand_id" id="categ">
+          <% marcas.forEach(marcas => { %>
+            <option value="<%= marcas.id %>"><%= marcas.brand_name %></option>
+        <%})%>
+        </select>
       </div>
 
       <div id="pos">
         <label for="" id="tipo"> Precio *</label>
         
-        <input id="categ" name="precio" type="number">
+        <input id="categ" name="price" type="number">
       </div>
 
       <div id="pos">
         <label for="tipo" id="tipo"> Descuento </label>
-        <input id="categ" name="descuento" type="number">
+        <input id="categ" name="discount" type="number">
       </div>
 
       <div id="pos">
         <label for="" id="tipo"> Subir imagen </label>
-          <input type="file" name="image" class="">        
+          <input type="file" name="images" class="">        
       </div>
 
       <div id="pos">
         <label for="tipo" id="tipo"> descripcion </label>
-        <textarea name="descripcion" id="descripcion" ></textarea>
+        <textarea name="description" id="descripcion" ></textarea>
         <span id="mini">Incluye estado, caracteristicas y motivo de venta</span>
       </div>
       

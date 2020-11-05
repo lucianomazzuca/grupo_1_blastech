@@ -2,6 +2,7 @@ const path = require("path");
 const dbProducts = require(path.join(__dirname, "..", "data", "dbProducts"));
 const fs = require("fs");
 const db = require("../database/models");
+const {validationResult} = require('express-validator');
 
 module.exports = {
     listado: function (req, res) {
@@ -135,37 +136,44 @@ module.exports = {
         });
     },
     cargar: function (req, res) {
-        res.render("cargaDeProducto", {
-            title: "Carga de productos",
-            css: "carga-producto.css",
-        });
+
+
+        let marcas = db.Brands.findAll({});
+
+        let categorias = db.Categories.findAll();
+
+        Promise.all([marcas, categorias])
+        .then(([marcas, categorias]) => {
+            res.render("cargaDeProducto",{
+                title: "Carga de productos",
+                css: "carga-producto.css",
+                marcas: marcas,
+                categorias: categorias,
+            })
+        })
+
+        
     },
     subir: function (req, res) {
-        let lastID = 1;
-        dbProducts.forEach((producto) => {
-            if (producto.id > lastID) {
-                lastID = producto.id;
-            }
-        });
-        let nuevoProducto = {
-            id: lastID + 1,
-            categoria: req.body.categoria,
-            modelo: req.body.modelo,
-            marca: req.body.marca,
-            precio: Number(req.body.precio),
-            descuento: Number(req.body.descuento),
-            image: req.files[0] ? req.files[0].filename : producto.image,
-            descripcion: req.body.descripcion,
-        };
 
-        console.log(nuevoProducto);
-        dbProducts.push(nuevoProducto);
-        fs.writeFileSync(
-            path.join(__dirname, "..", "data", "productsDataBase.json"),
-            JSON.stringify(dbProducts),
-            "utf-8"
-        );
-        res.redirect("/products");
+        let errors = validationResult(req)
+
+        if(errors.isEmpty()){
+            db.Products.create({
+                category_id: req.body.id_categoria,
+                model: req.body.model,
+                brand_id:req.body.brand_id,
+                price: req.body.price,
+                discount: req.body.discount,
+                images: (req.files[0])?req.files[0].filename: "default-image.png",
+                description: req.body.description,
+                features: "",
+                status: "",
+            })
+            .then(()=>{
+                return res.redirect('/products')
+            })
+        }
     },
     editList: function (req, res) {
         let productos = dbProducts;
