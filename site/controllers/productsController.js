@@ -204,7 +204,7 @@ module.exports = {
 
     },
     show: function (req, res) {
-        let producto = db.Products.findOne({
+        let product = db.Products.findOne({
             where : {
                 id : req.params.id
             },
@@ -228,24 +228,25 @@ module.exports = {
                 ['category_name','ASC']
             ]
         });
-        Promise.all([producto,brands,categories])
-        .then(([producto,brands,categories]) => {
+        Promise.all([product,brands,categories])
+        .then(([product,brands,categories]) => {
             res.render('editForm',{
                 title: "Blastech",
                 css: "editForm.css",
                 brands : brands,
                 categories : categories,
-                producto : producto
+                product : product
             })
         })
     },
     edit: function (req, res, next) {
         db.Products.update({
-            model: req.body.modelo,
+            model: req.body.model,
             price: req.body.price,
-            description: req.body.descripcion,
-            id_category: req.body.category,
-            id_brand: req.body.marca,
+            discount: req.body.discount,
+            description: req.body.description,
+            category_id: req.body.category,
+            brand_id: req.body.brand,
             images: (req.files[0]) ? req.files[0].filename : req.body.image
         },
             {
