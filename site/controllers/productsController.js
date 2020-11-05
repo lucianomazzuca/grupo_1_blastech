@@ -90,43 +90,7 @@ module.exports = {
     },
 
     search: function (req, res) {
-        // let categoriaProductos = [];
-        // let busqueda = req.query.search;
-        // if (busqueda == "") {
-        //     res.redirect("/");
-        // } else {
-        //     let productos = [];
-        //     dbProducts.forEach((producto) => {
-        //         if (
-        //             producto.categoria
-        //                 .toLowerCase()
-        //                 .includes(busqueda.toLowerCase())
-        //         ) {
-        //             productos.push(producto);
-        //         }
-        //     });
-        //     dbProducts.forEach((producto) => {
-        //         if (
-        //             producto.marca
-        //                 .toLowerCase()
-        //                 .includes(busqueda.toLowerCase())
-        //         ) {
-        //             productos.push(producto);
-        //         }
-        //     });
 
-        //     dbProducts.forEach((producto) => {
-        //         if (categoriaProductos.includes(producto.categoria) == false) {
-        //             categoriaProductos.push(producto.categoria);
-        //         }
-        //     });
-        //     res.render("listado", {
-        //         title: "Resultado de la busqueda",
-        //         css: "listado.css",
-        //         productos: productos,
-        //         categoria: categoriaProductos,
-        //     });
-        // }
         let term = req.query.search;
         term = term.trim().toLowerCase();
 
