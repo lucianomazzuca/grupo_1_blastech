@@ -2,68 +2,69 @@
 <html lang="es">
 <%- include('partials/head') %>
 
-    <body>
-        <%- include('partials/header') %>
+<body>
+  <%- include('partials/header') %>
 
-    <section class="principal">
-        <div class="container">
-            <form action="/products/edit/<%= productoSeleccionado.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-        
-            <h2 class="col-12">Editar Producto</h2>
-        
-            <div class="form-group col-12 col-md-6">
-                <label for="tipo" id="tipo">Modelo</label>
-                <input type="text" name="modelo" value="<%= productoSeleccionado.modelo%>">
-            </div>
-        
-            <div class="form-group col-12 col-md-6">
-                <label for="tipo"> Marca </label>
-                <input type="text" name="marca" value="<%= productoSeleccionado.marca%>">
-            </div>
+  <section class="principal">
+    <div class="container">
+      <form action="/products/edit/<%= producto.id %>?_method=PUT" method="POST"
+        enctype="multipart/form-data">
 
-            <div class="form-group col-12 col-md-4">
-                <label for="">Imagen</label>
-                <figure>
-                    <img src="/images/products/<%= productoSeleccionado.image %> " alt="" srcset="">
-                </figure>
-                <input type="file" name="image">
-            </div>
+        <h2 class="col-12">Editar Producto</h2>
 
-              <div class="form-group col-12 col-md-8">
-                <label for="tipo"> Descripcion </label>
-                <textarea name="descripcion"><%= productoSeleccionado.descripcion%>"</textarea>
-              </div>
-                      
-              <div class="form-group col-12 col-md-12 col-lg-4 categorias">
-                <label for="tipo">Categoria</label>
-                    <select name="categoria">
-                    <option value="<%= productoSeleccionado.categoria%>" selected><%= productoSeleccionado.categoria%></option>
-                    <% categorias.forEach(categoria => { %>
-                        <% if (categoria != productoSeleccionado.categoria) { %>
-                            <option value=" <%= categoria %>"> <%= categoria %></option>
-                        <% } %>
-                    <% }) %>
-                    </select>
-              </div>
-        
-              <div class="form-group col-12 col-md-6 col-lg-4">
-                <label for=""> Precio</label>
-                <input name="precio" type="number" value="<%= productoSeleccionado.precio%>">
-              </div>
-        
-              <div class="form-group col-12  col-md-6 col-lg-4">
-                <label for="tipo"> Descuento </label>
-                <input name="descuento" type="number" value="<%= productoSeleccionado.descuento%>">
-              </div>
-              <div class="btn-group">
-                <button id="public" href="/products/editList" type="">Cancelar</button>
-                <button id="public" type="submit" name="id" value="<%= productoSeleccionado.id %> ">Guardar</button>
-              </div>
-           </form>
+        <div class="form-group col-12 col-md-6">
+          <label for="tipo" id="tipo">Modelo</label>
+          <input type="text" name="modelo" value="<%= producto.model%>">
         </div>
-    </section>  
 
-            <%- include('partials/footer') %>
-    </body>
+        <div class="form-group col-12 col-md-6">
+          <label for="tipo"> Marca </label>
+          <input type="text" name="marca" value="<%= producto.brand%>">
+        </div>
+
+        <div class="form-group col-12 col-md-4">
+          <label for="">Imagen</label>
+          <figure>
+            <img src="/images/products/<%= producto.images %> " alt="" srcset="">
+          </figure>
+          <input type="file" name="image">
+        </div>
+
+        <div class="form-group col-12 col-md-8">
+          <label for="tipo"> Descripcion </label>
+          <textarea name="descripcion"><%= producto.description%>"</textarea>
+        </div>
+
+        <div class="form-group col-12 col-md-12 col-lg-4 categorias">
+          <label for="tipo">Categoria</label>
+          <select name="categoria">
+            <option value="<%= producto.category%>" selected><%= producto.category%></option>
+            <% categories.forEach(category => { %>
+            <% if (category != producto.category) { %>
+            <option value=" <%= category %>"> <%= category %></option>
+            <% } %>
+            <% }) %>
+          </select>
+        </div>
+
+        <div class="form-group col-12 col-md-6 col-lg-4">
+          <label for=""> Precio</label>
+          <input name="precio" type="number" value="<%= producto.precio%>">
+        </div>
+
+        <div class="form-group col-12  col-md-6 col-lg-4">
+          <label for="tipo"> Descuento </label>
+          <input name="descuento" type="number" value="<%= producto.descuento%>">
+        </div>
+        <div class="btn-group">
+          <button id="public" href="/products/editList" type="">Cancelar</button>
+          <button id="public" type="submit" name="id" value="<%= producto.id %> ">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <%- include('partials/footer') %>
+</body>
 
 </html>

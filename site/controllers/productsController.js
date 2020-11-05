@@ -204,24 +204,40 @@ module.exports = {
 
     },
     show: function (req, res) {
-        let productoSeleccionado = dbProducts.filter((producto) => {
-            return producto.id == req.params.id;
+        let producto = db.Products.findOne({
+            where : {
+                id : req.params.id
+            },
+            include : [
+                {
+                    association : 'brands'
+                },
+                {
+                    association : 'categories'
+                }
+            ]
         });
 
-        let categorias = [];
-        dbProducts.forEach((producto) => {
-            if (categorias.indexOf(producto.categoria) == -1) {
-                categorias.push(producto.categoria);
-            }
+        let brands = db.Brands.findAll({
+            order : [
+                ['brand_name','ASC']
+            ]
         });
-
-        res.render("editForm", {
-            title: "Editar producto",
-            css: "editForm.css",
-            productos: dbProducts,
-            productoSeleccionado: productoSeleccionado[0],
-            categorias,
+        let categories = db.Categories.findAll({
+            order : [
+                ['category_name','ASC']
+            ]
         });
+        Promise.all([producto,brands,categories])
+        .then(([producto,brands,categories]) => {
+            res.render('editForm',{
+                title: "Blastech",
+                css: "editForm.css",
+                brands : brands,
+                categories : categories,
+                producto : producto
+            })
+        })
     },
     edit: function (req, res, next) {
         db.Products.update({
