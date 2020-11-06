@@ -106,3 +106,17 @@ Para la creación de nuestros wireframes reunimos diversos sitios dedicados a la
 - Los usuarios logueados pueden acceder al detalle de los productos, y al carrito
 - Los usuarios logueados como administrador pueden acceder a todo lo anterior y ademas al menu de administración (cuenta de admin luciano@blastech.com, contraseña: 123456)
 
+
+
+## :pushpin: Quinto Sprint (05/11)
+
+### :clipboard: [Tablero de Trabajo](https://trello.com/b/VTdL0zEm/grupo1blastech)
+
+### :bust_in_silhouette: Registro de usuarios
+
+- En la carpeta database se encuentra diagrama y tanto el script de la base de datos como uno para la creacion de los productos
+- Creación de carpeta Sequelize e Instalacion y configuracion de las dependencias
+- Se crearon los modelos de la base de datos
+- Adaptamos el CRUD de usuarios y productos a la nueva base de datos
+- Usuario admin para tener acceso a las funciones de crude tanto de usuarios como productos: luciano@blastech.com // 123456
+
