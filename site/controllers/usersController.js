@@ -25,26 +25,26 @@ module.exports = {
                     email: req.body.email,
                 },
             })
-                .then((user) => {
-                    req.session.user = {
-                        id: user.id,
-                        first_name: user.first_name,
-                        last_name: user.last_name,
-                        email: user.email,
-                        image: user.image,
-                        category: user.category,
-                    };
-                    if (req.body.recordar) {
-                        res.cookie("user", req.session.user, {
-                            maxAge: 1000 * 60 * 60,
-                        });
-                    }
-                    res.locals.user = req.session.user;
-                    return res.redirect("/");
-                })
-                .catch((error) => {
-                    res.send(error);
-                });
+            .then((user) => {
+                req.session.user = {
+                    id: user.id,
+                    first_name: user.first_name,
+                    last_name: user.last_name,
+                    email: user.email,
+                    image: user.image,
+                    category: user.category,
+                };
+                if (req.body.recordar) {
+                    res.cookie("user", req.session.user, {
+                        maxAge: 1000 * 60 * 60,
+                    });
+                }
+                res.locals.user = req.session.user;
+                return res.redirect("/");
+            })
+            .catch((error) => {
+                res.send(error);
+            });
         } else {
             res.render("Login", {
                 title: "Ingresar",

@@ -4,7 +4,6 @@ const dbUsers = require('../data/dbUsers');
 const db = require('../database/models');
 
 module.exports = [
-    
     check('first_name')
     .isLength({
         min:1
@@ -22,14 +21,6 @@ module.exports = [
     .withMessage("Debes ingresar un email válido"),
 
     body('email')
-    // .custom(function(value){
-    //     for(let i = 0; i<dbUsers.length;i++){
-    //         if(dbUsers[i].email == value){
-    //             return false
-    //         }
-    //     }
-    //     return true
-    // })
     .custom( function(value) {
         return db.Users.findOne({
             where: {
