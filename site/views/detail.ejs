@@ -14,13 +14,13 @@
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="/images/products/<%= producto.image %> " class="d-block w-100" alt="Primera imagen">
+                            <img src="/images/products/<%= producto.images %> " class="d-block w-100" alt="Primera imagen">
                         </div>
                         <div class="carousel-item">
-                            <img src="/images/products/<%= producto.image %>" class="d-block w-100" alt="Segunda imagen">
+                            <img src="/images/products/<%= producto.images %>" class="d-block w-100" alt="Segunda imagen">
                         </div>
                         <div class="carousel-item">
-                            <img src="/images/products/<%= producto.image %>" class="d-block w-100" alt="Tercera imagen">
+                            <img src="/images/products/<%= producto.images %>" class="d-block w-100" alt="Tercera imagen">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -37,25 +37,22 @@
 
             <div class="col-md-7 derecha">
                 <p class="nuevo">Nuevo</p>
-                <h2><%= producto.categoria+" "+ producto.marca + " " + producto.modelo %>  </h2>
-                <p class=""><strike>$<%= producto.precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></strike> <strong> <%= producto.descuento %>  % OFF</strong></p>
+                <h2><%= producto.categories.category_name + " " + producto.brands.brand_name + " " + producto.model %>  </h2>
+                <p class=""><strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></strike> <strong> <%= producto.discount %>  % OFF</strong></p>
                 <h2 class="precio-detail">
-                    $<%- (producto.precio - producto.precio * producto.descuento / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %> 
+                    $<%- (producto.price - producto.price * producto.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %> 
                   </h2>
-                <p><b>Codigo de producto: <%= producto.modelo %> </b></p>
+                <p><b>Codigo de producto: <%= producto.model %> </b></p>
                 <img class="stars" src="/images/stars.png" alt="stars">
                 <p><b>Acerca de este producto:</b> </p>
-                <p><%= producto.descripcion %> </p>
+                <p><%= producto.description %> </p>
                 <p><b>Disponibilidad: </b>En Stock</p>
                 <label for="text">Cantidad: </label>
                 <input class="cantidad" type="text" value="1">
                 <a href="/products/cart"><button type="button" class="btn btn-success boton">Agregar al carro</button></a>
-
-
-
-
-
             </div>
+
+
             <div class="col-md-12 descripcion2">
                 <ul class="product-spec">
                     <li><span class="spec-item">CPU</span>
@@ -106,11 +103,11 @@
                         <div class="producto">
                           <a href="/products/detail/<%= producto.id %>   ">
                             <figure>
-                              <img src="/images/products/<%= producto.image %> " alt="">
+                              <img src="/images/products/<%= producto.images %> " alt="">
                             </figure>
                             <article>
-                              <span> <%= producto.categoria + " " + producto.marca %>  </span>
-                              <h2>$<%- (producto.precio - producto.precio * producto.descuento / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></h2>
+                              <span> <%= producto.categories.category_name + " " + producto.brands.brands_name %>  </span>
+                              <h2>$<%- (producto.price - producto.price * producto.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></h2>
                             </article>
                          </a>
                         </div>

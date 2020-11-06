@@ -62,31 +62,46 @@ module.exports = {
 
     },
     detail: function (req, res) {
-        let productos = dbProducts;
         let idProducto = req.params.id;
-        let producto = dbProducts.filter((producto) => {
-            return producto.id == idProducto;
-        });
 
-        let productoSeleccionado = dbProducts.filter((producto) => {
-            return producto.id == idProducto;
-        });
+        let producto = db.Products.findByPk(idProducto, {
+                include: [
+                    {
+                        association: 'categories',
+                    },
+                    {
+                        association: 'brands'
+                    }
+                ]
+            })
 
-        let productosRelacionados = dbProducts.filter((producto) => {
-            return producto.categoria == productoSeleccionado[0].categoria;
-        });
-        // productos.forEach(producto => {
-        //     if(producto.categoria == idProducto.categoria){
-        //         productosRelacionados.push(producto)
-        //     }
-        // })
+        let productosRelacionados = db.Products.findAll({
+            include: [
+                {
+                    association: 'categories',
+                },
+                {
+                    association: 'brands'
+                }
+            ],
+            where: {
+                '$categories.category_name$': { [Op.eq]: 'motherboard' }
+            }
+        })
 
-        res.render("detail", {
-            title: "Detalle de producto",
-            css: "detail.css",
-            producto: producto[0],
-            productos: productosRelacionados,
-        });
+        Promise.all([producto, productosRelacionados])
+        .then(([producto, productosRelacionados]) => {
+            res.render("detail", {
+                title: "Detalle de producto",
+                css: "detail.css",
+                producto: producto,
+                productos: productosRelacionados,
+            });
+        })
+        .catch(error => {
+            res.send(error)
+        })
+
     },
 
     search: function (req, res) {
