@@ -112,7 +112,6 @@ Para la creación de nuestros wireframes reunimos diversos sitios dedicados a la
 
 ### :clipboard: [Tablero de Trabajo](https://trello.com/b/VTdL0zEm/grupo1blastech)
 
-### :bust_in_silhouette: Registro de usuarios
 
 - En la carpeta database se encuentra diagrama y tanto el script de la base de datos como uno para la creacion de los productos
 - Creación de carpeta Sequelize e Instalacion y configuracion de las dependencias
