@@ -275,17 +275,16 @@ module.exports = {
            })
     },
     eliminar: function (req, res) {
-        let idProducto = req.params.id;
-        dbProducts.forEach((producto) => {
-            if (producto.id == idProducto) {
-                var eliminar = dbProducts.indexOf(producto);
-                dbProducts.splice(eliminar, 1);
+        db.Products.destroy({
+            where: {
+                id: req.params.id
             }
-        });
-        fs.writeFileSync(
-            path.join(__dirname, "../data/productsDataBase.json"),
-            JSON.stringify(dbProducts)
-        );
-        res.redirect("/products/editlist");
+        })
+        .then(() => {
+            res.redirect('/products/editlist')
+        })
+        .catch(errores => {
+            res.send(errores)
+        })
     },
 };
