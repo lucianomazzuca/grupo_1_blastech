@@ -46,11 +46,11 @@
             <div class="producto">
               <a href="/products/detail/<%= producto.id %>   ">
                 <figure>
-                  <img src="images/products/<%= producto.image %> " alt="">
+                  <img src="images/products/<%= producto.images %> " alt="">
                 </figure>
                 <article>
-                  <span> <%= producto.marca + " " + producto.modelo %>  </span>
-                  <h2>$<%- (producto.precio - producto.precio * producto.descuento / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></h2>
+                  <span> <%= producto.brands.brand_name + " " + producto.model %>  </span>
+                  <h2>$<%- (producto.price - producto.price * producto.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></h2>
                 </article>
              </a>
             </div>
@@ -74,11 +74,11 @@
               <div class="producto">
                 <a href="/products/detail/<%= producto.id %>  ">
                   <figure>
-                    <img src="images/products/<%= producto.image %> " alt="">
+                    <img src="images/products/<%= producto.images %> " alt="">
                   </figure>
                   <article>
-                    <span> <%= producto.marca + " " + producto.modelo %>  </span>
-                    <h2>$<%= producto.precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")  %> </h2>
+                    <span> <%= producto.brands.brand_name + " " + producto.model %>  </span>
+                    <h2>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")  %> </h2>
                   </article>
                </a>
               </div>
