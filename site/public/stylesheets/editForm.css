@@ -17,6 +17,7 @@
 .principal form .form-group{
     display: flex;
     flex-direction: column;
+    
 }
 
 .principal form textarea{
@@ -32,4 +33,13 @@
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
+    
+}
+
+.principal input, .principal  select, .principal input{
+    border-radius: 5px;
+    height: 40px;
+    border-color: black;
+    border-width: 1px;
+        
 }
