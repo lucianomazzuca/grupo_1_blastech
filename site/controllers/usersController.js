@@ -167,5 +167,18 @@ module.exports = {
                 usuarios,
             });
         });
-    }
+    },
+    delete: function(req, res) {
+        db.Users.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(() => {
+            res.redirect('/users/listado')
+        })
+        .catch(errores => {
+            res.send(errores)
+        })
+    },
 };

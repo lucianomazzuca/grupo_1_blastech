@@ -25,5 +25,7 @@ router.get('/logout', usersController.logout);
 router.get('/listado', usersController.list);
 router.get('/listado/search', usersController.listSearch);
 
+router.delete('/delete/:id', usersController.delete);
+
 
 module.exports = router;
