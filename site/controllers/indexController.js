@@ -7,21 +7,6 @@ const { Op } = require("sequelize");
 module.exports = {
 
     home:function(req,res){
-        // let destacados = dbProducts.filter(producto=>{
-        //     return producto.status == "visited"
-        // })
-        
-        // let ofertas = dbProducts.filter(producto=>{
-        //     return producto.status == "in-sale"
-        // })
-
-        // res.render('index', { 
-        //     title: 'Blastech',
-        //     css:'index.css',
-        //     destacados: destacados,
-        //     ofertas:ofertas
-        // });
-
         let destacados = db.Products.findAll({
             include: [
                 {
