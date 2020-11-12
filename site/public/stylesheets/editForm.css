@@ -43,3 +43,9 @@
     border-width: 1px;
         
 }
+
+.features{
+    height: 100%;
+    min-height: 100px;
+    height: 200px;
+}
