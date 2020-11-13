@@ -185,7 +185,7 @@ module.exports = {
                 discount: req.body.discount,
                 images: (req.files[0])?req.files[0].filename: "default-image.png",
                 description: req.body.description,
-                features: "",
+                features: req.body.features,
                 status: "",
             })
             .then(()=>{
@@ -260,6 +260,7 @@ module.exports = {
             price: req.body.price,
             discount: req.body.discount,
             description: req.body.description,
+            features: req.body.features,
             category_id: req.body.category,
             brand_id: req.body.brand,
             images: (req.files[0]) ? req.files[0].filename : req.body.image
