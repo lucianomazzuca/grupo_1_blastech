@@ -75,19 +75,24 @@ module.exports = {
                 ]
             })
 
-        let productosRelacionados = db.Products.findAll({
-            include: [
-                {
-                    association: 'categories',
-                },
-                {
-                    association: 'brands'
+        async function getRelatedProducts() {
+            const prod = await producto;
+            return db.Products.findAll({
+                include: [
+                    {
+                        association: 'categories',
+                    },
+                    {
+                        association: 'brands'
+                    }
+                ],
+                where: {
+                    '$categories.category_name$': { [Op.eq]: prod.categories.category_name }
                 }
-            ],
-            where: {
-                '$categories.category_name$': { [Op.eq]: 'motherboard' }
-            }
-        })
+            })
+        }
+
+        let productosRelacionados =  getRelatedProducts();
 
         Promise.all([producto, productosRelacionados])
         .then(([producto, productosRelacionados]) => {
