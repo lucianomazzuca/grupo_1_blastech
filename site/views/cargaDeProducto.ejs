@@ -5,68 +5,76 @@
   <%- include('partials/header') %> 
 
   <div>
-    <form action="" method="POST" enctype="multipart/form-data">
+    <form id="formAdd" action="" method="POST" enctype="multipart/form-data">
       <div class="principal">
       <div class="container">
       <div class="form-group col-12 ">
-      <div id="prueba">
+      <div class="background-form">
 
       <div class="">
-        <h1 id="hombreAraña">Nuevo producto</h1>
+        <h1 id="title">Nuevo producto</h1>
       </div>
 
-      <div id="pos">
-        <label for="tipo" id="tipo">Categoria *</label>
-        <select name="id_categoria" id="categ">
+      <div class="pos">
+        <label for="tipo">Modelo *</label>
+        <input type="text" name="model" id="categ" class="form-control " >
+        <small class="text-danger" id="errorModel"></small>
+      </div>
+
+      <div class="pos">
+        <label for="tipo">Categoria *</label>
+        <select name="id_categoria" id="categ" class="form-control">
+          <option value=""></option>
           <% categorias.forEach(categorias => { %>
             <option value="<%= categorias.id %>"><%= categorias.category_name %></option>
         <%})%>
         </select>
+        <small class="text-danger" id="errorCategory"></small>
       </div>
 
-      <div id="pos">
-        <label for="tipo" id="tipo">Modelo *</label>
-        <input type="text" name="model" id="categ">
-      </div>
-
-      <div id="pos">
-        <label for="tipo" id="tipo"> Marca </label>
-        <select name="brand_id" id="categ">
+      <div class="pos">
+        <label for="tipo"> Marca </label>
+        <select name="brand_id" id="categ" class="form-control">
+          <option value=""></option>
           <% marcas.forEach(marcas => { %>
             <option value="<%= marcas.id %>"><%= marcas.brand_name %></option>
         <%})%>
         </select>
+        <small class="text-danger" id="errorBrand"></small>
       </div>
 
-      <div id="pos">
-        <label for="" id="tipo"> Precio *</label>
-        
-        <input id="categ" name="price" type="number">
+      <div class="pos">
+        <label for=""> Precio *</label>
+        <input id="categ" name="price" type="number" class="form-control ">
+        <small class="text-danger" id="errorPrice"></small>
       </div>
 
-      <div id="pos">
-        <label for="tipo" id="tipo"> Descuento </label>
-        <input id="categ" name="discount" type="number">
+      <div class="pos">
+        <label for="tipo"> Descuento </label>
+        <input id="categ" name="discount" type="number" class="form-control">
+        <small class="text-danger" id="errorDiscount"></small>
       </div>
 
-      <div id="pos">
-        <label for="" id="tipo"> Subir imagen </label>
-          <input type="file" name="images" class="">        
+      <div class="pos">
+        <label for=""> Subir imagen </label>
+          <input type="file" name="images" class="form-control">     
+          <small class="text-danger" id="errorImage"></small>   
       </div>
 
-      <div id="pos">
-        <label for="tipo" id="tipo"> Descripción </label>
-        <textarea name="description" id="descripcion" ></textarea>
-        <!-- <span id="mini">Incluye estado, caracteristicas y motivo de venta</span> -->
+      <div class="pos">
+        <label for="tipo"> Descripción </label>
+        <textarea name="description" id="descripcion" class="form-control"></textarea>
+        <small class="text-danger" id="errorDescription"></small>
       </div>
 
-      <div id="pos">
-        <label for="tipo" id="tipo"> Especificaciones </label>
-        <textarea name="features" id="features" ></textarea>
-        
+      <div class="pos">
+        <label for="tipo"> Especificaciones </label>
+        <textarea name="features" id="features" class="form-control"></textarea>
+        <small class="text-danger" id="errorFeatures"></small>
       </div>
       
-      <div id="pos">
+      <div class="pos">
+        <small class="text-danger" id="errorSubmit"></small>
         <button id="public" type="submit">Publicar</button>
       </div>
       

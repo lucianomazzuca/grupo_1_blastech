@@ -170,7 +170,7 @@ module.exports = {
                 css: "carga-producto.css",
                 marcas: marcas,
                 categorias: categorias,
-                script: 'addProduct.js'
+                // script: 'addProduct.js'
             })
         })
     },

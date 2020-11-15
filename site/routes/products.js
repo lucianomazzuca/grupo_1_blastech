@@ -27,8 +27,7 @@ router.get('/cargar', productsController.cargaDeProducto);
 router.get('/cart', productsController.cart);
 router.get('/search',productsController.search);
 
-// router.get('/cargar/productos',logCheck, adminCheck, upload.any(), productsController.cargar);
-router.get('/cargar/productos', upload.any(), productsController.cargar);
+router.get('/cargar/productos',logCheck, adminCheck, upload.any(), productsController.cargar);
 router.post('/cargar/productos', upload.any(), productsController.subir);
 
 //Admin
