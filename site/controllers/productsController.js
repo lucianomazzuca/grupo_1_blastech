@@ -159,8 +159,6 @@ module.exports = {
         });
     },
     cargar: function (req, res) {
-
-
         let marcas = db.Brands.findAll({});
 
         let categorias = db.Categories.findAll();
@@ -172,10 +170,9 @@ module.exports = {
                 css: "carga-producto.css",
                 marcas: marcas,
                 categorias: categorias,
+                script: 'addProduct.js'
             })
         })
-
-        
     },
     subir: function (req, res) {
 

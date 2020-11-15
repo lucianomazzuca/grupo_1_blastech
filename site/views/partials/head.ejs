@@ -8,4 +8,7 @@
     <link rel="shortcut icon" type="image/png" href="/logo/favicon.ico"/>
     <link rel="stylesheet" href="/stylesheets/<%= css %> " />
 
+    <% if (typeof script !== 'undefined') { %>
+      <script type="text/javascript" src="/javascript/<%= script %>"></script>
+    <% } %>
   </head>
