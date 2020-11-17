@@ -1,96 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('partials/head') %> 
+<%- include('partials/head') %>
+
 <body>
-  <%- include('partials/header') %> 
+  <%- include('partials/header') %>
 
   <div>
     <form id="formAdd" action="" method="POST" enctype="multipart/form-data">
       <div class="principal">
-      <div class="container">
-      <div class="form-group col-12 ">
-      <div class="background-form">
+        <div class="container">
+          <div class="form-group col-12 ">
+            <div class="background-form">
 
-      <div class="">
-        <h1 id="title">Nuevo producto</h1>
-      </div>
+              <div class="">
+                <h1 id="title">Nuevo producto</h1>
+              </div>
 
-      <div class="pos">
-        <label for="tipo">Modelo *</label>
-        <input type="text" name="model" id="categ" class="form-control " >
-        <small class="text-danger" id="errorModel"></small>
-      </div>
+              <div class="pos">
+                </small>
+                <label for="tipo">Modelo *</label>
+                <input type="text" class="form-control" id= "categ" placeholder="Modelo" name="model" 
+                  value="<%=(typeof old != 'undefined' && old.model)?old.model:""  %>">
+                <span class="text-danger"><%= (typeof errors != 'undefined' && errors.model)?errors.model.msg:"" %>
+                </span>
+              </div>
 
-      <div class="pos">
-        <label for="tipo">Categoria *</label>
-        <select name="id_categoria" id="categ" class="form-control">
-          <option value=""></option>
-          <% categorias.forEach(categorias => { %>
-            <option value="<%= categorias.id %>"><%= categorias.category_name %></option>
-        <%})%>
-        </select>
-        <small class="text-danger" id="errorCategory"></small>
-      </div>
+              <div class="pos">
+                <label for="">Categoría</label>
+                <select class="form-control" name="id_categoria" id="categ">
+                  <option value="" >Elegir Categoría </option>
+                  <% categorias.forEach(categoria => { %>
+                  <option value="<%= categoria.id %>"><%= categoria.category_name %> </option>
+                  <% }) %>
+                </select>
+                <span class="text-danger"><%= (typeof errors != 'undefined' && errors.id_categoria)?errors.id_categoria.msg:"" %>
+                </span>
+              </div>
 
-      <div class="pos">
-        <label for="tipo"> Marca </label>
-        <select name="brand_id" id="categ" class="form-control">
-          <option value=""></option>
-          <% marcas.forEach(marcas => { %>
-            <option value="<%= marcas.id %>"><%= marcas.brand_name %></option>
-        <%})%>
-        </select>
-        <small class="text-danger" id="errorBrand"></small>
-      </div>
+              <div class="pos">
+                <label for="">Marca</label>
+                <select class="form-control" name="brand_id" id="categ">
+                  <option value="">Elegir Marca </option>
+                  <% marcas.forEach(marca => { %>
+                  <option value="<%= marca.id %>"><%= marca.brand_name %> </option>
+                  <% }) %>
+                </select>
+                <span class="text-danger"><%= (typeof errors != 'undefined' && errors.brand_id)?errors.brand_id.msg:"" %>
+                </span>
+              </div>
 
-      <div class="pos">
-        <label for=""> Precio *</label>
-        <input id="categ" name="price" type="number" class="form-control ">
-        <small class="text-danger" id="errorPrice"></small>
-      </div>
+              <div class="pos">
+                <label for=""> Precio *</label>
+                <input type="text" class="form-control" placeholder="Precio" id= "categ" name="price"
+                  value="<%=(typeof old != 'undefined' && old.price)?old.price:""  %>">
+                <span class="text-danger"><%= (typeof errors != 'undefined' && errors.price)?errors.price.msg:"" %>
+                </span>
+              </div>
 
-      <div class="pos">
-        <label for="tipo"> Descuento </label>
-        <input id="categ" name="discount" type="number" class="form-control">
-        <small class="text-danger" id="errorDiscount"></small>
-      </div>
+              <div class="pos">
+                <label for="tipo"> Descuento </label>
+                <input id="categ" name="discount" type="number" class="form-control">
+                <small class="text-danger" id="errorDiscount"></small>
+              </div>
 
-      <div class="pos">
-        <label for=""> Subir imagen </label>
-          <input type="file" name="images" class="form-control">     
-          <small class="text-danger" id="errorImage"></small>   
-      </div>
+              <div class="pos">
+                <label for=""> Subir imagen </label>
+                <input type="file" name="images" class="form-control" id= "categ">
+                <small class="text-danger" id="errorImage"></small>
+              </div>
 
-      <div class="pos">
-        <label for="tipo"> Descripción </label>
-        <textarea name="description" id="descripcion" class="form-control"></textarea>
-        <small class="text-danger" id="errorDescription"></small>
-      </div>
+              <div class="pos">
+                <label for="tipo"> Descripción </label>
+                <textarea name="description" id="descripcion" class="form-control"></textarea>
+                <small class="text-danger" id="errorDescription"></small>
+                <span class="text-danger"><%= (typeof errors != 'undefined' && errors.description)?errors.description.msg:"" %>
+              </div>
 
-      <div class="pos">
-        <label for="tipo"> Especificaciones </label>
-        <textarea name="features" id="features" class="form-control"></textarea>
-        <small class="text-danger" id="errorFeatures"></small>
-      </div>
-      
-      <div class="pos">
-        <small class="text-danger" id="errorSubmit"></small>
-        <button id="public" type="submit">Publicar</button>
-      </div>
-      
+              <div class="pos">
+                <label for="tipo"> Especificaciones </label>
+                <textarea name="features" id="features" class="form-control"></textarea>
+                <small class="text-danger" id="errorFeatures"></small>
+              </div>
 
+              <div class="pos">
+                <small class="text-danger" id="errorSubmit"></small>
+                <button id="public" type="submit">Publicar</button>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
       </div>
-      </div>
-    </div>
-    </div>
-   </form>
+    </form>
   </div>
 
-      
 
-    
-  <%- include('./partials/footer.ejs') %> 
+
+
+  <%- include('./partials/footer.ejs') %>
 
 
 </body>
+
 </html>

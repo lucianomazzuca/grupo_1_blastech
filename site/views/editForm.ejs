@@ -19,7 +19,7 @@
 
         <div class="form-group col-12 col-md-6">
           <label for="tipo" id="tipo"> Marca </label>
-          <select class="form-control" name="brand" id="" name="brand">
+          <select class="form-control" name="brand" id="" name="brand" >
             <% brands.forEach(brand => { %>
                 <option value="<%= brand.id %>"><%= brand.brand_name %> </option>
             <% }) %>
