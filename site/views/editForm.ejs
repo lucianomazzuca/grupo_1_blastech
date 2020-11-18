@@ -7,23 +7,32 @@
 
   <section class="principal">
     <div class="container">
-      <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST"
-        enctype="multipart/form-data" class="edit">
+      <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data"
+        class="edit">
 
         <h2 class="col-12">Editar Producto</h2>
 
         <div class="form-group col-12 col-md-6">
-          <label for="tipo" id="tipo">Modelo</label>
-          <input type="text" name="model" value="<%= product.model%>">
+          <div class="pos">
+          </small>
+          <label for="tipo">Modelo *</label>
+          <input type="text" class="form-control" id= "categ" placeholder="Modelo" name="model" 
+            value="<%=(typeof old != 'undefined' && old.model)?old.model:""  %>">
+          <span class="text-danger"><%= (typeof errors != 'undefined' && errors.model)?errors.model.msg:"" %>
+          </span>
+        </div>
         </div>
 
         <div class="form-group col-12 col-md-6">
-          <label for="tipo" id="tipo"> Marca </label>
-          <select class="form-control" name="brand" id="" name="brand" >
-            <% brands.forEach(brand => { %>
-                <option value="<%= brand.id %>"><%= brand.brand_name %> </option>
+          <label for="">Marca</label>
+          <select class="form-control" name="brand_id" id="categ">
+            <option value="">Elegir Marca </option>
+            <% brands.forEach(marca => { %>
+            <option value="<%= marca.id %>"><%= marca.brand_name %> </option>
             <% }) %>
-        </select>
+          </select>
+          <span class="text-danger"><%= (typeof errors != 'undefined' && errors.brand_id)?errors.brand_id.msg:"" %>
+          </span>
         </div>
 
         <div class="form-group col-12 col-md-4">
@@ -45,17 +54,23 @@
         </div>
 
         <div class="form-group col-12 col-md-4">
-          <label for="tipo" id="tipo"> Categoria </label>
-          <select class="form-control" name="category" id="" name="category">
-            <% categories.forEach(category => { %>
-                <option value="<%= category.id %>"><%= category.category_name %> </option>
+          <label for="">Categoría</label>
+          <select class="form-control" name="id_categoria" id="categ">
+            <option value="">Elegir Categoría </option>
+            <% categories.forEach(categoria => { %>
+            <option value="<%= categoria.category_name %>"><%= categoria.category_name %> </option>
             <% }) %>
-        </select>
+          </select>
+          <span
+            class="text-danger"><%= (typeof errors != 'undefined' && errors.id_categoria)?errors.id_categoria.msg:"" %>
+          </span>
         </div>
 
         <div class="form-group col-12 col-md-4 col-lg-4">
           <label for=""> Precio</label>
-          <input name="price" type="number" value="<%= product.price%>">
+          <input type="text" class="form-control" placeholder="Precio" id="categ" name="price"
+            value="<%= product.price  %>">
+          <span class="text-danger"><%= (typeof errors != 'undefined' && errors.price)?errors.price.msg:"" %>
         </div>
 
         <div class="form-group col-12  col-md-4 col-lg-4">

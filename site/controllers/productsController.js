@@ -281,6 +281,10 @@ module.exports = {
                 })
         },
         edit: function (req, res, next) {
+        
+            let errors = validationResult(req)
+
+            if (errors.isEmpty()){
             db.Products.update({
                 model: req.body.model,
                 price: req.body.price,
@@ -300,6 +304,29 @@ module.exports = {
                 .then(() => {
                     res.redirect('/products/editList/')
                 })
+            } else {
+            let product = db.Products.findOne({
+                where : {
+                    id : req.params.id
+                }
+            })
+            let categories = db.Categories.findAll()
+            let brands = db.Brands.findAll()
+
+            Promise.all([product, categories, brands])
+                .then(([product, categories, brands]) => {
+                    res.render('editForm', {
+                        title: "Editar Producto",
+                        css: 'editForm.css',
+                        errors: errors.mapped(),
+                        old: req.body,
+                        categories: categories,
+                        brands: brands,
+                        product: product
+                    })
+
+                })
+            }
         },
         eliminar: function (req, res) {
             db.Products.destroy({

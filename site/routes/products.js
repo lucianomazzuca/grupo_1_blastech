@@ -34,7 +34,7 @@ router.post('/cargar/productos', upload.any(), productValidator,  productsContro
 //Admin
 router.get('/editlist', logCheck, adminCheck,productsController.editList);
 router.get('/show/:id', logCheck, adminCheck, productsController.show)
-router.put('/edit/:id', logCheck, adminCheck,productValidator, upload.any(), productsController.edit)
+router.put('/edit/:id', logCheck, adminCheck, productValidator, upload.any(), productsController.edit)
 
 router.delete('/delete/:id',adminCheck, productsController.eliminar)
 
