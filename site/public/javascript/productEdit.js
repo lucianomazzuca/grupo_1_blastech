@@ -10,12 +10,6 @@ window.addEventListener("load", () => {
     const selectCategory = form.querySelector('select[name="id_categoria"]');
     const inputPrice = form.querySelector('input[name="price"]');
     const inputDiscount = form.querySelector('input[name="discount"]');
-    
-    
-    
-
-    
-
 
     let errors = {};
     let regExExtensions = /(.jpg|.jpeg|.png|.gif)$/i;

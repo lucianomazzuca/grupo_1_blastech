@@ -13,7 +13,7 @@
 
         <div class="contenedor">
 
-            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
+            
             <div class="input-contenedor">
                 <i class="fas fa-envelope icon"></i>
                 <input
@@ -22,8 +22,9 @@
                 '' %>" 
                 type="email" placeholder="Correo Electronico" name="email">
             </div>
+            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
 
-            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password)?errors.password.msg: "" %> </small>
+            
             <div class="input-contenedor">
                 <i class="fas fa-key icon"></i>
                 <input 
@@ -31,6 +32,7 @@
                 '' %>"
                 type="password" placeholder="Contraseña" name="password">
             </div>
+            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password)?errors.password.msg: "" %> </small>
 
             <div class="recordar-container">
                 <label for="recordar">Recordar cuenta:</label>

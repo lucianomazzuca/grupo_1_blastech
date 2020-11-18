@@ -240,6 +240,7 @@ module.exports = {
                         css: "listadoEdit.css",
                         productos: productos,
                         categorias: categorias,
+                        
                     })
                 })
 
@@ -276,7 +277,8 @@ module.exports = {
                         css: "editForm.css",
                         brands: brands,
                         categories: categories,
-                        product: product
+                        product: product,
+                        script : "productEdit.js",
                     })
                 })
         },
@@ -322,7 +324,8 @@ module.exports = {
                         old: req.body,
                         categories: categories,
                         brands: brands,
-                        product: product
+                        product: product,
+                        
                     })
 
                 })

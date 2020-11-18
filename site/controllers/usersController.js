@@ -14,6 +14,7 @@ module.exports = {
         res.render("login", {
             title: "Ingresa tus datos",
             css: "login.css",
+            
         });
     },
     processLogin: function (req, res) {
@@ -51,6 +52,8 @@ module.exports = {
                 css: "login.css",
                 errors: errors.mapped(),
                 old: req.body,
+                script : "userLogin.js",
+                
             });
         }
     },
@@ -58,7 +61,7 @@ module.exports = {
         res.render("registro", {
             title: "Registro de Usuario",
             css: "register.css",
-            script : "userRegistro.js",
+            
         });
     },
     processRegister: function (req, res) {
@@ -104,7 +107,6 @@ module.exports = {
                 title: 'Perfil de Usuario',
                 css: 'perfil.css',
                 user: user,
-                script : "userEdit.js",
                 productos: dbProducts.filter(producto =>{
                     return producto.category != "visited" && producto.category != "in-sale"
                 })

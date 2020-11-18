@@ -107,4 +107,9 @@ p{
     border-radius: 5px;
     cursor: pointer;
 }
+.text-danger {
+    position: relative;
+    top: -15px;
+}
+
 

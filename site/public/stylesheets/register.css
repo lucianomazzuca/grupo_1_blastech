@@ -103,3 +103,7 @@ p{
     cursor: pointer;
 }
 
+.text-danger {
+    position: relative;
+    top: -15px;
+}
