@@ -1,15 +1,18 @@
 window.addEventListener("load", () => {
 
-    const form = document.querySelector("#formAdd");
+    const form = document.querySelector(".edit");
 
     const inputModel = form.querySelector('input[name="model"]');
-    const selectCategory = form.querySelector('select[name="id_categoria"]');
     const selectBrand = form.querySelector('select[name="brand_id"]');
-    const inputPrice = form.querySelector('input[name="price"]');
-    const inputDiscount = form.querySelector('input[name="discount"]');
     const inputImage = form.querySelector('input[name="images"]');
     const inputDescription = form.querySelector('textarea[name="description"]');
     const inputFeatures = form.querySelector('textarea[name="features"]');
+    const selectCategory = form.querySelector('select[name="id_categoria"]');
+    const inputPrice = form.querySelector('input[name="price"]');
+    const inputDiscount = form.querySelector('input[name="discount"]');
+    
+    
+    
 
     
 
