@@ -285,8 +285,8 @@ module.exports = {
     edit: function (req, res, next) {
 
         let errors = validationResult(req)
-        
-        if (errors.isEmpty()){
+
+        if (errors.isEmpty()) {
             db.Products.update({
                 model: req.body.model,
                 price: req.body.price,
@@ -306,42 +306,53 @@ module.exports = {
                 .then(() => {
                     res.redirect('/products/editList/')
                 })
-            } else {
+        } else {
             let product = db.Products.findOne({
-                where : {
-                    id : req.params.id
-                }
+                where: {
+                    id: req.params.id
+                },
+                include: [
+                    {
+                        association: 'brands'
+                    },
+                    {
+                        association: 'categories'
+                    }
+                ]
             })
             let categories = db.Categories.findAll()
             let brands = db.Brands.findAll()
 
-            Promise.all([product, categories, brands])
-                .then(([product, categories, brands]) => {
+            Promise.all([categories, brands, product])
+                .then(([categories, brands, product]) => {
                     res.render('editForm', {
                         title: "Editar Producto",
                         css: 'editForm.css',
+                        product: product,
                         errors: errors.mapped(),
                         old: req.body,
                         categories: categories,
-                        brands: brands,
-                        product: product,
+                        brands: brands
                         
+
+
+
                     })
 
                 })
+        }
+    },
+    eliminar: function (req, res) {
+        db.Products.destroy({
+            where: {
+                id: req.params.id
             }
-        },
-        eliminar: function (req, res) {
-            db.Products.destroy({
-                where: {
-                    id: req.params.id
-                }
+        })
+            .then(() => {
+                res.redirect('/products/editlist')
             })
-                .then(() => {
-                    res.redirect('/products/editlist')
-                })
-                .catch(errores => {
-                    res.send(errores)
-                })
-        },
-    };
+            .catch(errores => {
+                res.send(errores)
+            })
+    },
+};
