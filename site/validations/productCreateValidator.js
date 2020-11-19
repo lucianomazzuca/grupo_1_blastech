@@ -22,7 +22,7 @@ module.exports = [
 
 
     check('price')
-    .isDecimal({
+    .isInt({
         min:1
     }).withMessage('El producto debe tener un precio válido'),
 

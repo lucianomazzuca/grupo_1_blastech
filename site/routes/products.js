@@ -7,6 +7,8 @@ const multer = require('multer');
 const path = require('path');
 const logCheck = require('../middlewares/logCheck')
 const adminCheck = require('../middlewares/adminCheck');
+const productEditValidator = require('../validations/productEditValidator.js');
+const productCreateValidator = require('../validations/productCreateValidator.js');
 const productValidator = require('../validations/productValidator.js');
 
 var storage = multer.diskStorage({
@@ -29,12 +31,12 @@ router.get('/cart', productsController.cart);
 router.get('/search',productsController.search);
 
 router.get('/cargar/productos',logCheck, adminCheck, upload.any(), productsController.cargar);
-router.post('/cargar/productos', upload.any(), productValidator,  productsController.subir);
+router.post('/cargar/productos', upload.any(), productCreateValidator,  productsController.subir);
 
 //Admin
 router.get('/editlist', logCheck, adminCheck,productsController.editList);
 router.get('/show/:id', logCheck, adminCheck, productsController.show)
-router.put('/edit/:id', logCheck, adminCheck, productValidator, upload.any(), productsController.edit)
+router.put('/edit/:id', logCheck, adminCheck,upload.any(), productEditValidator, productsController.edit)
 
 router.delete('/delete/:id',adminCheck, productsController.eliminar)
 

@@ -217,76 +217,76 @@ module.exports = {
                     })
 
                 })
-            }
+        }
     },
-        editList: function (req, res) {
-            let productos = db.Products.findAll({
-                include: [
-                    {
-                        association: 'brands',
-                    },
-                    {
-                        association: 'categories',
-                    },
-                ]
-            });
-
-            let categorias = db.Categories.findAll();
-
-            Promise.all([productos, categorias])
-                .then(([productos, categorias]) => {
-                    res.render('listadoEdit', {
-                        title: "Blastech",
-                        css: "listadoEdit.css",
-                        productos: productos,
-                        categorias: categorias,
-                        
-                    })
-                })
-
-        },
-        show: function (req, res) {
-            let product = db.Products.findOne({
-                where: {
-                    id: req.params.id
+    editList: function (req, res) {
+        let productos = db.Products.findAll({
+            include: [
+                {
+                    association: 'brands',
                 },
-                include: [
-                    {
-                        association: 'brands'
-                    },
-                    {
-                        association: 'categories'
-                    }
-                ]
-            });
+                {
+                    association: 'categories',
+                },
+            ]
+        });
 
-            let brands = db.Brands.findAll({
-                order: [
-                    ['brand_name', 'ASC']
-                ]
-            });
-            let categories = db.Categories.findAll({
-                order: [
-                    ['category_name', 'ASC']
-                ]
-            });
-            Promise.all([product, brands, categories])
-                .then(([product, brands, categories]) => {
-                    res.render('editForm', {
-                        title: "Blastech",
-                        css: "editForm.css",
-                        brands: brands,
-                        categories: categories,
-                        product: product,
-                        script : "productEdit.js",
-                    })
+        let categorias = db.Categories.findAll();
+
+        Promise.all([productos, categorias])
+            .then(([productos, categorias]) => {
+                res.render('listadoEdit', {
+                    title: "Blastech",
+                    css: "listadoEdit.css",
+                    productos: productos,
+                    categorias: categorias,
+
                 })
-        },
-        edit: function (req, res, next) {
-        
-            let errors = validationResult(req)
+            })
 
-            if (errors.isEmpty()){
+    },
+    show: function (req, res) {
+        let product = db.Products.findOne({
+            where: {
+                id: req.params.id
+            },
+            include: [
+                {
+                    association: 'brands'
+                },
+                {
+                    association: 'categories'
+                }
+            ]
+        });
+
+        let brands = db.Brands.findAll({
+            order: [
+                ['brand_name', 'ASC']
+            ]
+        });
+        let categories = db.Categories.findAll({
+            order: [
+                ['category_name', 'ASC']
+            ]
+        });
+        Promise.all([product, brands, categories])
+            .then(([product, brands, categories]) => {
+                res.render('editForm', {
+                    title: "Blastech",
+                    css: "editForm.css",
+                    brands: brands,
+                    categories: categories,
+                    product: product,
+                    // script : "productEdit.js",
+                })
+            })
+    },
+    edit: function (req, res, next) {
+
+        let errors = validationResult(req)
+        
+        if (errors.isEmpty()){
             db.Products.update({
                 model: req.body.model,
                 price: req.body.price,
