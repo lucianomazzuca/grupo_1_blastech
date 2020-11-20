@@ -61,7 +61,7 @@
                       <span class="text-danger"><%= (typeof errors != 'undefined' && errors.first_name)?errors.first_name.msg:"" %>
                       </span>
                   </div>
-                  
+
                   <div class="input-contenedor">
                     <i class="fas fa-user icon"></i>
                     <span id="AuLetra"> Apellido de Usuario:</span>
@@ -119,6 +119,15 @@
                     <span id="AuLetra"> Dirección:</span>
                     <input id="txtpas" type="text" name="adress" value="<%= user.adress %>" placeholder="Actualizar Dirección">
                   </div>
+
+                  
+
+
+                  <a href="/users/restablecer"><button type="button" class="btn btn-success boton">Cambiar contraseña</button></a>
+
+
+
+                  
       
                   
                   <div id="pos">

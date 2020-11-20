@@ -1,51 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 
-  <%- include('./partials/head.ejs') %>
-  
+<%- include('./partials/head.ejs') %>
+
 <body>
 
-  <%- include('partials/header') %> 
+  <%- include('partials/header') %>
 
 
 
-      <form class="formulario">
-    
-        <h1>Restablecer Contraseña</h1>
-         <div class="contenedor">
-             
-             <div class="input-contenedor">
-             <i class="fas fa-envelope icon"></i>
-             <input id="txtpas" type="text" placeholder="Correo Electronico">
-             
-             </div>
-             
-             <div class="input-contenedor">
+  <form class="formulario">
+
+    <h1>Cambiar Contraseña</h1>
+    <div class="contenedor">
+      <form action="/users/restablecer/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <div class="input-contenedor">
+          <i class="fas fa-envelope icon"></i>
+          <input id="txtpas" type="text" placeholder="Correo Electronico" name="email">
+          <span class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg:"" %>
+
+        </div>
+          <div class="input-contenedor">
             <i class="fas fa-key icon"></i>
-             <input id="txtpas" type="password" placeholder="Contraseña Actual">
-             </div>
-
-             <div class="input-contenedor">
-              <i class="fas fa-key icon"></i>
-               <input id="txtpas" type="password" placeholder="Nueva Contraseña">
-               </div>
-
-             <div class="input-contenedor">
-                <i class="fas fa-key icon"></i>
-                 <input id="txtpas" type="password" placeholder="Repetir Contraseña">
-             </div>
-             
-             <div id="pos">
-              <button class="button"><a href="/">Iniciar Sesion</a></button>
+            <input id="txtpas" type="password" placeholder="Contraseña Actual" name="oldpass">
+            <span class="text-danger"><%= (typeof errors != 'undefined' && errors.oldpass)?errors.oldpass.msg:"" %>
           </div>
-             <p>¿Ya tienes una cuenta?<a class="link" href="/users/login">Iniciar Sesion</a></p>
-         </div>
-        </form>
+
+          <div class="input-contenedor">
+            <i class="fas fa-key icon"></i>
+            <input id="txtpas" type="password" placeholder="Nueva Contraseña" name="newpass">
+            <span class="text-danger"><%= (typeof errors != 'undefined' && errors.newpass)?errors.newpass.msg:"" %>
+          </div>
+
+          <div class="input-contenedor">
+            <i class="fas fa-key icon"></i>
+            <input id="txtpas" type="password" placeholder="Repetir Contraseña" name="newpass2">
+            <span class="text-danger"><%= (typeof errors != 'undefined' && errors.newpass2)?errors.newpass2.msg:"" %>
+          </div>
+
+          <div id="pos">
+            <button id="public" type="submit" class="button"><a href="">Cambiar contraseña</a></button>
+            
+          </div>
+          <!-- <p>¿Ya tienes una cuenta?<a class="link" href="/users/login">Iniciar Sesion</a></p> -->
+    </div>
+  </form>
 
 
 
-        <%- include('./partials/footer.ejs') %> 
+  <%- include('./partials/footer.ejs') %>
 
 
-      </body>
-      </html>
+</body>
+
+</html>

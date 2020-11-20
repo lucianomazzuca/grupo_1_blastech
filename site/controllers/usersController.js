@@ -100,6 +100,39 @@ module.exports = {
             css: "login.css",
         });
     },
+
+    processRestablecer: function (req, res) {
+        let errors = validationResult(req)
+
+        if (errors.isEmpty()) {
+            db.Users.update({
+                password: bcrypt.hashSync(req.body.newpass2, 10)
+            },
+                {
+                    where: {
+                        id: req.params.id
+                    }
+                })
+                .then(result => {
+                    console.log(result)
+                    res.redirect("/users/perfiles#datos")
+                   
+                })
+
+        } else {
+            db.Users.findByPk(req.session.user.id)
+                .then(user => {
+                    res.render('restablecer', {
+                        title: 'Restablecer contraseña',
+                        css: 'perfil.css',
+                        errors: errors.mapped(),
+                        user: user
+                       
+                    })
+
+                })
+        }
+    },
     perfil: function (req, res) {
         db.Users.findByPk(req.session.user.id)
             .then(user => {
@@ -125,7 +158,7 @@ module.exports = {
                 first_name: req.body.first_name.trim(),
                 last_name: req.body.last_name.trim(),
                 date: req.body.date,
-                image:(req.files[0])?req.files[0].filename:req.session.user.avatar,
+                image: (req.files[0]) ? req.files[0].filename : req.session.user.avatar,
                 adress: req.body.adress,
                 city: req.body.city,
                 province: req.body.province
