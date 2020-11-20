@@ -8,6 +8,7 @@ const loginValidator = require('../validations/loginValidator');
 
 const upImagesUsers = require('../middlewares/upImagesUsers');
 const registerValidator = require('../validations/registerValidator');
+const userEditValidator = require('../validations/userEditValidator');
 
 router.get('/registro', usersController.registro);
 router.post('/registro', upImagesUsers.any(), registerValidator, usersController.processRegister);
@@ -18,7 +19,7 @@ router.post('/login', loginValidator, usersController.processLogin);
 router.get('/restablecer', usersController.restablecer);
 
 router.get('/perfiles', usersController.perfil);
-router.put('/perfiles/:id',upImagesUsers.any(),usersController.perfilEdit);
+router.put('/perfiles/:id',upImagesUsers.any(),userEditValidator, usersController.perfilEdit);
 
 router.get('/logout', usersController.logout);
 

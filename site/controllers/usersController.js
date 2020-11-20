@@ -14,7 +14,7 @@ module.exports = {
         res.render("login", {
             title: "Ingresa tus datos",
             css: "login.css",
-            
+
         });
     },
     processLogin: function (req, res) {
@@ -26,34 +26,34 @@ module.exports = {
                     email: req.body.email,
                 },
             })
-            .then((user) => {
-                req.session.user = {
-                    id: user.id,
-                    first_name: user.first_name,
-                    last_name: user.last_name,
-                    email: user.email,
-                    image: user.image,
-                    category: user.category,
-                };
-                if (req.body.recordar) {
-                    res.cookie("user", req.session.user, {
-                        maxAge: 1000 * 60 * 60,
-                    });
-                }
-                res.locals.user = req.session.user;
-                return res.redirect("/");
-            })
-            .catch((error) => {
-                res.send(error);
-            });
+                .then((user) => {
+                    req.session.user = {
+                        id: user.id,
+                        first_name: user.first_name,
+                        last_name: user.last_name,
+                        email: user.email,
+                        image: user.image,
+                        category: user.category,
+                    };
+                    if (req.body.recordar) {
+                        res.cookie("user", req.session.user, {
+                            maxAge: 1000 * 60 * 60,
+                        });
+                    }
+                    res.locals.user = req.session.user;
+                    return res.redirect("/");
+                })
+                .catch((error) => {
+                    res.send(error);
+                });
         } else {
             res.render("Login", {
                 title: "Ingresar",
                 css: "login.css",
                 errors: errors.mapped(),
                 old: req.body,
-                script : "userLogin.js",
-                
+                script: "userLogin.js",
+
             });
         }
     },
@@ -61,7 +61,7 @@ module.exports = {
         res.render("registro", {
             title: "Registro de Usuario",
             css: "register.css",
-            
+
         });
     },
     processRegister: function (req, res) {
@@ -89,7 +89,7 @@ module.exports = {
                 css: "register.css",
                 errors: errors.mapped(),
                 old: req.body,
-                script : "userRegistro.js",
+                script: "userRegistro.js",
             });
         }
     },
@@ -102,42 +102,61 @@ module.exports = {
     },
     perfil: function (req, res) {
         db.Users.findByPk(req.session.user.id)
-          .then(user => {
-            res.render('perfilUser', {
-                title: 'Perfil de Usuario',
-                css: 'perfil.css',
-                user: user,
-                productos: dbProducts.filter(producto =>{
-                    return producto.category != "visited" && producto.category != "in-sale"
+            .then(user => {
+                res.render('perfilUser', {
+                    title: 'Perfil de Usuario',
+                    css: 'perfil.css',
+                    user: user,
+                    productos: dbProducts.filter(producto => {
+                        return producto.category != "visited" && producto.category != "in-sale"
+                    })
                 })
             })
-          })
-          .catch( error => {
-            res.send(error)
-          })
+            .catch(error => {
+                res.send(error)
+            })
     },
     perfilEdit: function (req, res) {
-        db.Users.update({
-            date: req.body.date,
-           
-            adress: req.body.adress,
-            city: req.body.city,
-            province: req.body.province
-        },
-        {
-            where : {
-                id : req.params.id
-            }
-        })
-        .then( result => {
-            console.log(result)
-            res.redirect("/users/perfiles",{
-                script : "userEdit.js",
-            });
-        })
-        .catch( err => {
-            res.send(err)
-        })
+
+        let errors = validationResult(req)
+
+        if (errors.isEmpty()) {
+            db.Users.update({
+                first_name: req.body.first_name.trim(),
+                last_name: req.body.last_name.trim(),
+                date: req.body.date,
+                image:(req.files[0])?req.files[0].filename:req.session.user.avatar,
+                adress: req.body.adress,
+                city: req.body.city,
+                province: req.body.province
+            },
+                {
+                    where: {
+                        id: req.params.id
+                    }
+                })
+                .then(result => {
+                    console.log(result)
+                    res.redirect("/users/perfiles#datos")
+                    // script : "userEdit.js",
+                    // });
+                })
+
+        } else {
+            db.Users.findByPk(req.session.user.id)
+                .then(user => {
+                    res.render('perfilUser', {
+                        title: 'Perfil de Usuario',
+                        css: 'perfil.css',
+                        errors: errors.mapped(),
+                        user: user,
+                        productos: dbProducts.filter(producto => {
+                            return producto.category != "visited" && producto.category != "in-sale"
+                        })
+                    })
+
+                })
+        }
     },
     logout: function (req, res) {
         req.session.destroy();
@@ -175,17 +194,17 @@ module.exports = {
             });
         });
     },
-    delete: function(req, res) {
+    delete: function (req, res) {
         db.Users.destroy({
             where: {
                 id: req.params.id
             }
         })
-        .then(() => {
-            res.redirect('/users/listado')
-        })
-        .catch(errores => {
-            res.send(errores)
-        })
+            .then(() => {
+                res.redirect('/users/listado')
+            })
+            .catch(errores => {
+                res.send(errores)
+            })
     },
 };
