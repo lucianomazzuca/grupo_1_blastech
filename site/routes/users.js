@@ -3,6 +3,9 @@ var router = express.Router();
 const logCheck = require('../middlewares/logCheck')
 const guestCheck = require('../middlewares/guestCheck')
 
+
+
+
 const usersController = require('../controllers/usersController.js');
 const loginValidator = require('../validations/loginValidator');
 
@@ -19,7 +22,7 @@ router.post('/login', loginValidator, usersController.processLogin);
 router.get('/restablecer', usersController.restablecer);
 
 router.get('/perfiles', usersController.perfil);
-router.put('/perfiles/:id',upImagesUsers.any(),userEditValidator, usersController.perfilEdit);
+router.put('/perfiles/:id', upImagesUsers.any(), userEditValidator, usersController.perfilEdit);
 
 router.get('/logout', usersController.logout);
 

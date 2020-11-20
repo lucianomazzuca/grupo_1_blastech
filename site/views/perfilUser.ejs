@@ -39,17 +39,13 @@
 							<div class="tab-pane fade " id="datos" role="tabpanel" aria-labelledby="home-tab">
 								<div class="contenedor">
                   
-                  <form action="/users/perfiles/<%= user.id %> ?_method=PUT" method="POST" class="prueba">
+                  <form action="/users/perfiles/<%= user.id %> ?_method=PUT" method="POST" class="prueba" enctype="multipart/form-data">
                  
                     <div>
                       <div class="col-12 col-md-4 mt-3 d-flex flex-column align-items-center">
-                          <% if (user.rol == "store") { %>
-                        <img src="/images/logos/<%= user.image %>" class="avatarImg" alt="avatar" width="75%"
+                          
+                        <img src="/images/user/<%= user.image %>" class="avatarImg" alt="avatar" width="75%"
                           style="object-fit: cover; object-position: top;">
-                          <% } else { %>
-                        <img src="/images/user/<%= user.image %>" class="avatarImg" alt="avatar" width="75%" 
-                          style="object-fit: cover; object-position: top;">
-                          <% } %>
                         <div class="form-group w-75">
                           <input type="file" class="form-control" id="avatarImput" name="avatar" placeholder="Actualizar Nombre">
                         </div>
