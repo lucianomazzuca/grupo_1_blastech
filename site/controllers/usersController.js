@@ -14,7 +14,7 @@ module.exports = {
         res.render("login", {
             title: "Ingresa tus datos",
             css: "login.css",
-
+            script: "userLogin.js",
         });
     },
     processLogin: function (req, res) {

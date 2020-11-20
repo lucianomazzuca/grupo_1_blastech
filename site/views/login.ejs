@@ -22,7 +22,7 @@
                 '' %>" 
                 type="email" placeholder="Correo Electronico" name="email">
             </div>
-            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
+            <small id="errorEmail" class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %> </small>
 
             
             <div class="input-contenedor">
@@ -32,7 +32,7 @@
                 '' %>"
                 type="password" placeholder="Contraseña" name="password">
             </div>
-            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password)?errors.password.msg: "" %> </small>
+            <small id="errorPass" class="text-danger"><%= (typeof errors != 'undefined' && errors.password)?errors.password.msg: "" %> </small>
 
             <div class="recordar-container">
                 <label for="recordar">Recordar cuenta:</label>

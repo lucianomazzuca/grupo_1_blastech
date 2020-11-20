@@ -171,8 +171,7 @@ module.exports = {
                     css: "carga-producto.css",
                     marcas: marcas,
                     categorias: categorias,
-
-                    // script: 'addProduct.js'
+                    script: 'addProduct.js'
                 })
             })
     },
@@ -278,7 +277,7 @@ module.exports = {
                     brands: brands,
                     categories: categories,
                     product: product,
-                    // script : "productEdit.js",
+                    script : "productEdit.js",
                 })
             })
     },

@@ -1,5 +1,5 @@
 window.addEventListener("load", () => {
-
+    console.log('vinculado')
     const form = document.querySelector(".edit");
 
     const inputModel = form.querySelector('input[name="model"]');
