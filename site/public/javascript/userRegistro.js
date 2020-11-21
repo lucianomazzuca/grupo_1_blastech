@@ -1,5 +1,5 @@
 window.addEventListener('load',function(){
-    console.log('holis');
+    console.log('vinculado');
 
     const form = document.querySelector(".formulario");
 
@@ -8,7 +8,7 @@ window.addEventListener('load',function(){
     const inputEmail = form.querySelector('input[name="email"]');
     const inputPass = form.querySelector('input[name="pass"]');
     const inputPass2 = form.querySelector('input[name="pass2"]');
-    const inputImagen = form.querySelector('input[name="image"]');
+    const inputImagen = form.querySelector('input[name="avatar"]');
 
     const errores = {};
     const regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
@@ -23,6 +23,7 @@ window.addEventListener('load',function(){
 
         for(let i = 0; i < elements.length - 1; i++) {
             if(elements[i].value == ''){
+                console.log(elements[i])
                 elements[i].classList.add('is-invalid');
                 error = true;
             }
@@ -99,7 +100,7 @@ window.addEventListener('load',function(){
 
         switch (true) {
             case this.value.length === 0:
-                errorPass2.innerHTML = "Reigrese su contraseña";
+                errorPass2.innerHTML = "Reingrese su contraseña";
                 this.classList.add('is-invalid')
                 break;
             case this.value !== inputPass.value :
@@ -112,7 +113,6 @@ window.addEventListener('load',function(){
                 errorPass2.innerHTML = ""
                 break;
         }
-
     })
 
     inputEmail.addEventListener('blur',function(){
@@ -132,7 +132,6 @@ window.addEventListener('load',function(){
                 errorEmail.innerHTML = ""
                 break;
         }
-
     })
 
     inputImagen.addEventListener('change',function(e){
@@ -144,24 +143,11 @@ window.addEventListener('load',function(){
                 this.classList.add('is-invalid')
                 this.value = '';
                 vistaPrevia.src = "";
-            break
-        
+                 break;
             default:
                 this.classList.remove('is-invalid');
                 this.classList.add('is-valid');
                 errorImagen.innerHTML = "";
-                
-                let reader = new FileReader();
-               
-                reader.readAsDataURL(e.target.files[0]);
-                
-                reader.onload = function(){
-                vistaPrevia.src = reader.result;
-                };
-                this.classList.remove('is-invalid');
-                this.classList.add('is-valid');
-                errorImagen.innerHTML = "";
-
         }
     })
 

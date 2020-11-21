@@ -7,13 +7,10 @@
 
   <%- include('partials/header') %>
 
-
   <form action="" method="POST" enctype="multipart/form-data" class="formulario">
 
     <h1>Registrate</h1>
     <div class="contenedor">
-
-     
 
       <div class="input-contenedor">
         
@@ -22,7 +19,7 @@
           id="first_name" name="first_name" value="<%= (typeof old != 'undefined' && old.first_name)?old.first_name:'' %>"
           placeholder="Nombre" />
       </div>
-      <small class="text-danger"><%= (typeof errors != 'undefined' && errors.first_name)?errors.first_name.msg: "" %></small>
+      <small id="errorNombre" class="text-danger"><%= (typeof errors != 'undefined' && errors.first_name)?errors.first_name.msg: "" %></small>
 
       <div class="input-contenedor">
         
@@ -31,9 +28,7 @@
           id="last_name" name="last_name" value="<%= (typeof old != 'undefined' && old.last_name)?old.last_name:'' %>"
           placeholder="Apellido" />
       </div>
-      <small class="text-danger"><%= (typeof errors != 'undefined' && errors.last_name)?errors.last_name.msg: "" %></small>
-
-
+      <small id="errorApellido" class="text-danger"><%= (typeof errors != 'undefined' && errors.last_name)?errors.last_name.msg: "" %></small>
 
       <div class="input-contenedor">
         
@@ -42,10 +37,7 @@
           id="email" value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>" placeholder="Email"
           name="email" />
       </div>
-      <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %></small>
-      
-
-
+      <small id="errorEmail" class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %></small>
 
       <div class="input-contenedor">
         
@@ -53,7 +45,7 @@
           class="form-control <%= (typeof errors != 'undefined' && errors.pass)?"is-invalid": ""  %>" id="pass"
           placeholder="Contraseña" name="pass" />
       </div>
-      <small class="text-danger"><%= (typeof errors != 'undefined' && errors.pass)?errors.pass.msg: "" %></small>
+      <small id="errorPass" class="text-danger"><%= (typeof errors != 'undefined' && errors.pass)?errors.pass.msg: "" %></small>
 
 
       <div class="input-contenedor">
@@ -62,7 +54,7 @@
           class="form-control <%= (typeof errors != 'undefined' && errors.pass2)?"is-invalid": ""  %>" id="pass2"
           placeholder="Reingresar contraseña" name="pass2" />
       </div>
-      <small class="text-danger"><%= (typeof errors != 'undefined' && errors.pass2)?errors.pass2.msg: "" %></small>
+      <small id="errorPass2" class="text-danger"><%= (typeof errors != 'undefined' && errors.pass2)?errors.pass2.msg: "" %></small>
 
       <div class="input-contenedor">
         <div class="custom-file ">
@@ -70,22 +62,18 @@
             lang="es" name="avatar">
           <label class="custom-file-label" for="customFileLang">Elegi tu Avatar</label>
         </div>
-        <small class="text-danger"><%= (typeof errorFormato != 'undefined')?errorFormato: "" %></small>
+        <small id="errorImagen" class="text-danger"><%= (typeof errorFormato != 'undefined')?errorFormato: "" %></small>
       </div>
 
-
-
-
-
-
       <div id="pos">
+        <small id="errorSubmit" class="text-danger"></small>
         <button type= "sumbit" class="button">Registrarse</a></button>
       </div>
       <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
-      <button class="cuentas" type="button"><a class="link" href="https://www.Facebook.com"> <span> <i
+      <!-- <button class="cuentas" type="button"><a class="link" href="https://www.Facebook.com"> <span> <i
               class="fab fa-facebook-f"> </i> Ingresar con Facebook </a> </span> </button>
       <button class="cuentas" type="button"><a class="link" href="https://www.Gmail.com"> <span> <i
-              class="fab fa-google"> </i> Ingresar con Google </a></span> </button>
+              class="fab fa-google"> </i> Ingresar con Google </a></span> </button> -->
       <p>¿Ya tienes una cuenta?<a class="link" href="/users/login">Iniciar Sesion</a></p>
     </div>
   </form>

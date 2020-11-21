@@ -1,5 +1,4 @@
 window.addEventListener("load", () => {
-
     const form = document.querySelector("#formAdd");
 
     const inputModel = form.querySelector('input[name="model"]');
@@ -11,12 +10,8 @@ window.addEventListener("load", () => {
     const inputDescription = form.querySelector('textarea[name="description"]');
     const inputFeatures = form.querySelector('textarea[name="features"]');
 
-    
-
-
     let errors = {};
     let regExExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
-
 
     form.addEventListener("submit", function (e) {
         e.preventDefault();

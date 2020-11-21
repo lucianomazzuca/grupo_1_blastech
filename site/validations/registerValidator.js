@@ -36,10 +36,10 @@ module.exports = [
 
     check('pass')
     .isLength({
-        min:8,
+        min:6,
         max:16
     })
-    .withMessage("Debes ingresar una contraseña entre 8 y 16 caracteres"),
+    .withMessage("Debes ingresar una contraseña entre 6 y 16 caracteres"),
 
     body('pass2')
     .custom((value,{req}) => {
