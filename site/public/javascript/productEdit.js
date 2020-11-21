@@ -12,10 +12,11 @@ window.addEventListener("load", () => {
     form.addEventListener("submit", function (e) {
         e.preventDefault();
         let error = false;
-        let elements = form.elements;
+        let elements = form.querySelectorAll('input');
 
         for(let i = 0; i < elements.length - 1; i++) {
-            if(elements[i].value == ''){
+            if(elements[i].name != 'image' && elements[i].value == ''){
+                console.log(elements[i])
                 elements[i].classList.add('is-invalid');
                 error = true;
             }
