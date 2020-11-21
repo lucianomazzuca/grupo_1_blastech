@@ -7,7 +7,7 @@
 
   <section class="principal">
     <div class="container">
-      <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST"
+      <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST" class="edit"
         enctype="multipart/form-data">
 
         <h2 class="col-12">Editar Producto</h2>
@@ -15,7 +15,7 @@
         <div class="form-group col-12 col-md-6">
           <label for="tipo" id="tipo">Modelo</label>
           <input type="text" name="model" value="<%= product.model%>">
-          <span class="text-danger"><%= (typeof errors != 'undefined' && errors.model)?errors.model.msg:"" %>
+          <span id="errorModel" class="text-danger" ><%= (typeof errors != 'undefined' && errors.model.id)?errors.model.id.msg:"" %>
           </span>
         </div>
 
@@ -28,7 +28,7 @@
               <option value="<%= marca.id %>"><%= marca.brand_name %> </option>
               <% }) %>
         </select>
-        <span class="text-danger"><%= (typeof errors != 'undefined' && errors.brand_id)?errors.brand_id.msg:"" %>
+        <span id="errorBrand" class="text-danger" ><%= (typeof errors != 'undefined' && errors.brand_id)?errors.brand_id.msg:"" %>
         </span>
         </div>
 
@@ -43,7 +43,7 @@
         <div class="form-group col-12 col-md-8">
           <label for="tipo"> Descripcion </label>
           <textarea name="description"><%= product.description%>"</textarea>
-          <span class="text-danger"><%= (typeof errors != 'undefined' && errors.description)?errors.description.msg:"" %>
+          <span id="errorDescription" class="text-danger" ><%= (typeof errors != 'undefined' && errors.description)?errors.description.msg:"" %>
         </div>
 
         <div class="form-group col-12 col-md-6">
@@ -55,14 +55,14 @@
             <option value="<%= categoria.id %>"><%= categoria.category_name %> </option>
             <% }) %>
       </select>
-        <span class="text-danger"><%= (typeof errors != 'undefined' && errors.id_categoria)?errors.id_categoria.msg:"" %>
+        <span id="errorCategory" class="text-danger" ><%= (typeof errors != 'undefined' && errors.id_categoria)?errors.id_categoria.msg:"" %>
         </span>
         </div>
 
         <div class="form-group col-12 col-md-6 col-lg-4">
           <label for=""> Precio</label>
           <input name="price" type="number" value="<%= product.price%>">
-          <span class="text-danger"><%= (typeof errors != 'undefined' && errors.price)?errors.price.msg:"" %>
+          <span id="errorPrice" class="text-danger" ><%= (typeof errors != 'undefined' && errors.price)?errors.price.msg:"" %>
           </span>
         </div>
 
@@ -71,8 +71,11 @@
           <input name="discount" type="number" value="<%= product.discount%>">
         </div>
         <div class="btn-group">
+          <small id="errorSubmit" class="text-danger"></small>
           <button id="public" href="/products/editList" type="">Cancelar</button>
           <button id="public" type="submit" name="id" value="<%= product.id %> ">Guardar</button>
+          
+          
         </div>
       </form>
     </div>

@@ -277,7 +277,7 @@ module.exports = {
                     brands: brands,
                     categories: categories,
                     product: product,
-                    script : "productEdit.js",
+                    script: 'productEdit.js'
                 })
             })
     },
