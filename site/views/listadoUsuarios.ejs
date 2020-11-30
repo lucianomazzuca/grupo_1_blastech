@@ -11,7 +11,7 @@
         </div>
 
         <div class="container-lg">
-            <form id="searchForm" action="/users/listado/search">
+            <form id="searchForm" action="/users/listado/search/1">
                 <input type="text" placeholder="Buscar nombre, apellido o email" name="term">
                 <button type="submit" >Buscar</button>
             </form>
@@ -53,9 +53,24 @@
             <!-- Fin de fila de usuarios -->
         </div>
 
+        <!-- Pagination component -->
+        <div class="container-lg page-buttons">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination" id="button-container" 
+                    data-currentPage="<%- currentPage %>" 
+                    data-rows="<%- rows %>" 
+                    data-limit="<%- limit %>"
+                    data-search= <%= (typeof search != 'undefined') ? search : "" %>>
+
+
+                </ul>
+              </nav>
+        </div>
+
     </section>
 
 
     <%- include('./partials/footer.ejs')%>
+    <script type="text/javascript" src="/javascript/pageButtons.js"></script>
 </body>
 </html>

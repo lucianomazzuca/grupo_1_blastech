@@ -44,10 +44,12 @@
                     <div>
                       <div class="col-12 col-md-4 mt-3 d-flex flex-column align-items-center">
                           
-                        <img src="/images/user/<%= user.image %>" class="avatarImg" alt="avatar" width="75%"
+                        <img id="vistaPrevia" src="/images/user/<%= user.image %>" class="avatarImg" alt="avatar" width="75%"
                           style="object-fit: cover; object-position: top;">
                         <div class="form-group w-75">
                           <input type="file" class="form-control" id="avatarImput" name="avatar" placeholder="Actualizar Nombre">
+                          <span id="errorFoto" class="text-danger"><%= (typeof errors != 'undefined' && errors.last_name)?errors.last_name.msg:"" %>
+                          </span>
                         </div>
                       </div>
                     </div>

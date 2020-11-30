@@ -83,3 +83,16 @@ body {
 .campo .btn {
     padding: 0 15px;
 }
+
+
+/* Pagination component */
+.page-buttons {
+    margin-top: 1em;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#button-container {
+    display: flex;
+    flex-wrap: wrap;
+}

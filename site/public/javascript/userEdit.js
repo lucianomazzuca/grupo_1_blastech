@@ -1,9 +1,7 @@
 window.addEventListener('load',function(){
-    console.log('holis');
-
     const form = document.querySelector(".prueba");
 
-    const inputImagen = form.querySelector('input[name="image"]');
+    const inputImagen = form.querySelector('input[name="avatar"]');
     const inputFecha = form.querySelector('input[name="date"]');
     const inputProvincia = form.querySelector('input[name="province"]');
     const inputCiudad = form.querySelector('input[name="city"]');
@@ -27,7 +25,7 @@ window.addEventListener('load',function(){
             default:
                 this.classList.remove('is-invalid');
                 this.classList.add('is-valid');
-                errorImagen.innerHTML = "";
+                errorFoto.innerHTML = "";
                 
                 let reader = new FileReader();
                
@@ -36,10 +34,6 @@ window.addEventListener('load',function(){
                 reader.onload = function(){
                 vistaPrevia.src = reader.result;
                 };
-                this.classList.remove('is-invalid');
-                this.classList.add('is-valid');
-                errorImagen.innerHTML = "";
-
         }
     })
 

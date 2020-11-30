@@ -28,8 +28,8 @@ router.put('/perfiles/:id', upImagesUsers.any(), userEditValidator, usersControl
 
 router.get('/logout', usersController.logout);
 
-router.get('/listado', usersController.list);
-router.get('/listado/search', usersController.listSearch);
+router.get('/listado/all/:page', usersController.list);
+router.get('/listado/search/:page', usersController.listSearch);
 
 router.delete('/delete/:id', usersController.delete);
 

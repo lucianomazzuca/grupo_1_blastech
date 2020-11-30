@@ -139,6 +139,7 @@ module.exports = {
                 res.render('perfilUser', {
                     title: 'Perfil de Usuario',
                     css: 'perfil.css',
+                    script : "userEdit.js",
                     user: user,
                     productos: dbProducts.filter(producto => {
                         return producto.category != "visited" && producto.category != "in-sale"
@@ -199,11 +200,21 @@ module.exports = {
         return res.redirect("/");
     },
     list: function (req, res) {
-        db.Users.findAll().then((usuarios) => {
+        const currentPage = req.params.page;
+        let limit = 5;
+
+        db.Users.findAndCountAll({
+            offset: (currentPage - 1) * limit,
+            limit: limit,
+        })
+        .then((result) => {
             res.render("listadoUsuarios", {
                 title: "Listado de usuarios",
                 css: "listado-usuarios.css",
-                usuarios,
+                usuarios: result.rows,
+                rows: result.count,
+                currentPage,
+                limit
             });
         });
     },
@@ -211,7 +222,12 @@ module.exports = {
         let term = req.query.term;
         term = term.trim().toLowerCase();
 
-        db.Users.findAll({
+        const currentPage = req.params.page;
+        let limit = 5;
+
+        db.Users.findAndCountAll({
+            offset: (currentPage - 1) * limit,
+            limit: limit,
             where: {
                 [Op.or]: [
                     { first_name: { [Op.like]: "%" + term + "%" } },
@@ -219,13 +235,21 @@ module.exports = {
                     { email: { [Op.like]: "%" + term + "%" } },
                 ],
             },
-        }).then((usuarios) => {
+        }).then((result) => {
             res.render("listadoUsuarios", {
                 title: "Listado de usuarios",
                 css: "listado-usuarios.css",
-                usuarios,
+                usuarios: result.rows,
+                rows: result.count,
+                currentPage,
+                limit,
+                search: term
             });
-        });
+        })
+        .catch(error => {
+            res.send(error)
+        })
+
     },
     delete: function (req, res) {
         db.Users.destroy({
