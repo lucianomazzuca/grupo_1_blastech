@@ -20,7 +20,7 @@ window.addEventListener("load", () => {
 
             case !regExExtensions.exec(this.value) :
                 errores.foto = "Solo imagenes con extension jpg, jpeg, png, o gif"
-                errorFoto.innerHTML = errores.foto;
+                errorImagen.innerHTML = errores.foto;
                 this.classList.add('is-invalid')
                 this.value = '';
                 vistaPrevia.src = "";
@@ -29,7 +29,7 @@ window.addEventListener("load", () => {
             default:
                 this.classList.remove('is-invalid');
                 this.classList.add('is-valid');
-                errorFoto.innerHTML = "";
+                errorImagen.innerHTML = "";
                 
                 let reader = new FileReader();
                
