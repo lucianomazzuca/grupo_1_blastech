@@ -2,12 +2,41 @@ window.addEventListener("load", () => {
     console.log('vinculado')
     const form = document.querySelector(".edit");
 
+    const inputImagen = form.querySelector('input[name="images"]');
     const inputModel = form.querySelector('input[name="model"]');
     const selectBrand = form.querySelector('select[name="brand"]');
     const inputDescription = form.querySelector('textarea[name="description"]');
     const selectCategory = form.querySelector('select[name="category"]');
     const inputPrice = form.querySelector('input[name="price"]');
+    
+    const errores = {};
+    const regExExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
 
+    inputImagen.addEventListener('change',function(e){
+
+        switch (true) {
+            case !regExExtensions.exec(this.value) :
+                errores.foto = "Solo imagenes con extension jpg, jpeg, png, o gif"
+                errorFoto.innerHTML = errores.foto;
+                this.classList.add('is-invalid')
+                this.value = '';
+                vistaPrevia.src = "";
+            break
+        
+            default:
+                this.classList.remove('is-invalid');
+                this.classList.add('is-valid');
+                errorFoto.innerHTML = "";
+                
+                let reader = new FileReader();
+               
+                reader.readAsDataURL(e.target.files[0]);
+                
+                reader.onload = function(){
+                vistaPrevia.src = reader.result;
+                };
+        }
+    }) 
 
     form.addEventListener("submit", function (e) {
         e.preventDefault();

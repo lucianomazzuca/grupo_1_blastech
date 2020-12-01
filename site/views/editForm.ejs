@@ -35,15 +35,22 @@
         <div class="form-group col-12 col-md-4">
           <label for="">Imagen</label>
           <figure>
-            <img src="/images/products/<%= product.images %> " alt="" srcset="">
+            <img id="vistaPrevia" src="/images/products/<%= product.images %>" class="avatarImg" alt="avatar" width="75%"
+                          style="object-fit: cover; object-position: top;">
           </figure>
-          <input type="file" name="image" value="/images/products/<%= product.images %>">
+          <input type="file" name="images" id="avatarInput" value="/images/products/<%= product.images %>">
+          <span id="errorFoto" class="text-danger"><%= (typeof errors != 'undefined' && errors.last_name)?errors.last_name.msg:"" %>
         </div>
 
         <div class="form-group col-12 col-md-8">
           <label for="tipo"> Descripcion </label>
           <textarea name="description"><%= product.description%>"</textarea>
           <span id="errorDescription" class="text-danger" ><%= (typeof errors != 'undefined' && errors.description)?errors.description.msg:"" %>
+        </div>
+
+        <div class="form-group col-12 col-md-12 features">
+          <label for="tipo"> Especificaciones </label>
+          <textarea name="features"><%= product.features%>"</textarea>
         </div>
 
         <div class="form-group col-12 col-md-6">

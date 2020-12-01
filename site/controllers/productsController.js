@@ -4,7 +4,7 @@ const fs = require("fs");
 const db = require("../database/models");
 const { validationResult } = require('express-validator');
 const sequelize = db.sequelize;
-const { Op } = require("sequelize");
+const { Op, where } = require("sequelize");
 
 module.exports = {
     listado: function (req, res) {
@@ -331,7 +331,7 @@ module.exports = {
                         errors: errors.mapped(),
                         old: req.body,
                         categories: categories,
-                        brands: brands
+                        brands: brands,
                         
 
 
