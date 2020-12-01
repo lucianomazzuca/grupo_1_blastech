@@ -14,14 +14,14 @@
 
         <div class="form-group col-12 col-md-6">
           <label for="tipo" id="tipo">Modelo</label>
-          <input type="text" name="model" value="<%= product.model%>">
+          <input id="model" class="form-control" type="text" name="model" value="<%= product.model%>">
           <span id="errorModel" class="text-danger" ><%= (typeof errors != 'undefined' && errors.model.id)?errors.model.id.msg:"" %>
           </span>
         </div>
 
         <div class="form-group col-12 col-md-6">
           <label for="tipo" id="tipo"> Marca </label>
-          <select class="form-control"  id="" name="brand">
+          <select class="form-control"  id="brand" name="brand">
               <option value="<%= product.brand_id %>"><%= product.brands.brand_name %></option>
              
               <% brands.forEach(marca => { %>
@@ -38,13 +38,13 @@
             <img id="vistaPrevia" src="/images/products/<%= product.images %>" class="avatarImg" alt="avatar" width="75%"
                           style="object-fit: cover; object-position: top;">
           </figure>
-          <input type="file" name="images" id="avatarInput" value="/images/products/<%= product.images %>">
-          <span id="errorFoto" class="text-danger"><%= (typeof errors != 'undefined' && errors.last_name)?errors.last_name.msg:"" %>
+          <input class="form-control" type="file" name="images" id="avatarImput" value="/images/products/<%= product.images %>">
+          <span  id="errorImagen" class="text-danger"><%= (typeof errors != 'undefined' && errors.last_name)?errors.last_name.msg:"" %>
         </div>
 
         <div class="form-group col-12 col-md-8">
           <label for="tipo"> Descripcion </label>
-          <textarea name="description"><%= product.description%>"</textarea>
+          <textarea id="description" class="form-control" name="description"><%= product.description%>"</textarea>
           <span id="errorDescription" class="text-danger" ><%= (typeof errors != 'undefined' && errors.description)?errors.description.msg:"" %>
         </div>
 
@@ -55,7 +55,7 @@
 
         <div class="form-group col-12 col-md-6">
           <label for="tipo" id="tipo"> Categoria </label>
-          <select class="form-control"  id="" name="category">
+          <select class="form-control"  id="category" name="category">
             <option value="<%= product.category_id %>"><%= product.categories.category_name %></option>
            
             <% categories.forEach(categoria => { %>
@@ -68,14 +68,14 @@
 
         <div class="form-group col-12 col-md-6 col-lg-4">
           <label for=""> Precio</label>
-          <input name="price" type="number" value="<%= product.price%>">
+          <input id="price" class="form-control" name="price" type="number" value="<%= product.price%>">
           <span id="errorPrice" class="text-danger" ><%= (typeof errors != 'undefined' && errors.price)?errors.price.msg:"" %>
           </span>
         </div>
 
         <div class="form-group col-12  col-md-6 col-lg-4">
           <label for="tipo"> Descuento </label>
-          <input name="discount" type="number" value="<%= product.discount%>">
+          <input class="form-control" name="discount" type="number" value="<%= product.discount%>">
         </div>
         <div class="btn-group">
           <small id="errorSubmit" class="text-danger"></small>

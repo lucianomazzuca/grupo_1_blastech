@@ -37,9 +37,7 @@ window.addEventListener('load',function(){
         }
     })
 
-    inputFecha.addEventListener('blur',function(){
-
-    })
+   
 
     inputProvincia.addEventListener('blur',function(){
         switch (true) {

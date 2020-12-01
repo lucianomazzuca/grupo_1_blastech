@@ -15,6 +15,9 @@ window.addEventListener("load", () => {
     inputImagen.addEventListener('change',function(e){
 
         switch (true) {
+
+
+
             case !regExExtensions.exec(this.value) :
                 errores.foto = "Solo imagenes con extension jpg, jpeg, png, o gif"
                 errorFoto.innerHTML = errores.foto;
@@ -44,8 +47,7 @@ window.addEventListener("load", () => {
         let elements = form.querySelectorAll('input');
 
         for(let i = 0; i < elements.length - 1; i++) {
-            if(elements[i].name != 'image' && elements[i].value == ''){
-                console.log(elements[i])
+            if(elements[i].name != 'images' && elements[i].value == ''){
                 elements[i].classList.add('is-invalid');
                 error = true;
             }
