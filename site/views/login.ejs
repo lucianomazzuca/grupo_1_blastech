@@ -9,13 +9,12 @@
 
 
       <form class="formulario" method="POST">
-        <h1>Iniciar Sesion</h1>
+        <h1>Iniciar Sesión</h1>
 
         <div class="contenedor">
 
             
-            <div class="input-contenedor">
-                <i class="fas fa-envelope icon"></i>
+            <div class="input-contenedor ">
                 <input
                 class="form-control txtpas <%= (typeof old != 'undefined' && old.email && !errors.email)?"is-valid":
                 (typeof errors != 'undefined' && errors.email)?"is-invalid":
@@ -26,7 +25,6 @@
 
             
             <div class="input-contenedor">
-                <i class="fas fa-key icon"></i>
                 <input 
                 class="form-control txtpas <%= (typeof errors != 'undefined' && errors.password)?"is-invalid":
                 '' %>"
@@ -39,11 +37,11 @@
                 <input type="checkbox" name="recordar">
             </div>
             <div id="pos">
-                <button type="submit" class="button">Iniciar Sesion</button>
+                <button type="submit" class="button">Iniciar Sesión</button>
             </div>
             <!-- <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
             <p><a class="link" href="/users/restablecer"> ¿Restablecer Contraseña? </a></p> -->
-            <p>¿No tienes una cuenta? <a class="link" href="/users/registro">Registrate </a></p>
+            <p>¿No tienes una cuenta? <a class="link" href="/users/registro"> Regístrate Aquí </a></p>
         </div>
     </form>
 

@@ -8,44 +8,51 @@ body {
     
 }
 
-.cubo{
-    border: solid 80% gray;
-}
-
 .contenedor{
     width: 100%;
-    padding: 15px;
 }
 
 .formulario{
-    border: solid 3px black;
+    border: solid 1px grey;
     background: #fff;
     margin-top: 150px;
-    padding: 3px;
-    
+    padding: 15px 25px;
+    border-radius: 3px;
 }
 
 h1{
     text-align: center;
     color: #1a2537;
-    font-size: 40px;
+    font-size: 32px;
+    margin-bottom: 15px;
 }
 
 .txtpas,#first_name,#last_name, #pass,#pass2,#email{
     font-size: 20px;
-    width: 82%;
     padding: 10px;
-    border: none;
+}
+
+.custom-file{
+    font-size: 18px;
+    padding: 10px;
 }
 
 .input-contenedor{
     margin-bottom: 15px;
-    border: 1px solid #aaa;
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+/* Bootstrap overwrite*/
+.form-control {
+    border: 1px solid grey;
+}
+
+.input-contenedor input {
+    width: 100%;
 }
 
 .icon{
@@ -71,12 +78,17 @@ h1{
 
 p{
     text-align: center;
+    margin-top: 1em;
 }
 
 .link{
     text-decoration: none;
-      color: #1a2537;
+    color: royalblue;
     font-weight: 600;
+}
+
+.link:visited {
+    color: royalblue;
 }
 
 .link:hover{
@@ -90,7 +102,6 @@ p{
         width: 500px;
         margin-top: 75px;
         margin-bottom: 75px;
-        border-radius: 2%;
     }
 }
 .cuentas{
