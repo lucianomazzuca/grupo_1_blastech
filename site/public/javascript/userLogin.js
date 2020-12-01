@@ -30,7 +30,6 @@ window.addEventListener('load',function(){
     });
 
     inputEmail.addEventListener('blur',function(){
-
         switch (true) {
             case this.value.length === 0:
                 errorEmail.innerHTML = "El campo email es obligatorio";
@@ -53,13 +52,9 @@ window.addEventListener('load',function(){
 
         switch (true) {
             case this.value.length === 0:
-                errorPass.innerHTML = "La contraseña es obligatorio";
+                errorPass.innerHTML = "La contraseña es obligatoria";
                 this.classList.add('is-invalid')
                 break;
-            // case !regExPass.test(this.value) :
-            //     errorPass.innerHTML = "La contraseña debe tener entre 6 y 12 caracteres, una mayúscula una minúscula y un número"
-            //     this.classList.add('is-invalid')
-            //     break
             default:
                 this.classList.remove('is-invalid')
                 this.classList.add('is-valid')

@@ -11,7 +11,7 @@ module.exports = [
     //Validar si el email está en la bd
     body("email")
     .isEmail()
-    .withMessage("Este email no ha sido registrado"),
+    .withMessage("El email o contraseña ingresados son inválidos"),
 
     body('password')
     .custom(function(value, {req}) {
@@ -22,11 +22,11 @@ module.exports = [
         })
         .then( user => {
             if(!bcrypt.compareSync(value, user.password)) {
-                return Promise.reject('Credenciales inválidas')
+                return Promise.reject('El email o contraseña ingresados son inválidos')
             }
         })
         .catch(error => {
-            return Promise.reject('Credenciales inválidas')
+            return Promise.reject('El email o contraseña ingresados son inválidos')
         })
     })
 ];
