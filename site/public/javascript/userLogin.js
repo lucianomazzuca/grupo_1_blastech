@@ -49,7 +49,7 @@ window.addEventListener('load',function(){
     })
 
     inputPass.addEventListener('blur',function(){
-
+        console.log(errorPass)
         switch (true) {
             case this.value.length === 0:
                 errorPass.innerHTML = "La contraseña es obligatoria";
