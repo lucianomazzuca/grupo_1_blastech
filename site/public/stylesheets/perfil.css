@@ -5,8 +5,14 @@
     color:white;
 }
 
+
 .perfilUsuario .contenido {
     border: 1px solid white;
+}
+
+.perfil {
+    max-width: 800px;
+    margin: auto;
 }
 
 .perfilUsuario .contenido figure img{
@@ -38,7 +44,7 @@
     --color-grisClaro: #f1f1f1;
 }
 .perfil{
-    border: solid 1px white;
+    border: solid 1px grey;
     background-color: white;
 }
 
@@ -55,8 +61,6 @@ body{
     font-weight: 300;
 }
 
-
-
 .row{
     justify-content: center;
 }
@@ -64,6 +68,8 @@ body{
 .principal{
     margin-top: 30px;
     font-size: 20px;
+    max-width: 800px;
+    margin: 30px auto
 }
 
 .filtro #filtrar{
@@ -205,23 +211,26 @@ body{
 }
 .input-contenedor{
     margin-bottom: 15px;
-    border: 1px solid #aaa;
     margin-bottom: 20px;
     margin-top: 20px;
 }
 .contenedor{
     width: 100%;
-    padding: 15px;
+    padding: 15px 30px;
 }
 .input-contenedor{
     margin-bottom: 15px;
-    border: 1px solid #aaa;
+    /* border: 1px solid #aaa; */
+}
+
+.input-contenedor input {
+    margin-top: 5px;
 }
 
 .icon{
-    min-width: 50px;
-    text-align: center;
     color: #999;
+    margin-right: 5px;
+    font-size: 18px;
 }
 
 .button{
@@ -268,9 +277,9 @@ p{
 }
 #txtpas{
     width: 100%;
-    font-size: 20px;
-    padding: 10px;
+    font-size: 18px;
+    padding: 5px 10px;
 }
 span{
-    font-size: 25px;
+    font-size: 18px;
 }

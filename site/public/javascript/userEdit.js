@@ -1,11 +1,15 @@
 window.addEventListener('load',function(){
+    console.log('vinculado')
     const form = document.querySelector(".prueba");
 
     const inputImagen = form.querySelector('input[name="avatar"]');
+    const inputNombre = form.querySelector('input[name="first_name"]');
+    const inputApellido = form.querySelector('input[name="last_name"]');
     const inputFecha = form.querySelector('input[name="date"]');
     const inputProvincia = form.querySelector('input[name="province"]');
     const inputCiudad = form.querySelector('input[name="city"]');
     const inputDirreccion = form.querySelector('input[name="adress"]');
+    console.log(inputNombre)
 
     const errores = {};
     const regExEmail =  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
