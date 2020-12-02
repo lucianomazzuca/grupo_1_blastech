@@ -29,8 +29,8 @@
                           style="object-fit: cover; object-position: top;">
                         <div class="form-group w-75">
                           <input type="file" class="form-control" id="avatarImput" name="avatar" placeholder="Actualizar Nombre">
-                          <span id="errorFoto" class="text-danger"><%= (typeof errors != 'undefined' && errors.last_name)?errors.last_name.msg:"" %>
-                          </span>
+                          <small id="errorFoto" class="text-danger"><%= (typeof errors != 'undefined' && errors.last_name)?errors.last_name.msg:"" %>
+                          </small>
                         </div>
                       </div>
                     </div>
@@ -38,17 +38,17 @@
                   <div class="input-contenedor">
                       <i class="fas fa-user icon"></i>
                       <span id="AuLetra"> Nombre de Usuario</span>
-                      <input id="txtpas" type="text" name="first_name" value="<%= user.first_name %>" placeholder="Actualizar Nombre" >
-                      <span class="text-danger"><%= (typeof errors != 'undefined' && errors.first_name)?errors.first_name.msg:"" %>
-                      </span>
+                      <input id="txtpas" type="text" class="form-control" name="first_name" value="<%= user.first_name %>" placeholder="Actualizar Nombre" >
+                      <small id="errorNombre" class="text-danger"><%= (typeof errors != 'undefined' && errors.first_name)?errors.first_name.msg:"" %>
+                      </small>
                   </div>
 
                   <div class="input-contenedor">
                     <i class="fas fa-user icon"></i>
                     <span id="AuLetra"> Apellido de Usuario</span>
-                    <input id="txtpas" type="text" name="last_name" value="<%= user.last_name %>" placeholder="Actualizar Apellido" >
-                    <span class="text-danger"><%= (typeof errors != 'undefined' && errors.last_name)?errors.last_name.msg:"" %>
-                    </span>
+                    <input id="txtpas" type="text" class="form-control" name="last_name" value="<%= user.last_name %>" placeholder="Actualizar Apellido" >
+                    <small id="errorApellido" class="text-danger"><%= (typeof errors != 'undefined' && errors.last_name)?errors.last_name.msg:"" %>
+                    </small>
                   </div>
 
                   <div class="input-contenedor">
@@ -106,6 +106,7 @@
                   
                   <div id="pos">
                       <!-- <button type="button" class="btn-sm btn-secondary m-1"><a href="/" class="text-light">Salir</a></button> -->
+                      <small id="errorSubmit" class="text-danger"></small>
                       <button type="submit" class="button">Actualizar datos</a></button>
                     
                   </div>

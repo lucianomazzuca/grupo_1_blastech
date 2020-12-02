@@ -9,14 +9,33 @@ window.addEventListener('load',function(){
     const inputProvincia = form.querySelector('input[name="province"]');
     const inputCiudad = form.querySelector('input[name="city"]');
     const inputDirreccion = form.querySelector('input[name="adress"]');
-    console.log(inputNombre)
 
     const errores = {};
     const regExEmail =  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
     const regExExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
 
-    inputImagen.addEventListener('change',function(e){
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let error = false;
+        let elements = form.querySelectorAll('input');
 
+        if(inputNombre.value == '') {
+            inputNombre.classList.add('is-invalid');
+            error = true;
+        } else if (inputApellido.value == ''){
+            inputApellido.classList.add('is-invalid');
+            error = true;
+        }
+
+        if(!error){
+            form.submit();
+        } else {
+            errorSubmit.innerText = 'Los campos señalados son obligatorios'
+        }
+        
+    });
+
+    inputImagen.addEventListener('change',function(e){
         switch (true) {
             case !regExExtensions.exec(this.value) :
                 errores.foto = "Solo imagenes con extension jpg, jpeg, png, o gif"
@@ -25,7 +44,6 @@ window.addEventListener('load',function(){
                 this.value = '';
                 vistaPrevia.src = "";
             break
-        
             default:
                 this.classList.remove('is-invalid');
                 this.classList.add('is-valid');
@@ -41,60 +59,96 @@ window.addEventListener('load',function(){
         }
     })
 
-   
-
-    inputProvincia.addEventListener('blur',function(){
+    inputNombre.addEventListener('blur',function(){
         switch (true) {
             case this.value.length === 0:
-                errorProvincia.innerHTML = "La provincia es obligatorio";
+                errorNombre.innerHTML = "El nombre es obligatorio";
                 this.classList.add('is-invalid')
                 break;
-            case this.value.trim().length <=3:
-                errorProvincia.innerHTML = "Tenés que poner al menos tres letras"
+            case this.value.trim().length < 3:
+                errorNombre.innerHTML = "Tenés que ingresar al menos tres letras"
                 this.classList.add('is-invalid')
                 break
             default:
                 this.classList.remove('is-invalid')
                 this.classList.add('is-valid')
-                errorProvincia.innerHTML = ""
+                errorNombre.innerHTML = ""
                 break;
         }
+
     })
 
-    inputCiudad.addEventListener('blur',function(){
+    inputApellido.addEventListener('blur',function(){
         switch (true) {
             case this.value.length === 0:
-                errorCiudad.innerHTML = "La Ciudad es obligatorio";
+                errorApellido.innerHTML = "El apellido es obligatorio";
                 this.classList.add('is-invalid')
                 break;
             case this.value.trim().length <=3:
-                errorCiudad.innerHTML = "Tenés que poner al menos tres letras"
+                errorApellido.innerHTML = "Tenés que ingresar al menos tres letras"
                 this.classList.add('is-invalid')
                 break
             default:
                 this.classList.remove('is-invalid')
                 this.classList.add('is-valid')
-                errorCiudad.innerHTML = ""
+                errorApellido.innerHTML = ""
                 break;
         }
+
     })
 
-    inputDirreccion.addEventListener('blur',function(){
-        switch (true) {
-            case this.value.length === 0:
-                errorDirreccion.innerHTML = "La Dirreccion es obligatorio";
-                this.classList.add('is-invalid')
-                break;
-            case this.value.trim().length <=3:
-                errorDirreccion.innerHTML = "Tenés que poner al menos tres letras"
-                this.classList.add('is-invalid')
-                break
-            default:
-                this.classList.remove('is-invalid')
-                this.classList.add('is-valid')
-                errorDirreccion.innerHTML = ""
-                break;
-        }
-    })
+    // inputProvincia.addEventListener('blur',function(){
+    //     switch (true) {
+    //         case this.value.length === 0:
+    //             errorProvincia.innerHTML = "La provincia es obligatorio";
+    //             this.classList.add('is-invalid')
+    //             break;
+    //         case this.value.trim().length <=3:
+    //             errorProvincia.innerHTML = "Tenés que poner al menos tres letras"
+    //             this.classList.add('is-invalid')
+    //             break
+    //         default:
+    //             this.classList.remove('is-invalid')
+    //             this.classList.add('is-valid')
+    //             errorProvincia.innerHTML = ""
+    //             break;
+    //     }
+    // })
+
+    // inputCiudad.addEventListener('blur',function(){
+    //     switch (true) {
+    //         case this.value.length === 0:
+    //             errorCiudad.innerHTML = "La Ciudad es obligatorio";
+    //             this.classList.add('is-invalid')
+    //             break;
+    //         case this.value.trim().length <=3:
+    //             errorCiudad.innerHTML = "Tenés que poner al menos tres letras"
+    //             this.classList.add('is-invalid')
+    //             break
+    //         default:
+    //             this.classList.remove('is-invalid')
+    //             this.classList.add('is-valid')
+    //             errorCiudad.innerHTML = ""
+    //             break;
+    //     }
+    // })
+
+    // inputDirreccion.addEventListener('blur',function(){
+    //     switch (true) {
+    //         case this.value.length === 0:
+    //             errorDirreccion.innerHTML = "La Dirreccion es obligatorio";
+    //             this.classList.add('is-invalid')
+    //             break;
+    //         case this.value.trim().length <=3:
+    //             errorDirreccion.innerHTML = "Tenés que poner al menos tres letras"
+    //             this.classList.add('is-invalid')
+    //             break
+    //         default:
+    //             this.classList.remove('is-invalid')
+    //             this.classList.add('is-valid')
+    //             errorDirreccion.innerHTML = ""
+    //             break;
+    //     }
+    // })
 
     })
