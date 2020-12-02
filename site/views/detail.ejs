@@ -83,7 +83,7 @@
                               <img src="/images/products/<%= producto.images %> " alt="">
                             </figure>
                             <article>
-                              <span> <%= producto.categories.category_name + " " + producto.brands.brands_name %>  </span>
+                              <span> <%= producto.categories.category_name + " " + producto.model %>  </span>
                               <h2>$<%- (producto.price - producto.price * producto.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %></h2>
                             </article>
                          </a>

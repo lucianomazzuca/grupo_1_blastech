@@ -18,12 +18,12 @@ function displayButtons() {
 
     if(maxLeft < 1) {
         maxLeft = 1;
-        maxRight = limit;
+        maxRight = 5;
     }
 
     if(maxRight > totalPages) {
         maxRight = totalPages;
-        maxLeft = totalPages - limit;
+        maxLeft = totalPages - 4;
 
         if(maxLeft < 1) {
             maxLeft = 1;
@@ -48,7 +48,6 @@ function displayButtons() {
             }
         }
     }
-
 
     //Agregar botones de anterior y siguiente dependiendo de la pagina actual
     if(currentPage != 1) {

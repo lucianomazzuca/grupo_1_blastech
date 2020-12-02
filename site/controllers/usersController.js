@@ -202,7 +202,7 @@ module.exports = {
     },
     list: function (req, res) {
         const currentPage = req.params.page;
-        let limit = 5;
+        let limit = 10;
 
         db.Users.findAndCountAll({
             offset: (currentPage - 1) * limit,
@@ -227,7 +227,7 @@ module.exports = {
         term = term.trim().toLowerCase();
 
         const currentPage = req.params.page;
-        let limit = 5;
+        let limit = 10;
 
         db.Users.findAndCountAll({
             offset: (currentPage - 1) * limit,
@@ -262,7 +262,7 @@ module.exports = {
             }
         })
             .then(() => {
-                res.redirect('/users/listado')
+                res.redirect('/users/listado/all/1')
             })
             .catch(errores => {
                 res.send(errores)
