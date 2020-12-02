@@ -145,25 +145,25 @@ window.addEventListener("load", () => {
         }
     });
 
-    inputFeatures.addEventListener("blur", function () {
-        switch (true) {
-            case this.value.length === 0:
-                errorFeatures.innerText = "Debes ingresar las especificaciones";
-                this.classList.add("is-invalid");
-                break;
-            case this.value.length < 10:
-                errorFeatures.innerText = "Debes ingresar al menos 10 caracteres";
-                this.classList.add("is-invalid");
-                break;
-            case this.value.length > 500:
-                errorFeatures.innerText = "La descripción debe ser menor a 500 caracteres";
-                this.classList.add("is-invalid");
-                break;
-            default:
-                this.classList.remove("is-invalid");
-                this.classList.add("is-valid");
-                errorFeatures.innerText = "";
-                break;
-        }
-    });
+    // inputFeatures.addEventListener("blur", function () {
+    //     switch (true) {
+    //         case this.value.length === 0:
+    //             errorFeatures.innerText = "Debes ingresar las especificaciones";
+    //             this.classList.add("is-invalid");
+    //             break;
+    //         case this.value.length < 10:
+    //             errorFeatures.innerText = "Debes ingresar al menos 10 caracteres";
+    //             this.classList.add("is-invalid");
+    //             break;
+    //         case this.value.length > 500:
+    //             errorFeatures.innerText = "La descripción debe ser menor a 500 caracteres";
+    //             this.classList.add("is-invalid");
+    //             break;
+    //         default:
+    //             this.classList.remove("is-invalid");
+    //             this.classList.add("is-valid");
+    //             errorFeatures.innerText = "";
+    //             break;
+    //     }
+    // });
 });
