@@ -1,6 +1,6 @@
 @import "style.css";
 
-.enviar-email{
+.enviar-email {
     
     padding: 40px;
     width: 600px;
@@ -9,6 +9,27 @@
     position: relative;
     padding-right: 0;
     width: 50%;
+}
+
+.contenedor-perfil {
+    padding: 40px;
+    width: 20px;
+    margin: 20px;
+    align-items: center;
+    position: relative;
+    padding-right: 0;
+    width: 20%;
+    
+}
+.imagen{
+    padding: 20px;
+    width: 200px;
+    margin: 0px;
+    align-items: center;
+    position: relative;
+    padding-right: 0;
+    width: 100%;
+    
 }
 
 .mb-2, .my-2 {
@@ -20,5 +41,76 @@
 
 body{
     min-height: 100%;
+}
+
+/* Prueba */
+
+ .contenido figure img{
+     
+
+    width: 30%;
+    border-radius: 100px;
+    
+    
+}
+h5{
+    margin-top: 20px;
+}
+ article {
+   
+    border-top: 1px solid white;
+    padding: 10px;
+    position: relative;
+    height: 150px;
+    
+    
+}
+
+
+.contenido{
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 350px;
+    height: 500px;
+}
+
+article h2{
+    text-align: center;
+}
+
+ article span{
+    color:green;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.titulo h2{
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+div .contenido:hover{
+    box-shadow: 0px 0px 10px 0px #888888;
+   
+}
+.principal{
+    display:flex;
+    flex-wrap: wrap;
+
+}
+
+ .contenido{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    
 }
 

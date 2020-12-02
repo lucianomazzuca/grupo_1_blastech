@@ -50,5 +50,11 @@ module.exports = {
             title: 'Dejanos tu email!',
             css: 'enviar-email.css',
         })
+    },
+    nosotros: function (req, res) {
+        res.render('nosotros', {
+            title: 'La empresa',
+            css: 'enviar-email.css',
+        })
     }
 }
