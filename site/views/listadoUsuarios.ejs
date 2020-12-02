@@ -36,16 +36,18 @@
                     <div class="campo email"><%- usuario.email %></div>
                     <div class="campo registro"><%- usuario.createdAt %></div>
                     <div class="campo acciones">
-                        <!-- <form action="">
+
+                        <form action="/users/show/<%= usuario.id %>" method="GET">
                             <button class="btn btn-outline-light">
                                 <h4 class="fas fa-edit text-primary"></h4>
                             </button>
-                        </form> -->
+                        </form>
                         <form action="/users/delete/<%= usuario.id %>?_method=DELETE" method="POST">
                             <button class="btn btn-outline-light" type="submit">
                                 <h4 class="fas fa-trash-alt text-danger"></h4>
                             </button>
                         </form>
+
                     </div>
                 </div>
             <% }) %>

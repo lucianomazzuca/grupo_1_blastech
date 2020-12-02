@@ -31,6 +31,8 @@ router.get('/logout', usersController.logout);
 router.get('/listado/all/:page', usersController.list);
 router.get('/listado/search/:page', usersController.listSearch);
 
+router.get('/show/:id', usersController.show);
+
 router.delete('/delete/:id', usersController.delete);
 
 

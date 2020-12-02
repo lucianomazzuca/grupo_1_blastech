@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+
+<body>
+    <%- include('./partials/header.ejs') %>
+
+    <main>
+
+        <section class="title">
+            <h2>Editar Usuario</h2>
+        </section>
+
+        <section class="form-container">
+            <form action="">
+                <div class="form-group">
+                    <label for="">ID</label>
+                    <input type="text" value="<%- usuario.id %>" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="">Registro</label>
+                    <input type="text" disabled value="<%- usuario.createdAt %>">
+                </div>
+                <div class="form-group">
+                    <label for="">Nombre</label>
+                    <input type="text" value="<%- usuario.first_name %>">
+                </div>
+                <div class="form-group">
+                    <label for="">Apellido</label>
+                    <input type="text" value="<%- usuario.last_name %>">
+                </div>
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="text" value="<%- usuario.email %>">
+                </div>
+                <div class="form-group">
+                    <label for="">Fecha de Nacimiento</label>
+                    <input type="text" value="<%- usuario.date %>">
+                </div>
+                <div class="form-group">
+                    <label for="">Provincia</label>
+                    <input type="text" value="<%- usuario.province %>">
+                </div>
+                <div class="form-group">
+                    <label for="">Ciudad</label>
+                    <input type="text" value="<%- usuario.city %>">
+                </div>
+                <div class="form-group">
+                    <label for="">Dirección</label>
+                    <input type="text" value="<%- usuario.adress %>">
+                </div>
+                <div class="form-group">
+                    <label for="">Status</label>
+                    <select name="" id="">
+                        <option value="user">user</option>
+                        <option value="admin">admin</option>
+                    </select>
+                </div>
+                <!-- Buttons -->
+                <div class="button-container">
+                    <button>Cancelar</button>
+                    <button>Guardar</button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <%- include('./partials/footer.ejs')%>
+</body>
+</html>

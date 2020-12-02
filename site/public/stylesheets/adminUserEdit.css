@@ -1,0 +1,60 @@
+@import "style.css";
+
+body {
+    margin-bottom: 200px;
+}
+
+main {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    border: 1px solid lightgray;
+    background-color: white;
+    padding: 25px 20px;
+}
+
+.form-container form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+    width: 50%;
+    padding: 0 10px;
+}
+
+label {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+input, select {
+    height: 35px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    font-size: 15px;
+    padding: 3px 10px;
+    border-radius: 3px;
+}
+
+.button-container {
+    display: flex;
+    width: 50%;
+}
+
+.button-container > * {
+    display: inline-block;
+    padding: 15px 15px;
+    width: 100%;
+}
+
+.button-container button {
+    padding: 10px;
+}

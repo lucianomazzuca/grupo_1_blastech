@@ -268,4 +268,16 @@ module.exports = {
                 res.send(errores)
             })
     },
+    show: function(req, res) {
+        let userId = req.params.id;
+
+        db.Users.findByPk(userId)
+        .then(user => {
+            res.render('adminUserEdit', {
+                css: 'adminUserEdit.css',
+                title: 'Editar Usuario',
+                usuario: user,
+            })
+        })
+    }
 };
