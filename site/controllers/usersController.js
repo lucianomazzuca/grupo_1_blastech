@@ -5,6 +5,7 @@ const { validationResult } = require("express-validator");
 const db = require("../database/models");
 const sequelize = db.sequelize;
 const { Op, where } = require("sequelize");
+const moment = require('moment')
 
 const dbUsers = require(path.join(__dirname, "..", "data", "dbUsers"));
 const dbProducts = require(path.join(__dirname, "..", "data", "dbProducts"));
@@ -208,6 +209,9 @@ module.exports = {
             limit: limit,
         })
         .then((result) => {
+            // let resultParsed = result.rows.map(row => {
+            //     row.createdAt = row.createdAt.format('YYYY-MM-DD');
+            // })
             res.render("listadoUsuarios", {
                 title: "Listado de usuarios",
                 css: "listado-usuarios.css",

@@ -1,3 +1,5 @@
+const moment = require('moment'); 
+
 module.exports = (sequelize, dataTypes) => {
 
     let alias = "Users";
@@ -42,9 +44,14 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(45),
         },
         date: {
-            type:dataTypes.DATEONLY,
+            type: dataTypes.DATEONLY,
+        },
+        createdAt: {
+            type: dataTypes.DATEONLY,
+            get: function() {
+                return moment.utc(this.getDataValue('createdAt')).format('DD-MM-YYYY');
+            }
         }
-
     }
 
     let config = {

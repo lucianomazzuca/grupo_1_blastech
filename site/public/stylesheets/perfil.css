@@ -283,3 +283,8 @@ p{
 span{
     font-size: 18px;
 }
+
+#vistaPrevia {
+    width: 150px;
+    height: 150px;
+}
