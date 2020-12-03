@@ -21,7 +21,7 @@
                 <label for="tipo">Modelo *</label>
                 <input type="text" class="form-control" id= "categ" placeholder="Modelo" name="model" 
                   value="<%=(typeof old != 'undefined' && old.model)?old.model:""  %>">
-                <span class="text-danger"><%= (typeof errors != 'undefined' && errors.model)?errors.model.msg:"" %>
+                <span id="errorModel" class="text-danger"><%= (typeof errors != 'undefined' && errors.model)?errors.model.msg:"" %>
                 </span>
               </div>
 
@@ -33,7 +33,7 @@
                   <option value="<%= categoria.id %>"><%= categoria.category_name %> </option>
                   <% }) %>
                 </select>
-                <span class="text-danger"><%= (typeof errors != 'undefined' && errors.id_categoria)?errors.id_categoria.msg:"" %>
+                <span id="errorCategory" class="text-danger"><%= (typeof errors != 'undefined' && errors.id_categoria)?errors.id_categoria.msg:"" %>
                 </span>
               </div>
 
@@ -45,7 +45,7 @@
                   <option value="<%= marca.id %>"><%= marca.brand_name %> </option>
                   <% }) %>
                 </select>
-                <span class="text-danger"><%= (typeof errors != 'undefined' && errors.brand_id)?errors.brand_id.msg:"" %>
+                <span id="errorBrand" class="text-danger"><%= (typeof errors != 'undefined' && errors.brand_id)?errors.brand_id.msg:"" %>
                 </span>
               </div>
 
@@ -53,7 +53,7 @@
                 <label for=""> Precio *</label>
                 <input type="text" class="form-control" placeholder="Precio" id= "categ" name="price"
                   value="<%=(typeof old != 'undefined' && old.price)?old.price:""  %>">
-                <span class="text-danger"><%= (typeof errors != 'undefined' && errors.price)?errors.price.msg:"" %>
+                <span id="errorPrice" class="text-danger"><%= (typeof errors != 'undefined' && errors.price)?errors.price.msg:"" %>
                 </span>
               </div>
 

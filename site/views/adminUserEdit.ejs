@@ -12,7 +12,14 @@
         </section>
 
         <section class="form-container">
-            <form action="">
+            <form action="/users/adminEdit/<%= usuario.id %> ?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div class="avatar-container">
+                    <img id="vistaPrevia" src="/images/user/<%= usuario.image %>" class="avatarImg" alt="avatar" width="100%"
+                      style="object-fit: cover; object-position: top;">
+                    <div class="form-group">
+                      <input type="file" class="form-control" id="customFileLang" name="avatar">
+                    </div>
+                </div>
                 <div class="form-group">
                     <label for="">ID</label>
                     <input type="text" value="<%- usuario.id %>" disabled>
@@ -23,43 +30,44 @@
                 </div>
                 <div class="form-group">
                     <label for="">Nombre</label>
-                    <input type="text" value="<%- usuario.first_name %>">
+                    <input type="text" name="first_name" value="<%- usuario.first_name %>">
                 </div>
                 <div class="form-group">
                     <label for="">Apellido</label>
-                    <input type="text" value="<%- usuario.last_name %>">
+                    <input type="text" name="last_name" value="<%- usuario.last_name %>">
                 </div>
                 <div class="form-group">
                     <label for="">Email</label>
-                    <input type="text" value="<%- usuario.email %>">
+                    <input type="text" name="email" value="<%- usuario.email %>">
                 </div>
                 <div class="form-group">
                     <label for="">Fecha de Nacimiento</label>
-                    <input type="text" value="<%- usuario.date %>">
+                    <input type="text" name="date" value="<%- usuario.date %>">
                 </div>
                 <div class="form-group">
                     <label for="">Provincia</label>
-                    <input type="text" value="<%- usuario.province %>">
+                    <input type="text" name="province" value="<%- usuario.province %>">
                 </div>
                 <div class="form-group">
                     <label for="">Ciudad</label>
-                    <input type="text" value="<%- usuario.city %>">
+                    <input type="text" name="city" value="<%- usuario.city %>">
                 </div>
                 <div class="form-group">
                     <label for="">Dirección</label>
-                    <input type="text" value="<%- usuario.adress %>">
+                    <input type="text" name="adress" value="<%- usuario.adress %>">
                 </div>
                 <div class="form-group">
                     <label for="">Status</label>
-                    <select name="" id="">
+                    <select name="category" id="">
                         <option value="user">user</option>
                         <option value="admin">admin</option>
                     </select>
                 </div>
                 <!-- Buttons -->
                 <div class="button-container">
-                    <button>Cancelar</button>
-                    <button>Guardar</button>
+                    <button id="back"><i class="fas fa-arrow-left"></i></button>
+                    <button id="del"><i class="fas fa-trash-alt"></i></button>
+                    <button id="save" type="submit"><i class="fas fa-save"></i></button>
                 </div>
             </form>
         </section>

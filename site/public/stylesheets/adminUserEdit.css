@@ -31,6 +31,16 @@ main {
     padding: 0 10px;
 }
 
+.avatar-container {
+    display: block;
+    width: 100%;
+}
+
+.avatar-container img {
+    width: 150px;
+    height: 150px;
+}
+
 label {
     margin-bottom: 10px;
     font-size: 15px;
@@ -46,15 +56,33 @@ input, select {
 
 .button-container {
     display: flex;
-    width: 50%;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1em;
+    padding: 0 10px;
 }
 
 .button-container > * {
-    display: inline-block;
-    padding: 15px 15px;
-    width: 100%;
+    width: 10%;
+    padding: 7px;
+    border: 1px solid lightgrey;
+    color: white;
+    border-radius: 5px;
 }
 
-.button-container button {
-    padding: 10px;
+.button-container > *:hover {
+    opacity: 0.7;
 }
+
+.button-container #back {
+    background-color: royalblue;
+}
+
+.button-container #del {
+    background-color: rgb(180, 0, 0);
+}
+
+.button-container #save {
+    background-color: rgb(0, 200, 0);
+}
+

@@ -101,7 +101,6 @@ module.exports = {
             css: "login.css",
         });
     },
-
     processRestablecer: function (req, res) {
         let errors = validationResult(req)
 
@@ -109,20 +108,19 @@ module.exports = {
             db.Users.update({
                 password: bcrypt.hashSync(req.body.newpass2, 10)
             },
-                {
-                    where: {
-                        id: req.params.id
-                    }
-                })
-                .then(result => {
-                    console.log(result)
-                    res.redirect("/users/perfiles#datos")
-                   
-                })
-
+            {
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(result => {
+                console.log(result)
+                res.redirect("/users/perfiles")
+            })
         } else {
             db.Users.findByPk(req.session.user.id)
                 .then(user => {
+                    console.log('no va')
                     res.render('restablecer', {
                         title: 'Restablecer contraseña',
                         css: 'perfil.css',
@@ -279,5 +277,29 @@ module.exports = {
                 usuario: user,
             })
         })
+    },
+    adminEdit: function(req, res) {
+        db.Users.update({
+            first_name: req.body.first_name.trim(),
+            last_name: req.body.last_name.trim(),
+            date: req.body.date,
+            email: req.body.email,
+            image: (req.files[0]) ? req.files[0].filename : req.body.image,
+            adress: req.body.adress,
+            city: req.body.city,
+            province: req.body.province,
+            category: req.body.category
+            },
+            {
+                where: {
+                    id: req.params.id
+                }
+        })
+        .then(result => {
+            res.redirect("/users/listado/all/1")
+            // script : "userEdit.js",
+            // });
+        })
+        .catch(error => res.send(error))
     }
 };

@@ -3,9 +3,6 @@ var router = express.Router();
 const logCheck = require('../middlewares/logCheck')
 const guestCheck = require('../middlewares/guestCheck')
 
-
-
-
 const usersController = require('../controllers/usersController.js');
 const loginValidator = require('../validations/loginValidator');
 
@@ -21,7 +18,7 @@ router.get('/login', guestCheck, usersController.login);
 router.post('/login', loginValidator, usersController.processLogin);
 
 router.get('/restablecer', logCheck, usersController.restablecer);
-router.put('/restablecer/:id',logCheck, restablecerValidator,  usersController.processRestablecer);
+router.put('/restablecer/:id', restablecerValidator, usersController.processRestablecer);
 
 router.get('/perfiles', usersController.perfil);
 router.put('/perfiles/:id', upImagesUsers.any(), userEditValidator, usersController.perfilEdit);
@@ -32,6 +29,7 @@ router.get('/listado/all/:page', usersController.list);
 router.get('/listado/search/:page', usersController.listSearch);
 
 router.get('/show/:id', usersController.show);
+router.put('/adminEdit/:id', usersController.adminEdit);
 
 router.delete('/delete/:id', usersController.delete);
 

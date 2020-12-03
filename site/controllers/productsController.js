@@ -296,15 +296,14 @@ module.exports = {
                 brand_id: req.body.brand,
                 images: (req.files[0]) ? req.files[0].filename : req.body.image
             },
-                {
-                    where: {
-                        id: req.params.id
-                    }
-                })
-
-                .then(() => {
-                    res.redirect('/products/editList/')
-                })
+            {
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(() => {
+                res.redirect('/products/editList/')
+            })
         } else {
             let product = db.Products.findOne({
                 where: {
