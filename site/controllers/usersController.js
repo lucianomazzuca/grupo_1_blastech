@@ -279,6 +279,7 @@ module.exports = {
         })
     },
     adminEdit: function(req, res) {
+        console.log(req.body)
         db.Users.update({
             first_name: req.body.first_name.trim(),
             last_name: req.body.last_name.trim(),

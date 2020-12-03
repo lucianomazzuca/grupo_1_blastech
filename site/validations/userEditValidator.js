@@ -14,6 +14,5 @@ module.exports = [
     })
     .withMessage('Debes escribir un apellido')
 
-    
 
 ]

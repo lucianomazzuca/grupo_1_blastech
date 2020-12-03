@@ -29,7 +29,7 @@ router.get('/listado/all/:page', usersController.list);
 router.get('/listado/search/:page', usersController.listSearch);
 
 router.get('/show/:id', usersController.show);
-router.put('/adminEdit/:id', usersController.adminEdit);
+router.put('/admin-edit/:id', upImagesUsers.any(), usersController.adminEdit);
 
 router.delete('/delete/:id', usersController.delete);
 
